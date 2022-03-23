@@ -1,0 +1,38 @@
+.hero {
+}
+
+.wrapper {
+  position: relative;
+}
+
+.image {
+  height: 500px;
+  width: 100%;
+}
+
+.text {
+  color: #fff;
+  font-family: "RecifeDisplayLight", sans-serif;
+  font-size: 20px;
+  left: 50%;
+  line-height: 110%;
+  max-width: 270px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .image {
+    height: 560px;
+  }
+
+  .text {
+    font-size: 40px;
+    line-height: 125%;
+    max-width: 800px;
+  }
+}

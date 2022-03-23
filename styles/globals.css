@@ -1,16 +1,44 @@
-html,
+@font-face {
+  font-family: "FaktPro";
+  src: url("../fonts/FaktPro-Light.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RecifeDisplayLight";
+  src: url("../fonts/RecifeDisplay-Light.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RecifeDisplay";
+  src: url("../fonts/RecifeDisplay-Book.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RecifeDisplayRegular";
+  src: url("../fonts/RecifeDisplay-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #5d5d5d;
+  font-family: "FaktPro", sans-serif;
+  font-size: 14px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.holder {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-* {
-  box-sizing: border-box;
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 20px;
+  }
 }
