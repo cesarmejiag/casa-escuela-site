@@ -1,11 +1,13 @@
 import Layout from "../components/Layout";
 import Section from "../components/Section";
+import Carrousel from "../components/carrousel";
 import Card from "../components/card";
-import { Swiper, SwiperSlide } from "swiper/react";
+import useResize from "../hooks/useResize";
+
 import data from "../data";
-import "swiper/css";
 
 const About = () => {
+  const { mobile } = useResize();
   const { team } = data.about;
   const { cards } = team;
 
@@ -16,13 +18,13 @@ const About = () => {
       </Section>
 
       <Section id="team" title="Team">
-        <Swiper slidesPerView={3}>
-          {cards.map((card) => (
-            <SwiperSlide>
-              <Card {...card}></Card>
-            </SwiperSlide>
+        <Carrousel
+          slides={cards.map((card) => (
+            <Card {...card} />
           ))}
-        </Swiper>
+          slidesPerView={mobile ? 1 : 3}
+          spaceBetween={mobile ? 0 : 50}
+        />
       </Section>
     </Layout>
   );

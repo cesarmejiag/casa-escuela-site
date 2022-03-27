@@ -13,7 +13,7 @@ const Footer = () => {
               <div className="row">
                 <div className="col-12 col-md-4">
                   <div className={styles.logo}>
-                    <Image src="/images/ce-icon.svg" width={32} height={21} />
+                    <Image src="/images/icon-ce.svg" width={32} height={21} />
                   </div>
                 </div>
                 <div className="col-12 col-md-8">

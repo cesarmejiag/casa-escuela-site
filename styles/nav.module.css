@@ -1,0 +1,73 @@
+.logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 205px;
+}
+
+.leftLinks .link {
+  padding-left: 15px;
+}
+
+.leftLinks .link:first-child {
+  padding-left: 0;
+}
+
+.rightLinks .link {
+  padding-right: 15px;
+}
+
+.rightLinks .link:last-child {
+  padding-right: 0;
+}
+
+.link {
+  color: #000;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  color: #000;
+}
+
+.toggleBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  margin-left: auto;
+  outline: none;
+  padding: 0;
+  position: relative;
+  width: 20px;
+}
+
+.toggleBtn::before,
+.toggleBtn::after {
+  border-bottom: 1px solid #000;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.toggleBtn::before {
+  top: 7px;
+}
+
+.toggleBtn::after {
+  top: 12px;
+}
+
+@media screen and (min-width: 992px) {
+  .leftLinks .link {
+    padding-left: 30px;
+  }
+
+  .rightLinks .link {
+    padding-right: 30px;
+  }
+}

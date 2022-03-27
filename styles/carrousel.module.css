@@ -1,0 +1,30 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.prevBtn,
+.nextBtn {
+  background: transparent no-repeat center center;
+  border: none;
+  cursor: poiner;
+  outline: none;
+}
+
+.prevBtn {
+  background-image: url("/images/icon-slider-arrow.svg");
+  transform: rotate(0);
+}
+
+.nextBtn {
+  background-image: url("/images/icon-slider-arrow.svg");
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 768px) {
+  .controls {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
