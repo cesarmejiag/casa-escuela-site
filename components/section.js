@@ -1,17 +1,32 @@
-import styles from "../styles/section.module.css";
+import styles from "../styles/Section.module.css";
 import PropTypes from "prop-types";
+import Image from "next/image";
 
-const Section = ({ id, title, children }) => {
+const Section = ({ id, title, intro, imageSrc, children }) => {
   return (
     <section className={styles.section} id={id}>
       <div className="holder">
         <div className="container-fluid">
-          {title && (
+          {(title || intro) && (
             <div className={styles.header}>
-              <h2 className={styles.title}>{title}</h2>
+              {title && <h2 className={styles.title}>{title}</h2>}
+              {intro && <div className={styles.intro}>{intro}</div>}
             </div>
           )}
-          <div className={styles.content}>{children}</div>
+          <div className={styles.content}>
+            {imageSrc && (
+              <div className={styles.image}>
+                <Image
+                  layout="responsive"
+                  src={imageSrc}
+                  width={1803}
+                  height={840}
+                  quality={100}
+                />
+              </div>
+            )}
+            <div>{children}</div>
+          </div>
         </div>
       </div>
     </section>
@@ -21,6 +36,8 @@ const Section = ({ id, title, children }) => {
 Section.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string,
+  intro: PropTypes.string,
+  imageSrc: PropTypes.string,
 };
 
 export default Section;

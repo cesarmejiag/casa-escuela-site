@@ -1,4 +1,4 @@
-import styles from "../styles/hero.module.css";
+import styles from "../styles/Hero.module.css";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
@@ -12,11 +12,10 @@ const Hero = ({ id, imageSrc, text }) => {
               <Image
                 src={imageSrc}
                 layout="fill"
-                width={1803}
-                height={840}
                 quality={100}
                 objectFit="cover"
                 objectPosition="center center"
+                priority
               />
             </div>
             <div

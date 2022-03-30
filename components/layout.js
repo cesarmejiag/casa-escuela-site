@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children, pageTitle }) => {
   const siteTitle = "Casa Escuela";

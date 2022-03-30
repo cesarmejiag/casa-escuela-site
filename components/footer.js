@@ -1,7 +1,7 @@
-import styles from "../styles/footer.module.css";
+import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 
-import Weather from "./weather";
+import Weather from "./Weather";
 
 const Footer = () => {
   return (

@@ -1,4 +1,4 @@
-import styles from "../styles/carrousel.module.css";
+import styles from "../styles/Carrousel.module.css";
 
 import PropTypes from "prop-types";
 import { useState } from "react";

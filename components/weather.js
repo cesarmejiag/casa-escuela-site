@@ -1,4 +1,4 @@
-import styles from "../styles/weather.module.css";
+import styles from "../styles/Weather.module.css";
 import useFetch from "../hooks/useFetch";
 
 const padZero = (number) => {

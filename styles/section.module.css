@@ -14,16 +14,39 @@
   text-transform: uppercase;
 }
 
+.intro {
+  font-family: "RecifeDisplayLight", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 45px auto 0;
+  max-width: 850px;
+  text-align: center;
+}
+
+.image {
+  margin-top: 70px;
+}
+
 .content {
   color: #5d5d5d;
 }
 
 @media screen and (min-width: 768px) {
   .section {
-    padding: 170px 0;
+    padding: 90px 0;
   }
 
   .title {
     font-size: 110px;
+  }
+
+  .intro {
+    font-size: 40px;
+    line-height: 50px;
+    margin-top: 50px;
+  }
+
+  .image {
+    margin-top: 150px;
   }
 }

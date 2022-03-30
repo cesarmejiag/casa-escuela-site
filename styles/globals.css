@@ -27,6 +27,7 @@
 }
 
 body {
+  background-color: #f5f3ef;
   color: #5d5d5d;
   font-family: "FaktPro", sans-serif;
   font-size: 14px;
@@ -37,8 +38,20 @@ body {
   max-width: 1200px;
 }
 
+/* About */
+.about-footerText {
+  max-width: 690px;
+  margin: 95px auto 0;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
+  }
+
+  /* About */
+  .about-footerText {
+    margin: 160px auto 0;
   }
 }

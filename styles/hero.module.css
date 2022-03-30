@@ -1,12 +1,10 @@
-.hero {
-}
-
 .wrapper {
   position: relative;
 }
 
 .image {
   height: 500px;
+  position: relative;
   width: 100%;
 }
 

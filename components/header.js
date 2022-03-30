@@ -1,7 +1,7 @@
-import styles from "../styles/header.module.css";
+import styles from "../styles/Header.module.css";
 import { useState } from "react";
-import Nav from "./nav";
-import MobileNav from "./mobile-nav";
+import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   const [visible, setVisible] = useState(false);

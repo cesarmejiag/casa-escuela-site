@@ -2,13 +2,36 @@ export default {
   home: {
     hero: {
       imageSrc: "/images/cover.png",
-      text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness."
+      text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
     },
     whatWeDo: {
-      
-    }
+      intro:
+        "Casa Escuela is a multi-disciplinary residency based in the center of Merida, Yucatan.  Sited in a former schoolhouse, we host artists, creatives, teachers, and chefs to bring inspiration in their disciplines and create unique shared experiences with the local community.",
+      imageSrc: "/images/what-we-do-image.png",
+    },
+    homeTo: {
+      intro:
+        "Home to tellers of stories, makers of art, and lovers of happenstance.",
+      text: "Your sanctuary in the center of Merida’s abundant and diverse city life. <br /><br />Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
+      imageSrc1: "/images/home-to-tellers-image-1.png",
+      imageSrc2: "/images/home-to-tellers-image-2.png",
+    },
   },
   about: {
+    intro: {
+      id: "la-casa-de-todos",
+      title: "La casa de todos",
+      intro:
+        "Every space tells the story of the people who inhabit it. Every room carefully safeguards the emotions, experiences, conversations, and traditions of a time well-lived.",
+      imageSrc: "/images/about-cover.png",
+    },
+    built: {
+      intro:
+        "Built in 1919, Casa Escuela (School House) was originally designed as a private residence for a local family in Merida, Yucatan.",
+      imageSrc: "/images/about-image.jpg",
+      footerText:
+        "In 1965 it was converted to a co-ed school in the rapidly growing center of town. Casa Escuela closed its doors in 2011 until it was purchased by its current owners in 2018 who re-opened the space with the idea of transforming it into a community hub for learning and lived experiences across a variety of cultural and artistic disciplines.",
+    },
     team: {
       cards: [
         {
@@ -28,5 +51,81 @@ export default {
         },
       ],
     },
+    pillars: {
+      cards: [
+        {
+          title: "Co-Creation",
+          text: "To nurture our collective knowledge, honoring Mexican tradition and building bridges with other territories. <br />To unite our creations and find each other in the magic that occurs when we work together.",
+        },
+        {
+          title: "Responsibility",
+          text: "To embrace the abundance of life through gratitude and generosity, standing firm on our ethical, environmental and social responsiblities.",
+        },
+        {
+          title: "Space",
+          text: "To honor ancestral and collective wisdom, ridding them of the hierarchies that often keep them confined. To understand the difference between knowledge and understanding, and constantly evolving to find the gifts we have been given and share them with the world.",
+        },
+        {
+          title: "Wisdom",
+          text: "To honor ancestral and collective wisdom, ridding them of the hierarchies that often keep them confined. To understand the difference between knowledge and understanding, and constantly evolving to find the gifts we have been given and share them with the world.",
+        },
+      ],
+    },
+  },
+  beOurGuest: {
+    intro: {
+      id: "be-our-guest",
+      title: "Be our Guest",
+      intro:
+        "Stay with us to indulge in the quiet refuge within our walls and explore Merida, Yucatan, Mexico’s most colorful and vibrant city.",
+      imageSrc: "/images/be-our-guest-cover.png",
+      footerText:
+        "Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
+    },
+    host: {
+      id: "host-an-event",
+      title: "Host an event",
+      imageSrc:
+        "Let the energy of our space help you create unforgettable experiences.",
+      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><div>Contact us to learn more about booking Casa Escuela to host your next event.</div>",
+    },
+    sayab: {
+      id: "sayab",
+      title: "Sayab",
+      intro: "Water source to heal, nourish and transform",
+      footerText:
+        "Sayab is a space within our walls to honor and recognize the magnificent healing power of water, where our guests can rest and rejuvenate during their stay.",
+    },
+    sayabBottom: {
+      id: "sayab-bottom",
+      intro:
+        "Sayab is the Mayan word for “place where water never ceases”, used to describe the Cenotes, fresh water caves of never-ending sweet water found in the Yucatan Peninsula.",
+    },
+  },
+  happenings: {
+    intro: {
+      id: "happenings",
+      title: "Happenings",
+      intro:
+        "We create atmospheres for people to find new experiences, learn new skills, and connect with one another.",
+      imageSrc: "/images/happenings-cover.png",
+    },
+    cards: [
+      {
+        title: "Workshops         ",
+        text: "Workshop participants develop works of art in various media, such as creative writing, photography, and other visual mediums that are featured in different expositions or pop-up shows.",
+        image: "/images/happenings-1.png",
+      },
+      {
+        title: "Wellness",
+        text: "Casa Escuela invites world-renowned experts in the field of yoga, meditation, fitness, as well as Ayurvedic and local Mayan medicinal traditions to promote spiritual and physical health as a way to nurture our creative mind.",
+        image: "/images/happenings-2.png",
+      },
+      {
+        title: "La Cocina",
+        text: "Our kitchen is an epicenter for culinary experiences where some of the most innovative chefs in the world host workshops, cooking classes and field trips through the creative interplay of fresh ingredients, traditional cuisine and culinary innovation that expand our senses and indulge our spirit.",
+        image: "/images/happenings-3.png",
+      },
+    ],
   },
 };

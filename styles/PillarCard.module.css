@@ -1,0 +1,66 @@
+.pillarCard {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bg-1,
+.bg-2,
+.bg-3,
+.bg-4 {
+  background: no-repeat transparent center center;
+  background-image: url("/images/pillar-card-1.svg");
+  background-size: contain;
+}
+
+.bg-1 {
+  background-image: url("/images/pillar-card-1.svg");
+}
+
+.bg-2 {
+  background-image: url("/images/pillar-card-2.svg");
+}
+
+.bg-3 {
+  background-image: url("/images/pillar-card-3.svg");
+}
+
+.bg-4 {
+  background-image: url("/images/pillar-card-4.svg");
+}
+
+.wrapper {
+}
+
+.title {
+  font-family: "RecifeDisplayLight", sans-serif;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+.text {
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .pillarCard {
+    max-width: 550px;
+    min-height: 700px;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 50px;
+    margin-bottom: 35px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+}
