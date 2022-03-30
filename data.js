@@ -128,4 +128,24 @@ export default {
       },
     ],
   },
+  residencies: {
+    intro: {
+      id: "residencies",
+      title: "Residencies",
+      intro:
+        "Art is not just what we can do or what we want to do, it is what we must do to bring the world back together.",
+      imageSrc: "/images/residencies-cover.png",
+      footerText:
+        "We invite visual artists and designers from all over the world to live and work in Casa Escuela. This wonderful experience inspires participants, allows them to get immersed in the local culture and exhibit their finished work in our gallery.",
+    },
+    exhibition: {
+      id: "exhibition-space",
+      title: "Exhibition space",
+      imageSrc: "/images/exhibition-image.png",
+      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div>",
+    },
+    footer: {
+      imageSrc: "/images/exhibition-image.png"
+    }
+  },
 };
