@@ -29,8 +29,8 @@ const About = () => {
 
       <Section id="team" title="Team">
         <Carrousel
-          slides={team.cards.map((card) => (
-            <Card {...card} />
+          slides={team.cards.map((card, index) => (
+            <Card {...card} key={index} />
           ))}
           slidesPerView={mobile ? 1 : 3}
           spaceBetween={mobile ? 0 : 50}
@@ -40,7 +40,7 @@ const About = () => {
       <Section id="pillars" title="Pillars">
         <Carrousel
           slides={pillars.cards.map((card, index) => (
-            <PillarCard id={index + 1} title={card.title} text={card.text} />
+            <PillarCard id={index + 1} title={card.title} text={card.text} key={index} />
           ))}
           slidesPerView={1}
           spaceBetween={0}

@@ -22,8 +22,8 @@ const Happenings = () => {
 
       <Section>
         <Carrousel
-          slides={cards.map((card) => (
-            <Card {...card} />
+          slides={cards.map((card, index) => (
+            <Card {...card} key={index} />
           ))}
           slidesPerView={mobile ? 1 : 3}
           spaceBetween={mobile ? 0 : 50}

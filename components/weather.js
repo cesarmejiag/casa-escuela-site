@@ -19,7 +19,7 @@ const formatTime = (datetime) => {
   return `${padZero(hours)}:${padZero(minutes)} ${m}`;
 };
 
-const weather = () => {
+const Weather = () => {
   // https://www.weatherapi.com/api-explorer.aspx
   const apikey = "491e1bf6e76e4bad84e43123221803";
   const query = "20.9800512,-89.7029589";
@@ -53,4 +53,4 @@ const weather = () => {
   );
 };
 
-export default weather;
+export default Weather;
