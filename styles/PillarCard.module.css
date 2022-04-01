@@ -46,8 +46,8 @@
 
 @media screen and (min-width: 768px) {
   .pillarCard {
-    max-width: 550px;
-    min-height: 700px;
+    max-width: 780px;
+    min-height: 600px;
   }
 
   .wrapper {

@@ -8,7 +8,7 @@ const Residensies = () => {
   const { intro, exhibition, footer } = data.residencies;
 
   return (
-    <Layout>
+    <Layout pageTitle="Residencies">
       <Section
         id={intro.id}
         title={intro.title}

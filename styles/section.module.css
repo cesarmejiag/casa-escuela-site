@@ -3,7 +3,9 @@
 }
 
 .header {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  max-width: 900px;
+  margin: 40px auto;
 }
 
 .title {
