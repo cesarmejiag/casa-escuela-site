@@ -26,6 +26,16 @@
   font-style: normal;
 }
 
+:root{
+  --transparent: transparent;
+  --labelColor: #384c48;
+  --blackColor: #000000;
+  --grayColor: #5d5d5d;
+  --fontSizeInput: 14px;
+  --fontSize2: 20px;
+  --fontWeight3: 300;
+}
+
 body {
   background-color: #f5f3ef;
   color: #5d5d5d;
@@ -55,3 +65,131 @@ body {
     margin: 160px auto 0;
   }
 }
+
+/**
+ * Contact Page
+ */
+ #contact{
+	 padding: 0;
+ }
+
+ .contact-intro,
+ .contact-abstract{
+   color: var(--grayColor);
+   font-weight: var(--fontWeight3);
+   font-size: 14px;
+   line-height: 20px;
+   text-align: center;
+   width: 100%;
+ }
+
+ .contact-intro{
+  margin: 68px auto 0;
+  max-width: 318px;
+ }
+
+ .contact-abstract{
+   margin: 32px auto;
+   max-width: 205px;
+ }
+
+ .contact-form{
+   margin: 0 auto;
+   max-width: 320px;
+ }
+
+ .contact-group-button{
+   display: flex;
+   flex-flow: column;
+   margin: 30px 0;
+ }
+ .labels{
+   color: var(--labelColor);
+   font-size: var(--fontSize2);
+ }
+
+ .inputField{
+	padding: 15px 0 10px;
+ }
+
+ .inputField,
+ .message{
+   background: var(--transparent);
+	 border: 0;
+	 border-bottom: 1px solid rgb(133,133,133);
+	 color: var(--blackColor);
+	 font-family: 'FaktPro', sans-serif;
+	 font-size: var(--fontSizeInput);
+	 font-weight: var(--fontWeight3);
+	 outline: none;
+ }
+
+ .contact-message{
+   display: flex;
+   flex-flow: column;
+ }
+
+ .message{
+   min-height: 196px;
+   padding: 29px;
+   resize: none;
+ }
+
+ .message::placeholder{
+   color: var(--blackColor);
+ }
+
+ .submit-button{
+	 background: var(--transparent);
+	 border: 0;
+	 color: var(--blackColor);
+	 display: block;
+	 font-family: 'FaktPro', sans-serif;
+	 font-weight: var(--fontWeight3);
+	 font-size: 18px;
+	 line-height: 24px;
+	 margin-left: auto;
+	 margin-top: 45px;
+	 max-width: 50px;
+	 text-align: center;
+	 text-decoration: none;
+   padding: 0;
+	 position: relative;
+   width: 100%;
+ }
+ 
+ .submit-button:before{
+	 background: #a3a29f;
+	 bottom: 3px;
+	 content: '';
+	 display: block;
+	 height: 2px;
+	 left: 0;
+	 position: absolute;
+	 width: 100%;
+ }
+
+ .address{
+	 margin: 55px 0;
+	 max-width: 260px;
+	 width: 100%;
+ }
+
+ .contact-title-address{
+	 color: var(--labelColor);
+	 font-family: 'RecifeDisplayRegular', sans-serif;
+	 font-size: var(--fontSize2);
+	 line-height: 24px;
+	 margin-bottom: 26px;
+	 text-transform: capitalize;
+ }
+
+ .contact-address{
+	 color: var(--grayColor);
+	 font-family: 'FaktPro', sans-serif;
+	 font-size: var(--fontSizeInput);
+	 font-weight: var(--fontWeight3);
+	 line-height: 20px;
+	 max-width: 138px;
+	 width: 100%;
+ }
