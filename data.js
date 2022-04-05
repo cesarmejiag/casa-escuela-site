@@ -154,10 +154,11 @@ export default {
       title: "Contact",
       intro:
         "Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn’t.  We have an obligation to re-member these stories back to life.",
-      imageSrc: "/images/contact-cover.png",
       abstract: "To weave each thread carefully,  every word a new strand,every braid a conversation,every dialogue, a bridge.",
       addressTitle: "address",
       address: "C65 no. 530 Centro C.P. 97000 Merida, Yucatan, Mexico.",
+      appreciation: "Thank You",
+      contactMessage: "We’ll contact you shortly",
     },
   }
 };

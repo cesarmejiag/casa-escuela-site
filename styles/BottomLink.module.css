@@ -5,7 +5,10 @@
 
 .bottomLink a {
   color: #000;
+  font-family: 'FaktPro', sans-serif;
   font-size: 18px;
+  font-weight: var(--fontWeight3);
+  line-height: 24px;
 }
 
 @media screen and (min-width: 768px) {
