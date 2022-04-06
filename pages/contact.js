@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
+import SideCustom from "../components/SideCustom";
 
 import data from "../data";
 
@@ -72,6 +73,10 @@ const Contact = () => {
           </div>
         </div>
       </Section>
+
+      <SideCustom className="side-custom" pageTitle="Residences" abstract="Art is not just what we can do or what we want to do, it is what we must do to bring the world back together" image="/images/contact-cover.png" caption="Luz Vega - Taller de Cerámica" description="We invite visual artists and designers from all over the world to live and work in Casa Escuela." text="Current artist in residence"  path="https://www.google.com/">
+
+      </SideCustom>
     </Layout>
   );
 };
