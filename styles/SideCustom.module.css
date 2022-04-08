@@ -1,4 +1,5 @@
 .sideCustom{
+  padding: 60px 0;
   position: relative;
   z-index: 0;
 }
@@ -67,4 +68,23 @@
   line-height: 24px;
   margin-bottom: 40px;
   text-align: center;
+}
+
+@media (min-width: 767px){
+
+  .title{
+    font-size: 55px;
+    line-height: 60px;
+  }
+  .abstracts{
+    line-height: 25px;
+    margin: 26px auto 73px;
+    max-width: 340px;
+  }
+  .image{
+    max-width: 90%;
+  }
+  .descriptionText{
+    font-size: 18px;
+  }
 }

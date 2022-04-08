@@ -263,6 +263,7 @@ body {
  .contact-text-response{
    font-size: 40px;
    line-height: 45px;
+   text-transform: uppercase;
  }
 
  .contact-message-response{
@@ -304,5 +305,15 @@ body {
 
    .contact-address{
      max-width: 90%;
+   }
+   .contact-wrapper-response{
+     max-width: 400px;
+   }
+   .contact-text-response{
+     font-size: 55px;
+     line-height: 60px;
+   }
+   .contact-message-response{
+     line-height: 25px;
    }
  }
