@@ -1,7 +1,10 @@
 export default {
   home: {
     hero: {
-      imageSrc: "/images/cover.png",
+      imagesSrc: [
+        "/images/cover.png",
+        "/images/about-cover.png",
+      ],
       text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
     },
     whatWeDo: {

@@ -1,0 +1,31 @@
+.imageSwicher {
+  height: 100%;
+  width: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: scale(1.05);
+  width: 100%;
+}
+
+.image.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.clickText {
+  font-size: 10px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}

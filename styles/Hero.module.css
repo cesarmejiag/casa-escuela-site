@@ -1,3 +1,7 @@
+.hero {
+  padding: 60px 0;
+}
+
 .wrapper {
   position: relative;
 }
@@ -24,6 +28,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+
   .image {
     height: 560px;
   }

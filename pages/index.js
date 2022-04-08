@@ -6,17 +6,13 @@ import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 
 import data from "../data";
-import SwichImage from "../components/SwichImage";
 
 export default function Home() {
   const { hero, whatWeDo, homeTo } = data.home;
 
   return (
     <Layout>
-
-      <SwichImage mainSrc={hero.imageSrc} />
-
-      <Hero id="cover" text={hero.text} imageSrc={hero.imageSrc} />
+      <Hero id="cover" text={hero.text} imagesSrc={hero.imagesSrc} />
       <Section id="what-we-do" title="What we do">
         <div className="what-we-do-intro">{whatWeDo.intro}</div>
         <div className="what-we-do-image">
