@@ -38,6 +38,17 @@ body {
   max-width: 1200px;
 }
 
+/* Section */
+.section-intro {
+  font-size: 16px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.section-image {
+  margin-top: 85px;
+}
+
 /* About */
 .about-footerText {
   max-width: 690px;
@@ -48,6 +59,17 @@ body {
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
+  }
+
+  /* Section */
+  .section-intro {
+    font-size: 20px;
+    margin: 50 auto 0;
+    max-width: 680px;
+  }
+
+  .section-image {
+    margin-top: 130px;
   }
 
   /* About */

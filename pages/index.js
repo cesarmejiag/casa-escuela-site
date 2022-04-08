@@ -3,6 +3,7 @@ import Image from "next/image";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
+import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
 
 import data from "../data";
@@ -14,14 +15,11 @@ export default function Home() {
     <Layout>
       <Hero id="cover" text={hero.text} imagesSrc={hero.imagesSrc} />
       <Section id="what-we-do" title="What we do">
-        <div className="what-we-do-intro">{whatWeDo.intro}</div>
-        <div className="what-we-do-image">
-          <Image
-            src={whatWeDo.imageSrc}
-            layout="responsive"
-            width={1803}
-            height={840}
-          />
+        <div className="section-intro">{whatWeDo.intro}</div>
+        <div className="section-image">
+          <div className="what-we-do-image">
+            <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
+          </div>
         </div>
       </Section>
       <Section id="home-to" intro={homeTo.intro}>
@@ -53,6 +51,13 @@ export default function Home() {
         </div>
       </Section>
       <BottomLink path="/contact" text="Book your stay" />
+
+      <style jsx>{`
+        .what-we-do-image {
+          padding-bottom: 46%;
+          position: relative;
+        }
+      `}</style>
     </Layout>
   );
 }

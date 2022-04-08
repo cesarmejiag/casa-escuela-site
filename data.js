@@ -1,16 +1,16 @@
 export default {
   home: {
     hero: {
-      imagesSrc: [
-        "/images/cover.png",
-        "/images/about-cover.png",
-      ],
+      imagesSrc: ["/images/cover.png", "/images/what-we-do-image.png"],
       text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
     },
     whatWeDo: {
       intro:
         "Casa Escuela is a multi-disciplinary residency based in the center of Merida, Yucatan.  Sited in a former schoolhouse, we host artists, creatives, teachers, and chefs to bring inspiration in their disciplines and create unique shared experiences with the local community.",
-      imageSrc: "/images/what-we-do-image.png",
+      imagesSrc: [
+        "/images/what-we-do-image.png",
+        "/images/what-we-do-image.png",
+      ],
     },
     homeTo: {
       intro:
@@ -148,7 +148,7 @@ export default {
       text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div>",
     },
     footer: {
-      imageSrc: "/images/exhibition-image.png"
-    }
+      imageSrc: "/images/exhibition-image.png",
+    },
   },
 };
