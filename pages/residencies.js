@@ -14,8 +14,8 @@ const Residensies = () => {
         title={intro.title}
         intro={intro.intro}
         imageSrc={intro.imageSrc}
+        footer={intro.footerText}
       >
-        <div>{intro.footerText}</div>
         <BottomLink path="/contact" text="Current artist in residence" />
       </Section>
 

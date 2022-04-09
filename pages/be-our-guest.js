@@ -14,9 +14,8 @@ const BeOurGuest = () => {
         title={intro.title}
         intro={intro.intro}
         imageSrc={intro.imageSrc}
-      >
-        <div className="be-our-guest-footerText">{intro.footerText}</div>
-      </Section>
+        footer={intro.footerText}
+      ></Section>
 
       <BottomLink path="/contact" text="Book your stay" />
 

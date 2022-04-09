@@ -2,7 +2,7 @@ import styles from "../styles/Section.module.css";
 import PropTypes from "prop-types";
 import Image from "next/image";
 
-const Section = ({ id, title, intro, imageSrc, children }) => {
+const Section = ({ id, title, intro, imageSrc, footer, children }) => {
   return (
     <section className={styles.section} id={id}>
       <div className="holder">
@@ -24,6 +24,12 @@ const Section = ({ id, title, intro, imageSrc, children }) => {
                   quality={100}
                 />
               </div>
+            )}
+            {footer && (
+              <div
+                className={styles.footer}
+                dangerouslySetInnerHTML={{ __html: footer }}
+              ></div>
             )}
             <div>{children}</div>
           </div>

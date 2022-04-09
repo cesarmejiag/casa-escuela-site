@@ -3,9 +3,7 @@
 }
 
 .header {
-  /* margin-bottom: 40px; */
-  max-width: 900px;
-  margin: 40px auto;
+  margin-bottom: 40px;
 }
 
 .title {
@@ -21,12 +19,18 @@
   font-size: 20px;
   line-height: 24px;
   margin: 45px auto 0;
-  max-width: 850px;
+  max-width: 1030px;
   text-align: center;
 }
 
 .image {
   margin-top: 70px;
+}
+
+.footer {
+  margin: 55px auto 0;
+  max-width: 505px;
+  text-align: center;
 }
 
 .content {
