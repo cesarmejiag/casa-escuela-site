@@ -1,10 +1,16 @@
 import styles from "../styles/Hero.module.css";
 import PropTypes from "prop-types";
+import { useParallax } from "react-scroll-parallax";
+
 import ImageSwicher from "./ImageSwicher";
 
 const Hero = ({ id, imagesSrc, text }) => {
+  const parallax = useParallax({
+    speed: -5,
+  });
+
   return (
-    <section className={styles.hero} id={id}>
+    <section className={styles.hero} id={id} ref={parallax.ref}>
       <div className="holder">
         <div className="container-fluid">
           <div className={styles.wrapper}>
