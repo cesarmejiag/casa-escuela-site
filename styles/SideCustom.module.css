@@ -1,0 +1,90 @@
+.sideCustom{
+  padding: 60px 0;
+  position: relative;
+  z-index: 0;
+}
+.sideCustom:after{
+  background: #dfe3da;
+  content: "";
+  height: 69%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.title{
+  color: #384c48;
+  font-family: "Recife Display",sans-serif;
+  font-size: 40px;
+  font-weight: "300";
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.abstracts{
+  font-family: "Recife Display",sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 60px auto 73px;
+  max-width: 280px;
+  text-align: center;
+  width: 100%;
+}
+.image{
+  margin: 0 auto;
+  max-width: 318px;
+  min-height: 347px;
+  width: 100%;
+}
+.image img{
+  object-fit: cover;
+}
+.captionText,
+.descriptionText{
+  color: #5d5d5d;
+  font-family: "Fakt Pro",sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  margin: 15px auto 0;
+}
+.descriptionContainer{
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  max-width: 318px;
+  width: 100%;
+}
+.descriptionText{
+  margin: 15px auto 35px;
+  text-align: center;
+}
+.descriptionContainer a{
+  color: #000;
+  font-family: "Fakt Pro",sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+@media (min-width: 767px){
+
+  .title{
+    font-size: 55px;
+    line-height: 60px;
+  }
+  .abstracts{
+    line-height: 25px;
+    margin: 26px auto 73px;
+    max-width: 340px;
+  }
+  .image{
+    max-width: 90%;
+  }
+  .descriptionText{
+    font-size: 18px;
+  }
+}
