@@ -2,31 +2,30 @@ import  styles from "../styles/SideCustom.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
-const SideCustom = ({pageTitle, abstract, image, caption,description,text,path}) => {
+const SideCustom = ({title, abstract,src, caption,link, textlink}) => {
   return (
     <div className={styles.sideCustom}>
-      <h2 className={styles.title}>{pageTitle}</h2>
-      <div className={styles.abstracts}>
+      <div className={styles.sideTitle}>{title}</div>
+      <div className={styles.sideAbstract}>
         {abstract}
       </div>
-      <div className={styles.image}>
-        <Image
-            src={image}
-            width={498}
-            height={791}
-            layout="responsive"
-            quality={100}
-          />
-          <div className={styles.captionText}>{caption}</div>
-      </div>
-      <div className={styles.descriptionContainer}>
-        <div className={styles.descriptionText}>
-          {description}
+      <div className={styles.sideContainer}>
+        <div className={styles.sideWrapperImage}>
+          <a href="#" className={styles.sideImage}>
+              <img src={src} alt={caption} />
+          </a>
+          <div className={styles.sideCaption}>{caption}</div>
         </div>
-        <Link className={styles.linkReference} href={path}>
-          {text}
-        </Link>
+        <div className={styles.sideWrapperInformation}>
+          <div className={styles.sideAbstractDesktop}>
+            {abstract}
+          </div>
+          <a href={link} className={styles.sideLink}>
+            {textlink}
+          </a>
+        </div>
       </div>
+      
     </div>
   )
 };
