@@ -1,0 +1,65 @@
+.mobileNav {
+  background: #f5f3ef;
+  height: calc(100% - 80px);
+  left: 0;
+  top: 80px;
+  overflow: hidden;
+  position: fixed;
+  transition: transform 550ms;
+  transform: translateX(100%);
+  width: 100%;
+}
+
+.mobileNav > div {
+  height: 100%;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 30px 0;
+  height: 100%;
+}
+
+.list {
+  list-style: none;
+  margin: auto 0;
+  padding: 0;
+  width: 100%;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+.list li:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  color: #000;
+  font-family: "FaktPro", sans-serif;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #000;
+}
+
+.bottom {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text {
+  color: #000;
+  max-width: 130px;
+  text-align: right;
+}
+
+.mobileNav.expanded {
+  transform: translateX(0);
+}

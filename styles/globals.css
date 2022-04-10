@@ -45,6 +45,10 @@ body {
   font-weight: var(--fontWeight3);
 }
 
+.outer-wrapper {
+  margin-top: 80px;
+}
+
 .holder {
   margin: 0 auto;
   max-width: 1200px;
