@@ -105,7 +105,7 @@ export default {
         "/images/host-image-2.png",
         "/images/host-image-3.png",
       ],
-      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><div>Contact us to learn more about booking Casa Escuela to host your next event.</div>",
+      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a href='/contact'>Contact us to learn more about booking Casa Escuela to host your next event.</a></div>",
     },
     sayab: {
       id: "sayab",
@@ -170,7 +170,7 @@ export default {
       id: "exhibition-space",
       title: "Exhibition space",
       imagesSrc: ["/images/exhibition-image.png", "/images/exhibition-image.png"],
-      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div>",
+      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><div><a href='/contact'>Current exhibitions (PDF)</a></div>",
     },
     footer: {
       id: "footer",

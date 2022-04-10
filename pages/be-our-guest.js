@@ -32,15 +32,11 @@ const BeOurGuest = () => {
               </div>
             </div>
             <div className="col-12 col-md-6">
-              <div className="section-intro">
-                Let the energy of our space help you create unforgettable
-                experiences.
-              </div>
-              <div className="section-body">
-                <a>
-                  Contact us to learn more about booking Casa Escuela to host
-                  your next event.
-                </a>
+              <div className="host-body">
+                <div
+                  className="section-body"
+                  dangerouslySetInnerHTML={{ __html: host.text }}
+                ></div>
               </div>
             </div>
           </div>
@@ -74,6 +70,11 @@ const BeOurGuest = () => {
           position: relative;
         }
 
+        .host-body {
+          margin: 0 auto;
+          max-width: 560px;
+        }
+
         .sayab-footer {
           font-size: 12px;
           margin: 45px auto 0;
@@ -94,6 +95,10 @@ const BeOurGuest = () => {
 
           .host-image {
             margin-bottom: 0;
+          }
+
+          .host-body {
+            margin: 0 0 0 auto;
           }
 
           .sayab-footer {

@@ -29,11 +29,12 @@ const Residensies = () => {
               </div>
             </div>
             <div className="col-12 col-md-6">
-              <div
-                className=""
-                dangerouslySetInnerHTML={{ __html: exhibition.text }}
-              ></div>
-              <BottomLink path="/contact" text="Current exhibitions (PDF)" />
+              <div className="exhibition-body">
+                <div
+                  className="section-body"
+                  dangerouslySetInnerHTML={{ __html: exhibition.text }}
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -54,6 +55,11 @@ const Residensies = () => {
         .exhibition-image {
           padding-bottom: 110.4%;
           position: relative;
+        }
+
+        .exhibition-body {
+          margin: 0 auto;
+          max-width: 430px
         }
 
         @media screen and (min-width: 768px) {
