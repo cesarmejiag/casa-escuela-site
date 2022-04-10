@@ -10,6 +10,12 @@
   text-align: center;
 }
 
+.title2 {
+  color: #384c48;
+  font-family: "RecifeDisplayLight", sans-serif;
+  font-size: 40px;
+}
+
 .text {
   color: #5d5d5d;
   font-size: 14px;

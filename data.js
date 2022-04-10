@@ -1,10 +1,13 @@
 export default {
   home: {
     hero: {
+      id: "hero",
       imagesSrc: ["/images/cover.png", "/images/what-we-do-image.png"],
       text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
     },
     whatWeDo: {
+      id: "what-we-do",
+      title: "What we do",
       intro:
         "Casa Escuela is a multi-disciplinary residency based in the center of Merida, Yucatan.  Sited in a former schoolhouse, we host artists, creatives, teachers, and chefs to bring inspiration in their disciplines and create unique shared experiences with the local community.",
       imagesSrc: [
@@ -13,6 +16,7 @@ export default {
       ],
     },
     homeTo: {
+      id: "home-to",
       intro:
         "Home to tellers of stories, makers of art, and lovers of happenstance.",
       text: "Your sanctuary in the center of Merida’s abundant and diverse city life. <br /><br />Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
@@ -26,16 +30,19 @@ export default {
       title: "La casa de todos",
       intro:
         "Every space tells the story of the people who inhabit it. Every room carefully safeguards the emotions, experiences, conversations, and traditions of a time well-lived.",
-      imageSrc: "/images/about-cover.png",
+      imagesSrc: ["/images/about-cover.png"],
     },
     built: {
+      id: "build",
       intro:
         "Built in 1919, Casa Escuela (School House) was originally designed as a private residence for a local family in Merida, Yucatan.",
-      imageSrc: "/images/about-image.jpg",
+      imagesSrc: ["/images/about-image.jpg", "/images/about-image.jpg"],
       footerText:
         "In 1965 it was converted to a co-ed school in the rapidly growing center of town. Casa Escuela closed its doors in 2011 until it was purchased by its current owners in 2018 who re-opened the space with the idea of transforming it into a community hub for learning and lived experiences across a variety of cultural and artistic disciplines.",
     },
     team: {
+      id: "team",
+      title: "Team",
       cards: [
         {
           title: "Mónica Calderón",
@@ -55,6 +62,8 @@ export default {
       ],
     },
     pillars: {
+      id: "pillars",
+      title: "Pillars",
       cards: [
         {
           title: "Co-Creation",
@@ -81,21 +90,28 @@ export default {
       title: "Be our Guest",
       intro:
         "Stay with us to indulge in the quiet refuge within our walls and explore Merida, Yucatan, Mexico’s most colorful and vibrant city.",
-      imageSrc: "/images/be-our-guest-cover.png",
+      imagesSrc: [
+        "/images/be-our-guest-cover.png",
+        "/images/be-our-guest-cover.png",
+      ],
       footerText:
         "Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
     },
     host: {
       id: "host-an-event",
       title: "Host an event",
-      imageSrc:
-        "Let the energy of our space help you create unforgettable experiences.",
+      imagesSrc: [
+        "/images/host-image-1.png",
+        "/images/host-image-2.png",
+        "/images/host-image-3.png",
+      ],
       text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><div>Contact us to learn more about booking Casa Escuela to host your next event.</div>",
     },
     sayab: {
       id: "sayab",
       title: "Sayab",
       intro: "Water source to heal, nourish and transform",
+      imagesSrc: ["/images/sayab-image.webp", "/images/sayab-image.webp"],
       footerText:
         "Sayab is a space within our walls to honor and recognize the magnificent healing power of water, where our guests can rest and rejuvenate during their stay.",
     },
@@ -111,25 +127,31 @@ export default {
       title: "Happenings",
       intro:
         "We create atmospheres for people to find new experiences, learn new skills, and connect with one another.",
-      imageSrc: "/images/happenings-cover.png",
+      imagesSrc: [
+        "/images/happenings-cover.png",
+        "/images/happenings-cover.png",
+      ],
     },
-    cards: [
-      {
-        title: "Workshops         ",
-        text: "Workshop participants develop works of art in various media, such as creative writing, photography, and other visual mediums that are featured in different expositions or pop-up shows.",
-        image: "/images/happenings-1.png",
-      },
-      {
-        title: "Wellness",
-        text: "Casa Escuela invites world-renowned experts in the field of yoga, meditation, fitness, as well as Ayurvedic and local Mayan medicinal traditions to promote spiritual and physical health as a way to nurture our creative mind.",
-        image: "/images/happenings-2.png",
-      },
-      {
-        title: "La Cocina",
-        text: "Our kitchen is an epicenter for culinary experiences where some of the most innovative chefs in the world host workshops, cooking classes and field trips through the creative interplay of fresh ingredients, traditional cuisine and culinary innovation that expand our senses and indulge our spirit.",
-        image: "/images/happenings-3.png",
-      },
-    ],
+    cards: {
+      id: "cards",
+      cards: [
+        {
+          title: "Workshops         ",
+          text: "Workshop participants develop works of art in various media, such as creative writing, photography, and other visual mediums that are featured in different expositions or pop-up shows.",
+          image: "/images/happenings-1.png",
+        },
+        {
+          title: "Wellness",
+          text: "Casa Escuela invites world-renowned experts in the field of yoga, meditation, fitness, as well as Ayurvedic and local Mayan medicinal traditions to promote spiritual and physical health as a way to nurture our creative mind.",
+          image: "/images/happenings-2.png",
+        },
+        {
+          title: "La Cocina",
+          text: "Our kitchen is an epicenter for culinary experiences where some of the most innovative chefs in the world host workshops, cooking classes and field trips through the creative interplay of fresh ingredients, traditional cuisine and culinary innovation that expand our senses and indulge our spirit.",
+          image: "/images/happenings-3.png",
+        },
+      ],
+    },
   },
   residencies: {
     intro: {
@@ -137,18 +159,25 @@ export default {
       title: "Residencies",
       intro:
         "Art is not just what we can do or what we want to do, it is what we must do to bring the world back together.",
-      imageSrc: "/images/residencies-cover.png",
+      imagesSrc: [
+        "/images/residencies-cover.png",
+        "/images/residencies-cover.png",
+      ],
       footerText:
         "We invite visual artists and designers from all over the world to live and work in Casa Escuela. This wonderful experience inspires participants, allows them to get immersed in the local culture and exhibit their finished work in our gallery.",
     },
     exhibition: {
       id: "exhibition-space",
       title: "Exhibition space",
-      imageSrc: "/images/exhibition-image.png",
+      imagesSrc: ["/images/exhibition-image.png", "/images/exhibition-image.png"],
       text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div>",
     },
     footer: {
-      imageSrc: "/images/exhibition-image.png",
+      id: "footer",
+      imagesSrc: [
+        "/images/exhibition-image.png",
+        "/images/exhibition-image.png",
+      ],
     },
   },
   contact: {
@@ -157,11 +186,12 @@ export default {
       title: "Contact",
       intro:
         "Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn’t.  We have an obligation to re-member these stories back to life.",
-      abstract: "To weave each thread carefully,  every word a new strand,every braid a conversation,every dialogue, a bridge.",
+      abstract:
+        "To weave each thread carefully,  every word a new strand,every braid a conversation,every dialogue, a bridge.",
       addressTitle: "address",
       address: "C65 no. 530 Centro C.P. 97000 Merida, Yucatan, Mexico.",
       appreciation: "Thank You",
       contactMessage: "We’ll contact you shortly",
     },
-  }
+  },
 };

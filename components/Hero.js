@@ -6,7 +6,7 @@ import ImageSwicher from "./ImageSwicher";
 
 const Hero = ({ id, imagesSrc, text }) => {
   const parallax = useParallax({
-    speed: -5,
+    speed: 4,
   });
 
   return (

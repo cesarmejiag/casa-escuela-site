@@ -11,8 +11,11 @@ export default function Home() {
 
   return (
     <Layout>
-      <Hero id="cover" text={hero.text} imagesSrc={hero.imagesSrc} />
-      <Section id="what-we-do" title="What we do">
+      {/* Hero Section */}
+      <Hero id={hero.id} text={hero.text} imagesSrc={hero.imagesSrc} />
+
+      {/* What We Do Section */}
+      <Section id={whatWeDo.id} title={whatWeDo.title}>
         <div className="section-intro">{whatWeDo.intro}</div>
         <div className="section-image">
           <div className="what-we-do-image">
@@ -20,18 +23,22 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <Section id="home-to" intro={homeTo.intro}>
+
+      {/* Home To Section */}
+      <Section id={homeTo.id} intro={homeTo.intro}>
         <div className="home-to-wrapper">
           <div className="row">
             <div className="col-12 col-lg-8">
               <div className="home-to-image-1">
                 <ImageSwicher
                   imagesSrc={[homeTo.imageSrc1, homeTo.imageSrc1]}
+                  parallaxSpeed={3}
                 />
               </div>
               <div className="home-to-image-2">
                 <ImageSwicher
                   imagesSrc={[homeTo.imageSrc2, homeTo.imageSrc2]}
+                  parallaxSpeed={8}
                 />
               </div>
             </div>
@@ -44,8 +51,10 @@ export default function Home() {
           </div>
         </div>
       </Section>
-      <BottomLink path="/contact" text="Book your stay" />
 
+      {/* Bottom Section */}
+      <BottomLink path="/contact" text="Book your stay" />
+      
       <style jsx>{`
         .what-we-do-image {
           padding-bottom: 46%;
@@ -86,7 +95,7 @@ export default function Home() {
             padding-bottom: 80.252%;
             width: 90.207%;
           }
-  
+
           .home-to-image-2 {
             left: 45%;
             margin-top: -25%;

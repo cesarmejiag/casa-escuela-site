@@ -12,7 +12,7 @@ const Carrousel = ({ slides, slidesPerView = 3, spaceBetween = 30 }) => {
   };
 
   return (
-    <div>
+    <div className={styles.carrousel}>
       <div className={styles.controls}>
         <button className={styles.prevBtn}></button>
         {index} / {slides.length}

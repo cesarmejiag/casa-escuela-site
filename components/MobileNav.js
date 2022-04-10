@@ -22,9 +22,9 @@ const MobileNav = ({ visible }) => {
     <div className={`${styles.mobileNav} ${visible && styles.expanded}`}>
       <div className="container-fluid">
         <div className={styles.inner}>
-          <ul class={styles.list}>
-            {options.map(({ path, label }) => (
-              <li>{createLink(path, label)}</li>
+          <ul className={styles.list}>
+            {options.map(({ path, label }, index) => (
+              <li key={index}>{createLink(path, label)}</li>
             ))}
           </ul>
           <div className={styles.bottom}>

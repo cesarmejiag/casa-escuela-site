@@ -17,13 +17,13 @@ const Happenings = () => {
         id={intro.id}
         title={intro.title}
         intro={intro.intro}
-        imageSrc={intro.imageSrc}
+        imagesSrc={intro.imagesSrc}
       />
 
-      <Section>
+      <Section id={cards.id}>
         <Carrousel
-          slides={cards.map((card, index) => (
-            <Card {...card} key={index} />
+          slides={cards.cards.map((card, index) => (
+            <Card {...card} key={index} type2 />
           ))}
           slidesPerView={mobile ? 1 : 3}
           spaceBetween={mobile ? 0 : 50}

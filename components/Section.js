@@ -1,8 +1,8 @@
 import styles from "../styles/Section.module.css";
 import PropTypes from "prop-types";
-import Image from "next/image";
+import ImageSwicher from "./ImageSwicher";
 
-const Section = ({ id, title, intro, imageSrc, footer, children }) => {
+const Section = ({ id, title, intro, imagesSrc, footer, children }) => {
   return (
     <section className={styles.section} id={id}>
       <div className="holder">
@@ -14,15 +14,9 @@ const Section = ({ id, title, intro, imageSrc, footer, children }) => {
             </div>
           )}
           <div className={styles.content}>
-            {imageSrc && (
+            {imagesSrc && (
               <div className={styles.image}>
-                <Image
-                  layout="responsive"
-                  src={imageSrc}
-                  width={1803}
-                  height={840}
-                  quality={100}
-                />
+                <ImageSwicher imagesSrc={imagesSrc} />
               </div>
             )}
             {footer && (

@@ -3,40 +3,104 @@ import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 
 import data from "../data";
+import ImageSwicher from "../components/ImageSwicher";
 
 const BeOurGuest = () => {
   const { intro, host, sayab, sayabBottom } = data.beOurGuest;
 
   return (
     <Layout pageTitle="Be Our Guest">
+      {/* Intro Section */}
       <Section
         id={intro.id}
         title={intro.title}
         intro={intro.intro}
-        imageSrc={intro.imageSrc}
+        imagesSrc={intro.imagesSrc}
         footer={intro.footerText}
-      ></Section>
+      />
 
+      {/* Bottom Link Section */}
       <BottomLink path="/contact" text="Book your stay" />
 
+      {/* Host Section */}
       <Section id={host.id} title={host.title}>
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <div className=""></div>
-          </div>
-          <div className="col-12 col-md-6">
-            <div className=""></div>
+        <div className="host-wrapper">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6">
+              <div className="host-image">
+                <ImageSwicher imagesSrc={host.imagesSrc} />
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="section-intro">
+                Let the energy of our space help you create unforgettable
+                experiences.
+              </div>
+              <div className="section-body">
+                <a>
+                  Contact us to learn more about booking Casa Escuela to host
+                  your next event.
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
 
+      {/* Sayab Section */}
       <Section id={sayab.id} title={sayab.title} intro={sayab.intro}>
-        <div>{sayab.footerText}</div>
+        <div className="sayab-footer">{sayab.footerText}</div>
+        <div className="section-image">
+          <div className="sayab-image">
+            <ImageSwicher imagesSrc={sayab.imagesSrc} />
+          </div>
+        </div>
       </Section>
 
+      {/* Sayab Bottom Section */}
       <Section id={sayabBottom.id} intro={sayabBottom.intro}></Section>
 
+      {/* Bottom Link Section */}
       <BottomLink path="/contact" text="Coming soon" />
+
+      <style jsx>{`
+        .host-wrapper {
+          margin-top: 45px;
+        }
+
+        .host-image {
+          margin-bottom: 90px;
+          padding-bottom: 112%;
+          position: relative;
+        }
+
+        .sayab-footer {
+          font-size: 12px;
+          margin: 45px auto 0;
+          max-width: 392px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+
+        .sayab-image {
+          padding-bottom: 46.6%;
+          position: relative;
+        }
+
+        @media screen and (min-width: 768px) {
+          .host-wrapper {
+            margin-top: 100px;
+          }
+
+          .host-image {
+            margin-bottom: 0;
+          }
+
+          .sayab-footer {
+            margin: 50px auto 0;
+          }
+        }
+      `}</style>
     </Layout>
   );
 };
