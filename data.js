@@ -194,5 +194,5 @@ export default {
       appreciation: "Thank You",
       contactMessage: "We'll contact you shortly",
     },
-  },
+  }
 };
