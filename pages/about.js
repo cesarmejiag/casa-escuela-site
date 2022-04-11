@@ -7,6 +7,7 @@ import Card from "../components/Card";
 import BottomLink from "../components/BottomLink";
 import PillarCard from "../components/PillarCard";
 import useResize from "../hooks/useResize";
+import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
@@ -27,6 +28,8 @@ const About = () => {
 
       {/* Built Section */}
       <Section id={built.id} intro={built.intro}>
+        <BackgroundColor cSrc="" cColor="#ecf0f8" cHeight="80%">
+        </BackgroundColor>
         <div className="section-image">
           <div className="built-image">
             <ImageSwicher imagesSrc={built.imagesSrc} />

@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
-import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 
@@ -33,8 +32,6 @@ const Contact = () => {
         <div className="contact-abstract">{intro.abstract}</div>
       </Section>
       <Section id="contact-form">
-        <BackgroundColor cSrc="/images/backColor-1.svg" cColor="#b96241" cHeight="75%">
-        </BackgroundColor>
         <div className="contact-response">
           <div className="contact-wrapper-response">
             <div className="contact-text-response">

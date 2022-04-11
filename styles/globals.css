@@ -55,6 +55,13 @@ body {
 }
 
 /* Section */
+#home-to,
+#build,
+#host-an-event,
+#happenings,
+#residencies{
+  position: relative;
+}
 .section-intro {
   font-size: 16px;
   margin: 40px auto 0;
