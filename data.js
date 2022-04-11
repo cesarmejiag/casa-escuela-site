@@ -169,7 +169,10 @@ export default {
     exhibition: {
       id: "exhibition-space",
       title: "Exhibition space",
-      imagesSrc: ["/images/exhibition-image.png", "/images/exhibition-image.png"],
+      imagesSrc: [
+        "/images/exhibition-image.png",
+        "/images/exhibition-image.png",
+      ],
       text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><div><a href='/contact'>Current exhibitions (PDF)</a></div>",
     },
     footer: {
@@ -184,14 +187,12 @@ export default {
     intro: {
       id: "contact",
       title: "Contact",
-      intro:
-        "Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn’t.  We have an obligation to re-member these stories back to life.",
-      abstract:
-        "To weave each thread carefully,  every word a new strand,every braid a conversation,every dialogue, a bridge.",
+      imagesSrc: ["/images/contact-cover.png"],
+      text: "<div>Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn't. We have an obligation to re-member these stories back to life.</div><br /><div>To weave each thread carefully,<br />every word a new strand,<br />every braid a conversation,<br />every dialogue, a bridge.</div>",
       addressTitle: "address",
       address: "C65 no. 530 Centro C.P. 97000 Merida, Yucatan, Mexico.",
       appreciation: "Thank You",
-      contactMessage: "We’ll contact you shortly",
+      contactMessage: "We'll contact you shortly",
     },
   },
 };

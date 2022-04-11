@@ -2,11 +2,11 @@ import styles from "../styles/Section.module.css";
 import PropTypes from "prop-types";
 import ImageSwicher from "./ImageSwicher";
 
-const Section = ({ id, title, intro, imagesSrc, footer, children }) => {
+const Section = ({ id, title, intro, imagesSrc, footer, noHolder = false, children }) => {
   return (
     <section className={styles.section} id={id}>
-      <div className="holder">
-        <div className="container-fluid">
+      <div className={!noHolder ? 'holder' : ''}>
+        <div className={!noHolder ? 'container-fluid' : ''}>
           {(title || intro) && (
             <div className={styles.header}>
               {title && <h2 className={styles.title}>{title}</h2>}
@@ -37,7 +37,9 @@ Section.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string,
   intro: PropTypes.string,
-  imageSrc: PropTypes.string,
+  imagesSrc: PropTypes.arrayOf(PropTypes.string),
+  footer: PropTypes.string,
+  noHolder: PropTypes.bool
 };
 
 export default Section;

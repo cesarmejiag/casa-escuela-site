@@ -59,7 +59,7 @@ const Residensies = () => {
 
         .exhibition-body {
           margin: 0 auto;
-          max-width: 430px
+          max-width: 430px;
         }
 
         @media screen and (min-width: 768px) {
