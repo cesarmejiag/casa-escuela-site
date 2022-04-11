@@ -62,6 +62,17 @@ body {
 #residencies{
   position: relative;
 }
+#build{
+  margin-top: -65px;
+}
+#host-an-event h2{
+  color: #020202;
+}
+#host-an-event h3,
+#host-an-event a{
+  color: #000;
+}
+
 .section-intro {
   font-size: 16px;
   margin: 40px auto 0;
@@ -86,6 +97,10 @@ body {
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
+  }
+  #host-an-event h3,
+  #host-an-event a{
+    color: #f5f3ef;
   }
 
   /* Section */
@@ -164,7 +179,7 @@ body {
 }
 
 select.inputField {
-  height: 47px;
+  height: 50px;
 }
 
 .contact-message {
@@ -325,6 +340,7 @@ select.inputField {
 
   .contact-group-button {
     max-width: 410px;
+    padding: 0 10px;
     width: 100%;
   }
 
