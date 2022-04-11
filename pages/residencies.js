@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
+import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
@@ -18,6 +19,8 @@ const Residensies = () => {
         footer={intro.footerText}
       >
         <BottomLink path="/contact" text="Current artist in residence" />
+        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="50%">
+        </BackgroundColor>
       </Section>
 
       <Section id={exhibition.id} title={exhibition.title}>

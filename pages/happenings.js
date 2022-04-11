@@ -4,6 +4,7 @@ import Carrousel from "../components/Carrousel";
 import Card from "../components/Card";
 import BottomLink from "../components/BottomLink";
 import useResize from "../hooks/useResize";
+import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 
@@ -13,12 +14,15 @@ const Happenings = () => {
 
   return (
     <Layout pageTitle="Happenings">
+      
       <Section
         id={intro.id}
         title={intro.title}
         intro={intro.intro}
         imagesSrc={intro.imagesSrc}
       />
+      <BackgroundColor cSrc="" cColor="#efebe5" cHeight="80%">
+      </BackgroundColor>
 
       <Section id={cards.id}>
         <Carrousel

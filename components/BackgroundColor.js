@@ -3,10 +3,10 @@ import styles from "../styles/BackgroundColor.module.css";
 const BackgroundColor = ({cSrc, cColor,cHeight}) => {
   let styleBack;
   if(cSrc){
-    styleBack =  {backgroundImage:`url(${cSrc})`,paddingBottom:cHeight};
+    styleBack =  {backgroundImage:`url(${cSrc})`,height:cHeight};
      
   }else{
-    styleBack =  {background:cColor,paddingBottom:cHeight};
+    styleBack =  {background:cColor,height:cHeight};
   }
     
   return (

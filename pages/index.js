@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
+import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 
@@ -26,6 +27,8 @@ export default function Home() {
 
       {/* Home To Section */}
       <Section id={homeTo.id} intro={homeTo.intro}>
+        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="75%">
+        </BackgroundColor>
         <div className="home-to-wrapper">
           <div className="row">
             <div className="col-12 col-lg-8">
