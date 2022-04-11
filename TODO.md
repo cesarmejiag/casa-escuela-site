@@ -13,7 +13,8 @@
 -----
 
 1. Agregar flechitas carrousel de pillars en about - Tuks
-2. Agregar inview - 
-3. Cambiar color blanco en be our guest
-4. Contact margen negativo para la parte azul
-5. Revisar background de inputs y que estén bien alineados
+2. Agregar inview - Chai
+3. Cambiar color blanco en be our guest - Chai
+4. Contact margen negativo para la parte azul - Chai
+5. Revisar background de inputs y que estén bien alineados - Chai
+6. Revisar opciones de footer - Chai
