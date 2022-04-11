@@ -180,6 +180,9 @@ body {
 	 font-weight: var(--fontWeight3);
 	 outline: none;
  }
+ select.inputField{
+   height: 47px;
+ }
 
  .contact-message{
    display: flex;
@@ -198,6 +201,23 @@ body {
    color: var(--blackColor);
  }
 
+ .contact-wrapper-submit{
+   margin-left: auto;
+   margin-top: 45px;
+   max-width: 50px;
+   position: relative;
+   width: 100%;
+ }
+ .contact-wrapper-submit:before{
+  background: #83827f;
+  bottom: 3px;
+  content: '';
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
  .submit-button{
 	 background: var(--transparent);
 	 border: 0;
@@ -207,25 +227,10 @@ body {
 	 font-weight: var(--fontWeight3);
 	 font-size: 18px;
 	 line-height: 24px;
-	 margin-left: auto;
-	 margin-top: 45px;
-	 max-width: 50px;
 	 text-align: center;
-	 text-decoration: none;
    padding: 0;
 	 position: relative;
    width: 100%;
- }
- 
- .submit-button:before{
-	 background: #83827f;
-	 bottom: 3px;
-	 content: '';
-	 display: block;
-	 height: 2px;
-	 left: 0;
-	 position: absolute;
-	 width: 100%;
  }
 
  .contact-address{
@@ -259,8 +264,12 @@ body {
    display: none;
    height: 100%;
    left: 0;
-   position: absolute;
+   position: fixed;
    width: 100%;
+   z-index: 1;
+ }
+ .contact-response.visible{
+    display: block;
  }
 
  .contact-wrapper-response{

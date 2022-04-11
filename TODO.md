@@ -1,4 +1,4 @@
-1. Componente de background - Chai -(to check)
+1. Componente de background - Chai -(to check) checked
 2. Compoenten de side (separaciones) - Tuks
 3. Componente de select box - Tuks
 4. Echar a andar el formulario - Chai
