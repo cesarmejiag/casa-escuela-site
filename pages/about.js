@@ -28,7 +28,7 @@ const About = () => {
 
       {/* Built Section */}
       <Section id={built.id} intro={built.intro}>
-        <BackgroundColor cSrc="" cColor="#ecf0f8" cHeight="80%">
+        <BackgroundColor cSrc="" cColor="#ecf0f8" cHeight="40%">
         </BackgroundColor>
         <div className="section-image">
           <div className="built-image">

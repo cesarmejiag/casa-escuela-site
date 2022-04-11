@@ -25,7 +25,7 @@ const BeOurGuest = () => {
 
       {/* Host Section */}
       <Section id={host.id} title={host.title}>
-        <BackgroundColor cSrc="" cColor="#b96241" cHeight="45%">
+        <BackgroundColor cSrc="" cColor="#b96241" cHeight="80%">
         </BackgroundColor>
         <div className="host-wrapper">
           <div className="row align-items-center">
