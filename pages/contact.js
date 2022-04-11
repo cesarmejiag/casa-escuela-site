@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
@@ -63,7 +65,9 @@ const Contact = () => {
             <div className="contact-message-response">
               {intro.contactMessage}
               <div className="contact-link-response">
-                <a href="/">Back home</a>
+                <Link href="/">
+                  <a>Back home</a>
+                </Link>
               </div>
             </div>
           </div>
