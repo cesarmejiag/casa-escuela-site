@@ -401,8 +401,8 @@ select.inputField {
 
 .hidden{
   opacity: 0;
-  transition: opacity .775s .4650s, transform .775s .650s;
-  transform: translateY(50px);
+  transition: opacity 2s , transform 2s;
+  transform: translateY(150px);
 }
 
 .inview{

@@ -4,25 +4,20 @@ import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
-import React, { useState } from 'react'
-import { useInViewEffect } from 'react-hook-inview'
+import { useInView } from 'react-hook-inview'
 
 import data from "../data";
 
 export default function Home() {
   const { hero, whatWeDo, homeTo } = data.home;
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [ref, isVisible] = useInView({
+    threshold: 1,
+  })
+  const [ref1, isVisible1] = useInView({
+    threshold: 0,
+  })
 
-  const ref = useInViewEffect(
-    ([entry], observer) => {
-      if (entry.isIntersecting) {
-        observer.unobserve(entry.target)
-      }
-      setIsVisible(entry.isIntersecting)
-    },
-    { threshold: 0.5 },
-  )
 
   return (
     <Layout>
@@ -33,8 +28,8 @@ export default function Home() {
       <Section id={whatWeDo.id} title={whatWeDo.title}>
         
         <div ref={ref}  className={`section-intro ${isVisible ? "inview" : "hidden"}`}>{whatWeDo.intro}</div>
-        <div ref={ref}  className={`section-image ${isVisible ? "inview" : "hidden"}`}>
-          <div className="what-we-do-image">
+        <div  className={"section-image "}>
+          <div ref={ref1} className={`what-we-do-image ${isVisible1 ? "inview" : "hidden"}`}>
             <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
           </div>
         </div>
