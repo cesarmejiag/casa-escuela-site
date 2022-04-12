@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import ImageSwicher from "../components/ImageSwicher";
+import Link from "next/link";
 
 import data from "../data";
 
@@ -63,7 +64,9 @@ const Contact = () => {
             <div className="contact-message-response">
               {intro.contactMessage}
               <div className="contact-link-response">
-                <a href="/">Back home</a>
+              <Link href="/">
+                <a>Back home</a>
+              </Link>
               </div>
             </div>
           </div>

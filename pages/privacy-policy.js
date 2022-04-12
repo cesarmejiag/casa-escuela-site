@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
         This privacy statement is provided in a layered format, so you can click through to the specific areas set out below. 
         Data controller
         <div >This Privacy Statement</div>
-        This privacy statement is issued on behalf of Alma Maya LLC so when we mention "we", "us" or "our" in this privacy statement, we are referring to the relevant entity within Alma Maya responsible for processing your data. Alma Maya is made up of different legal entities included but not limited to:
+        This privacy statement is issued on behalf of Alma Maya LLC so when we mention &#34;we&#34;, &#34;us&#34; or &#34;our&#34; in this privacy statement, we are referring to the relevant entity within Alma Maya responsible for processing your data. Alma Maya is made up of different legal entities included but not limited to:
         Alma Maya LLC
         Alma Maya S DE R.L. DE C.V.
         We will let you know which entity will be the data controller for your data when you stay with us or use any of our Services.
@@ -22,14 +22,14 @@ const PrivacyPolicy = () => {
         The Data Controller of this website is Alma Maya LLC, with registered address at 11520 SW 22nd Ct DAVIE, FL 33325. If you have any questions regarding this privacy statement you can reach us via info@almamayaresort.com
         Please note that our websites are not intended for children and minors and we do not knowingly solicit or collect Personal Data from anyone under the age of 18, other than from a parent or legal guardian with consent. As a parent or legal guardian, please do not allow your children to submit Personal Data without your permission.
         This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements. When you leave our website, we encourage you to read the privacy statement of every website you visit.
-        <div ref={ref} className={isVisible ? 'privacy-title inview' : 'privacy-title'}>How is your personal data collected?</div>
+        <div className="privacy-title">How is your personal data collected?</div>
         This privacy statement also aims to give you information on how Alma Maya collects and processes your personal data through your use of this website, and other services provided by Alma Maya  (“Services”) from which you are accessing this Privacy Statement, including any data you may provide when you use our: 
         Online services, such as websites owned or controlled by the Alma Maya Resort , web and mobile applications, social media pages, HTML-formatted email messages; or  
         Offline interactions, when you visit or stay as a guest at one of our properties, reach out to our call center, or through other offline interactions. 
         We use different methods to collect data from and about you including through this website: 
         Direct interactions. You may give us your personal data by filling in forms or by corresponding with us by post, phone, email or otherwise. This includes personal data you provide online when you book an accommodation, sign up for a newsletter or participate in a survey, contest or promotional offer. We collect personal data offline, when you visit our properties, or use services, such as restaurants, childcare services, and spas.  
         Automated technologies or interactions. As you interact with our website, we will automatically collect Technical Data about your equipment, browsing actions and patterns. We collect this personal data by using cookies, and other similar technologies. 
-        Security Systems. When you visit our managed properties, information may be collected about you through such properties’ closed circuit television systems, electronic key cards and other security systems.
+        Security Systems. When you visit our managed properties, information may be collected about you through such properties&#39; closed circuit television systems, electronic key cards and other security systems.
         Third parties or publicly available sources. We will receive personal data about you from various third parties and public sources including business partners, hotels managed by us, travel agents and aggregators. 
         Purposes for which we will use your personal data.
 
@@ -39,12 +39,12 @@ const PrivacyPolicy = () => {
         We will use this information for the following purposes:
         Performing our customer service obligations, such as the creation and management of reservations and your stay in our properties, payment, catering to your requests, monitoring use of services (telephone, bar, pay TV etc.) in response to a contractual relationship between you and us, such as a hotel booking or service request;   
         Improvement of our services, such as assessment of our services in hotels, restaurants, and other outlets, improvement in the operation of our business as part of the contracted relationship between you and us; 
-        Personalization of our services and communications, for example to personalize content and tailor our digital customer experience and offerings, understand customers’ requirements to develop targeted marketing programs, newsletters, and promotions. We will always seek and record your permission to opt in and participate in any of our marketing campaigns. Use of your information for marketing is presented in more detail under the Marketing section below. 
+        Personalization of our services and communications, for example to personalize content and tailor our digital customer experience and offerings, understand customers&#39; requirements to develop targeted marketing programs, newsletters, and promotions. We will always seek and record your permission to opt in and participate in any of our marketing campaigns. Use of your information for marketing is presented in more detail under the Marketing section below. 
         Administration of loyalty programs and frequent flyer program partners;
         Compliance with legal obligations in accordance with applicable laws, such as local privacy laws, prevention of fraud or money laundering, police investigations, and tourism regulations. 
-        Safety and security to maintain the safety, health and well-being of customers, and protecting Alma Maya’s assets and employees. 
+        Safety and security to maintain the safety, health and well-being of customers, and protecting Alma Maya&#39;s assets and employees. 
         <div className="privacy-title">This Website</div>
-        Booking process: To manage booking requests made by the users including any modifications and cancellations as well as confirmation communications of these transactions. To register and manage your online check-in; To manage the payment or prepayment, if it is requested; To review your guest profile, in order to unify guests’ profiles and personalize services provided.  If the user consent is given for direct marketing communications - sending you personalized promotional offers and event details, subscribing and unsubscribing you, when you request it. The lawful grounds for these processes are the performance of the contract, our legitimate interest and user consent.
+        Booking process: To manage booking requests made by the users including any modifications and cancellations as well as confirmation communications of these transactions. To register and manage your online check-in; To manage the payment or prepayment, if it is requested; To review your guest profile, in order to unify guests&#39; profiles and personalize services provided.  If the user consent is given for direct marketing communications - sending you personalized promotional offers and event details, subscribing and unsubscribing you, when you request it. The lawful grounds for these processes are the performance of the contract, our legitimate interest and user consent.
         Check-in online. To manage your check-in online and personalize your services if you request it. To manage any other services required by the user. The lawful grounds for these processes are the performance of the contract and user consent.
         Best rate guarantee. To manage claims or requests made by the user including contacting you to resolve the claim or request. To verify the information provided by the user. The lawful grounds for these processes are user consent and legitimate interest.
         Newsletter. Direct marketing communications - sending you promotional offers and event details, subscribing and unsubscribing you, when you request it. The lawful grounds for these processes are user consent.
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
         Countries in which we manage and operate hotels, residences, and/or sales offices; and
         Countries where our third-party service providers, advisors, and consultants are located, which changes from time to time.
         Where Personal Data is transferred to a country with a lower level of data protection as compared to the country in which the information was collected, we take all reasonable steps to ensure that your information and privacy are protected in line with the applicable legal obligations. Whenever we transfer your personal data, we ensure a similar degree of protection is afforded to it by ensuring at least one of the following safeguards is implemented:
-        Where we use certain service providers, we may use specific contracts that provide suitable protection measures which enable the enforcement of the data subject’s rights, including effective legal remedial measures according to the rules and methods as prescribed and announced by the Committee. 
+        Where we use certain service providers, we may use specific contracts that provide suitable protection measures which enable the enforcement of the data subject&#39;s rights, including effective legal remedial measures according to the rules and methods as prescribed and announced by the Committee. 
         Alma Maya could use the consent of the data subjects as well as any other regulation that the applicable law provides.
         Please contact us if you want further information on the specific mechanism used by us when transferring your personal data. 
         Data retention
@@ -98,7 +98,7 @@ const PrivacyPolicy = () => {
         <div className="privacy-title">Your rights</div>
         Under certain circumstances, you have rights under data protection laws in relation to your personal data.
         Request access to your personal data
-        Request access to your personal data (commonly known as a "data subject access request"). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.
+        Request access to your personal data (commonly known as a &#34;data subject access request&#34;). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.
         Request correction of your personal data
         Request correction of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.
 
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
 
         Request restriction of processing your personal data
         Request restriction of processing of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios: 
-        If you want us to establish the data's accuracy.
+        If you want us to establish the data&#39;s accuracy.
         Where our use of the data is unlawful, but you do not want us to erase it.
         Where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims. 
         You have objected to our use of your data, but we need to verify whether we have overriding legitimate grounds to use it. 
