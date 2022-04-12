@@ -12,7 +12,7 @@ const covidPolicy = () => {
         We have detailed all measures in place below. Please take note of them before you arrive at Alma Maya Resort.
         <div className="covid-title">Before your arrival</div>
         Remember to check-in online before your stay to limit contact. You can always email, WhatsApp or call us prior to your arrival in case you have questions or need assistance checking in. You will receive  an email with your confirmation details after booking. This email will include your check-in information.
-        Don’t forget to add a copy/picture of your ID in the profile tab.
+        Don&#39;t forget to add a copy/picture of your ID in the profile tab.
         Your arrival at Alma Maya Resort.
         
         Arrival at the large parking lot in front of the reception
