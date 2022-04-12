@@ -22,7 +22,9 @@
 
 .link {
   color: #000;
+  display: block;
   font-size: 12px;
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -63,11 +65,25 @@
 }
 
 @media screen and (min-width: 992px) {
+
   .leftLinks .link {
-    padding-left: 30px;
+    padding: 0 15px;
   }
 
   .rightLinks .link {
-    padding-right: 30px;
+    padding: 0 15px;
   }
+
+  .link.active:before{
+    background: #000;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 1px;
+    left:50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
 }

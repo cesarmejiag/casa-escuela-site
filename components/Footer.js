@@ -30,8 +30,21 @@ const Footer = () => {
                   <div>Contact</div>
                 </div>
                 <div className="col-4">
-                  <div>Terms and Conditions</div>
-                  <div>Privacy & Policy</div>
+                  <div>
+                    <a className={styles.customAnchor} href="terms-conditions">
+                      Terms and Conditions
+                    </a>
+                  </div>
+                  <div>
+                    <a className={styles.customAnchor} href="privacy-policy">
+                      Privacy & Policy
+                    </a>
+                  </div>
+                  <div>
+                    <a className={styles.customAnchor} href="covid-policy">
+                      Covid Policy
+                    </a>
+                  </div>
                 </div>
                 <div className="col-4">
                   <div>All rights reserved</div>

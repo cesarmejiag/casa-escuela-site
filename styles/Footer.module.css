@@ -4,7 +4,11 @@
   font-size: 10px;
   padding: 50px 0;
 }
-
+.customAnchor,
+.customAnchor:hover {
+  color: #000;
+  text-decoration: none;
+}
 .logo {
   margin-bottom: 30px;
 }
