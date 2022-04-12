@@ -3,10 +3,15 @@ import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 
+
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
 
 const BeOurGuest = () => {
+
+ 
+
+
   const { intro, host, sayab, sayabBottom } = data.beOurGuest;
 
   return (
