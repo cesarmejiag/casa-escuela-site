@@ -1,13 +1,21 @@
 import styles from "../styles/Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from 'next/router'
 
-const Nav = ({ onToggleClick }) => {
-  const createLink = (path, text) => (
+const Nav = ({ onToggleClick}) => {
+
+  const router = useRouter()
+
+  const createLink = (path, text) => {
+    
+    return (
     <Link href={path}>
-      <a className={styles.link}>{text}</a>
+      <a className={`${styles.link} ${router.asPath === path ? `${styles.active}`: ""}`} >{text}</a>
     </Link>
-  );
+    )
+  };
+
   const handleClick = () => {
     onToggleClick();
   };

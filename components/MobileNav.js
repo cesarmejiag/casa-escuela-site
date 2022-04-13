@@ -2,8 +2,9 @@ import styles from "../styles/MobileNav.module.css";
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from 'next/router'
 
-const MobileNav = ({ visible }) => {
+const MobileNav = ({ visible, href }) => {
   const options = [
     { path: "/be-our-guest", label: "Be our guest" },
     { path: "/happenings", label: "Happenings" },
@@ -12,9 +13,12 @@ const MobileNav = ({ visible }) => {
     { path: "/contact", label: "Contact" },
     { path: "#", label: "Shop" },
   ];
+
+  
+
   const createLink = (path, text) => (
-    <Link href={path}>
-      <a className={styles.link}>{text}</a>
+    <Link href={path} >
+      <a className={styles.link} style={styles}>{text}</a>
     </Link>
   );
 

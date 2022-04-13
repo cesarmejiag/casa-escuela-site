@@ -376,3 +376,40 @@ select.inputField {
     font-size: 26px;
   }
 }
+
+/*footer styles*/
+#terms-conditions,
+#privacy-policy,
+#covid-policy{
+  margin: 0 auto;
+  max-width: 90%;
+  width: 100%;
+}
+.privacy-title,
+.terms-title,
+.covid-title{
+  font-size: 21px;
+  font-weight: 600;
+  
+
+}
+.privacy-title.main,
+.terms-title.main,
+.covid-title.main{
+  text-align: center;
+}
+
+.hidden{
+  opacity: 0;
+  transition: opacity 2s , transform 2s;
+  transform: translateY(150px);
+}
+
+.inview{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+  
+
+

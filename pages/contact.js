@@ -7,6 +7,7 @@ import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import ImageSwicher from "../components/ImageSwicher";
+import Link from "next/link";
 
 import data from "../data";
 
