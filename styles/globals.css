@@ -88,6 +88,10 @@ body {
   font-size: 20px;
 }
 
+.section-body a {
+  color: #000;
+}
+
 .section-footer {
   max-width: 690px;
   margin: 95px auto 0;
@@ -117,10 +121,6 @@ body {
   .section-body h3 {
     font-family: "RecifeDisplayLight";
     font-size: 40px;
-  }
-
-  .section-body a {
-    color: #000;
   }
 
   .section-footer {
