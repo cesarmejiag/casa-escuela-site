@@ -1,4 +1,4 @@
-.imageSwicher, 
+.imageSwicher,
 .wrapper {
   height: 100%;
   position: absolute;
@@ -28,6 +28,6 @@
 
 .clickText {
   font-size: 10px;
-  margin-top: 10px;
+  margin: 10px 0;
   text-transform: uppercase;
 }

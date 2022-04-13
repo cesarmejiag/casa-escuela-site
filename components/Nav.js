@@ -1,30 +1,29 @@
 import styles from "../styles/Nav.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 
-const Nav = ({ onToggleClick}) => {
-
-  const router = useRouter()
+const Nav = ({ onToggleClick }) => {
+  const router = useRouter();
 
   const createLink = (path, text) => {
-    
+    const active = router.asPath === path ? ` ${styles.active}` : ``;
     return (
-    <Link href={path}>
-      <a className={`${styles.link} ${router.asPath === path ? `${styles.active}`: ""}`} >{text}</a>
-    </Link>
-    )
+      <Link href={path}>
+        <a className={`${styles.link}${active}`}>{text}</a>
+      </Link>
+    );
   };
 
-  const handleClick = () => {
-    onToggleClick();
-  };
+  const handleClick = () => onToggleClick();
 
   return (
     <nav>
       <div className="row align-items-center">
         <div className="col-2 col-md-4">
-          <div className={`${styles.leftLinks} d-none d-md-flex justify-content-start`}>
+          <div
+            className={`${styles.leftLinks} d-none d-md-flex justify-content-start`}
+          >
             {createLink("/be-our-guest", "Be our guest")}
             {createLink("/happenings", "Happenings")}
             {createLink("/residencies", "Residencies")}
@@ -45,7 +44,9 @@ const Nav = ({ onToggleClick}) => {
           </Link>
         </div>
         <div className="col-2 col-md-4">
-          <div className={`${styles.rightLinks} d-none d-md-flex justify-content-end`}>
+          <div
+            className={`${styles.rightLinks} d-none d-md-flex justify-content-end`}
+          >
             {createLink("/about", "About")}
             {createLink("/contact", "Contact")}
             {createLink("#", "Shop")}

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 import Section from "../components/Section";
-import BottomLink from "../components/BottomLink";
 import ImageSwicher from "../components/ImageSwicher";
-import Link from "next/link";
+import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 
@@ -35,26 +36,26 @@ const Contact = () => {
     }, 3000);
   };
 
-  console.log(formState);
-
   const { intro } = data.contact;
 
   return (
     <Layout pageTitle="Contact">
-      <Section id={intro.id} title={intro.title} noHolder>
+      <Section id={intro.id} title={intro.title} noHolder withMarginTop>
         <div className="contact-intro-image">
           <ImageSwicher imagesSrc={intro.imagesSrc} />
         </div>
       </Section>
-      <Section id="contact-your-story">
-        <div className="contact-intro-body">
-          <div className="section-body text-center">
-            <h3>We want to hear your story</h3>
-            <br />
-            <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
+      <BackgroundColor cSrcD="./images/bckContactD.svg" cSrcM="./images/bckContactM.svg" cColor="#ecf0f8" cHeight="100%">
+        <Section id="contact-your-story">
+          <div className="contact-intro-body">
+            <div className="section-body text-center">
+              <h3>We want to hear your story</h3>
+              <br />
+              <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </BackgroundColor>
       <Section id="contact-form">
         <div
           className={`contact-response${formState.data ? " displayed" : ""}`}
@@ -64,9 +65,9 @@ const Contact = () => {
             <div className="contact-message-response">
               {intro.contactMessage}
               <div className="contact-link-response">
-              <Link href="/">
-                <a>Back home</a>
-              </Link>
+                <Link href="/">
+                  <a>Back home</a>
+                </Link>
               </div>
             </div>
           </div>

@@ -4,67 +4,57 @@ import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
-import { useInView } from 'react-hook-inview'
+
 
 import data from "../data";
 
 export default function Home() {
   const { hero, whatWeDo, homeTo } = data.home;
 
-  const [ref, isVisible] = useInView({
-    threshold: 1,
-  })
-  const [ref1, isVisible1] = useInView({
-    threshold: 0,
-  })
-
-
-
   return (
     <Layout>
       {/* Hero Section */}
       <Hero id={hero.id} text={hero.text} imagesSrc={hero.imagesSrc} />
 
+
       {/* What We Do Section */}
-      <Section id={whatWeDo.id} title={whatWeDo.title}>
-        
-        <div ref={ref}  className={`section-intro ${isVisible ? "inview" : "hidden"}`}>{whatWeDo.intro}</div>
-        <div  className={"section-image "}>
-          <div ref={ref1} className={`what-we-do-image ${isVisible1 ? "inview" : "hidden"}`}>
+      <Section id={whatWeDo.id} title={whatWeDo.title} introText={whatWeDo.intro}>
+        <div  className="section-image">
+          <div className="what-we-do-image">
             <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
           </div>
         </div>
       </Section>
 
       {/* Home To Section */}
-      <Section id={homeTo.id} intro={homeTo.intro}>
-        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="75%">
-        </BackgroundColor>
-        <div className="home-to-wrapper">
-          <div className="row">
-            <div className="col-12 col-lg-8">
-              <div className="home-to-image-1">
-                <ImageSwicher
-                  imagesSrc={[homeTo.imageSrc1, homeTo.imageSrc1]}
-                  parallaxSpeed={3}
-                />
+      <BackgroundColor cSrcD="./images/bckhomeD.svg" cSrcM="./images/bckHomeM.svg" cColor="#dfe3da" cHeight="75%">
+        <Section id={homeTo.id} intro={homeTo.intro}>
+          <div className="home-to-wrapper">
+            <div className="row">
+              <div className="col-12 col-lg-8">
+                <div className="home-to-image-1">
+                  <ImageSwicher
+                    imagesSrc={[homeTo.imageSrc1, homeTo.imageSrc1]}
+                    parallaxSpeed={3}
+                  />
+                </div>
+                <div className="home-to-image-2">
+                  <ImageSwicher
+                    imagesSrc={[homeTo.imageSrc2, homeTo.imageSrc2]}
+                    parallaxSpeed={8}
+                  />
+                </div>
               </div>
-              <div className="home-to-image-2">
-                <ImageSwicher
-                  imagesSrc={[homeTo.imageSrc2, homeTo.imageSrc2]}
-                  parallaxSpeed={8}
-                />
+              <div className="col-12 col-lg-4">
+                <div
+                  className="home-to-text"
+                  dangerouslySetInnerHTML={{ __html: homeTo.text }}
+                ></div>
               </div>
-            </div>
-            <div className="col-12 col-lg-4">
-              <div
-                className="home-to-text"
-                dangerouslySetInnerHTML={{ __html: homeTo.text }}
-              ></div>
             </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </BackgroundColor>
 
       {/* Bottom Section */}
       <BottomLink path="/contact" text="Book your stay" />

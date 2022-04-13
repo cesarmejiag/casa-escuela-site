@@ -3,15 +3,10 @@ import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 
-
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
 
 const BeOurGuest = () => {
-
- 
-
-
   const { intro, host, sayab, sayabBottom } = data.beOurGuest;
 
   return (
@@ -23,33 +18,34 @@ const BeOurGuest = () => {
         intro={intro.intro}
         imagesSrc={intro.imagesSrc}
         footer={intro.footerText}
+        withMarginTop
       />
 
       {/* Bottom Link Section */}
       <BottomLink path="/contact" text="Book your stay" />
 
       {/* Host Section */}
-      <Section id={host.id} title={host.title}>
-        <BackgroundColor cSrc="" cColor="#b96241" cHeight="80%">
-        </BackgroundColor>
-        <div className="host-wrapper">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-6">
-              <div className="host-image">
-                <ImageSwicher imagesSrc={host.imagesSrc} />
+      <BackgroundColor cSrcD="./images/bckBOGD1.svg" cSrcM="./images/bckBOGM1.svg" cColor="#b96241" cHeight="80%">
+        <Section id={host.id} title={host.title}>
+          <div className="host-wrapper">
+            <div className="row align-items-center">
+              <div className="col-12 col-md-6">
+                <div className="host-image">
+                  <ImageSwicher imagesSrc={host.imagesSrc} />
+                </div>
               </div>
-            </div>
-            <div className="col-12 col-md-6">
-              <div className="host-body">
-                <div
-                  className="section-body"
-                  dangerouslySetInnerHTML={{ __html: host.text }}
-                ></div>
+              <div className="col-12 col-md-6">
+                <div className="host-body">
+                  <div
+                    className="section-body"
+                    dangerouslySetInnerHTML={{ __html: host.text }}
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </BackgroundColor>
 
       {/* Sayab Section */}
       <Section id={sayab.id} title={sayab.title} intro={sayab.intro}>
@@ -62,11 +58,12 @@ const BeOurGuest = () => {
       </Section>
 
       {/* Sayab Bottom Section */}
-      <Section id={sayabBottom.id} intro={sayabBottom.intro}></Section>
+      <BackgroundColor cSrcD="./images/bckBOGD2.svg" cSrcM="./images/bckBOGM2.svg" cColor="" cHeight="100%">
+        <Section id={sayabBottom.id} intro={sayabBottom.intro}></Section>
 
-      {/* Bottom Link Section */}
-      <BottomLink path="/contact" text="Coming soon" />
-
+        {/* Bottom Link Section */}
+        <BottomLink path="/contact" text="Coming soon" />
+      </BackgroundColor>
       <style jsx>{`
         .host-wrapper {
           margin-top: 45px;

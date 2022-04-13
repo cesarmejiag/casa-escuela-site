@@ -14,14 +14,14 @@ const Happenings = () => {
 
   return (
     <Layout pageTitle="Happenings">
-      
-      <Section
-        id={intro.id}
-        title={intro.title}
-        intro={intro.intro}
-        imagesSrc={intro.imagesSrc}
-      />
-      <BackgroundColor cSrc="" cColor="#efebe5" cHeight="80%">
+      <BackgroundColor cSrcD="./images/bckHappenigsD.svg" cSrcM="./images/bckHappenigsM.svg" cColor="#efebe5" cHeight="80%">
+        <Section
+          id={intro.id}
+          title={intro.title}
+          intro={intro.intro}
+          imagesSrc={intro.imagesSrc}
+          withMarginTop
+        />
       </BackgroundColor>
 
       <Section id={cards.id}>

@@ -11,17 +11,18 @@ const Residensies = () => {
 
   return (
     <Layout pageTitle="Residencies">
-      <Section
-        id={intro.id}
-        title={intro.title}
-        intro={intro.intro}
-        imagesSrc={intro.imagesSrc}
-        footer={intro.footerText}
-      >
-        <BottomLink path="/contact" text="Current artist in residence" />
-        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="50%">
-        </BackgroundColor>
-      </Section>
+      <BackgroundColor cSrcD="./images/bckResidenciesD.svg" cSrcM="./images/bckResidenciesM.svg" cColor="#dfe3da" cHeight="55%">
+        <Section
+          id={intro.id}
+          title={intro.title}
+          intro={intro.intro}
+          imagesSrc={intro.imagesSrc}
+          footer={intro.footerText}
+          withMarginTop
+        >
+          <BottomLink path="/contact" text="Current artist in residence" />
+        </Section>
+      </BackgroundColor>
 
       <Section id={exhibition.id} title={exhibition.title}>
         <div className="exhibition-wrapper">
