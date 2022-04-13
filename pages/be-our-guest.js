@@ -58,10 +58,9 @@ const BeOurGuest = () => {
 
       {/* Sayab Bottom Section */}
       <BackgroundColor cSrcD="./images/bckBOGD2.svg" cSrcM="./images/bckBOGM2.svg" cColor="" cHeight="100%">
-        <Section id={sayabBottom.id} intro={sayabBottom.intro}></Section>
-
-        {/* Bottom Link Section */}
-        <BottomLink path="/contact" text="Coming soon" />
+        <Section id={sayabBottom.id} intro={sayabBottom.intro}>
+          <BottomLink path="/contact" text="Coming soon" paddingStyle={2}/>
+        </Section>
       </BackgroundColor>
       <style jsx>{`
         .host-wrapper {

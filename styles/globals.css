@@ -59,17 +59,17 @@ body {
 #build,
 #host-an-event,
 #happenings,
-#residencies{
+#residencies {
   position: relative;
 }
-#build{
+#build {
   margin-top: -65px;
 }
-#host-an-event h2{
+#host-an-event h2 {
   color: #020202;
 }
 #host-an-event h3,
-#host-an-event a{
+#host-an-event a {
   color: #000;
 }
 
@@ -103,7 +103,7 @@ body {
     font-size: 20px;
   }
   #host-an-event h3,
-  #host-an-event a{
+  #host-an-event a {
     color: #f5f3ef;
   }
 
@@ -266,7 +266,7 @@ select.inputField {
   height: 100%;
   justify-content: center;
   margin: 0 auto;
-  max-width: 258px;
+  max-width: 700px;
   width: 100%;
 }
 
@@ -341,10 +341,6 @@ select.inputField {
     max-width: 90%;
   }
 
-  .contact-wrapper-response {
-    max-width: 660px;
-  }
-
   .contact-text-response {
     font-size: 110px;
   }
@@ -369,36 +365,30 @@ select.inputField {
 /*footer styles*/
 #terms-conditions,
 #privacy-policy,
-#covid-policy{
+#covid-policy {
   margin: 0 auto;
   max-width: 90%;
   width: 100%;
 }
 .privacy-title,
 .terms-title,
-.covid-title{
+.covid-title {
   font-size: 21px;
   font-weight: 600;
-  
-
 }
 .privacy-title.main,
 .terms-title.main,
-.covid-title.main{
+.covid-title.main {
   text-align: center;
 }
 
-.hidden{
+.hidden {
   opacity: 0;
-  transition: opacity 2s , transform 2s;
+  transition: opacity 2s, transform 2s;
   transform: translateY(150px);
 }
 
-.inview{
+.inview {
   opacity: 1;
   transform: translateY(0px);
 }
-
-  
-
-

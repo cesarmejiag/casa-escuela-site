@@ -20,7 +20,7 @@ const Residensies = () => {
           footer={intro.footerText}
           withMarginTop
         >
-          <BottomLink path="/contact" text="Current artist in residence" />
+          <BottomLink path="/contact" text="Current artist in residence" paddingStyle={3} />
         </Section>
       </BackgroundColor>
 
