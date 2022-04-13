@@ -28,16 +28,16 @@ const About = () => {
       />
 
       {/* Built Section */}
-      <Section id={built.id} intro={built.intro}>
-        <BackgroundColor cSrc="" cColor="#ecf0f8" cHeight="40%">
-        </BackgroundColor>
-        <div className="section-image">
-          <div className="built-image">
-            <ImageSwicher imagesSrc={built.imagesSrc} />
+      <BackgroundColor cSrcD="./images/bckAboutD.svg" cSrcM="./images/bckAboutM.svg" cColor="#ecf0f8" cHeight="40%">
+        <Section id={built.id} intro={built.intro}>
+          <div className="section-image">
+            <div className="built-image">
+              <ImageSwicher imagesSrc={built.imagesSrc} />
+            </div>
           </div>
-        </div>
-        <div className="section-footer">{built.footerText}</div>
-      </Section>
+          <div className="section-footer">{built.footerText}</div>
+        </Section>
+      </BackgroundColor>
 
       {/* Team Section */}
       <Section id={team.id} title={team.title}>

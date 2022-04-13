@@ -1,3 +1,6 @@
+.wrapperBackground{
+  position: relative;
+}
 .colorElement{
   background-repeat: no-repeat;
   background-size: cover;
