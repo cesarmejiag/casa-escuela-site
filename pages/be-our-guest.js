@@ -19,10 +19,9 @@ const BeOurGuest = () => {
         imagesSrc={intro.imagesSrc}
         footer={intro.footerText}
         withMarginTop
-      />
-
-      {/* Bottom Link Section */}
-      <BottomLink path="/contact" text="Book your stay" />
+      >
+        <BottomLink path="/contact" text="Book your stay" paddingStyle={1} />
+      </Section>
 
       {/* Host Section */}
       <Section id={host.id} title={host.title}>
@@ -57,10 +56,9 @@ const BeOurGuest = () => {
       </Section>
 
       {/* Sayab Bottom Section */}
-      <Section id={sayabBottom.id} intro={sayabBottom.intro}></Section>
-
-      {/* Bottom Link Section */}
-      <BottomLink path="/contact" text="Coming soon" />
+      <Section id={sayabBottom.id} intro={sayabBottom.intro}>
+        <BottomLink path="/contact" text="Coming soon" paddingStyle={2} />
+      </Section>
 
       <style jsx>{`
         .host-wrapper {

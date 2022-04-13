@@ -14,6 +14,7 @@
   color: #384c48;
   font-family: "RecifeDisplayLight", sans-serif;
   font-size: 40px;
+  margin-bottom: 23px;
 }
 
 .text {
@@ -26,6 +27,10 @@
   .title {
     font-size: 22px;
     text-align: initial;
+  }
+
+  .title2 {
+    margin-bottom: 34px;
   }
 
   .text {

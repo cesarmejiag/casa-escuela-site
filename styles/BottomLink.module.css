@@ -3,6 +3,18 @@
   padding: 60px 0;
 }
 
+.bottomLink.padding1 {
+  padding: 30px 0;
+}
+
+.bottomLink.padding2 {
+  padding: 0 0 60px;
+}
+
+.bottomLink.padding3 {
+  padding: 60px 0 0;
+}
+
 .bottomLink a {
   color: #000;
   font-family: "FaktPro", sans-serif;
@@ -14,6 +26,18 @@
 @media screen and (min-width: 768px) {
   .bottomLink {
     padding: 90px 0;
+  }
+
+  .bottomLink.padding1 {
+    padding: 60px 0;
+  }
+
+  .bottomLink.padding2 {
+    padding: 0 0 90px;
+  }
+
+  .bottomLink.padding3 {
+    padding: 90px 0 0;
   }
 
   .bottomLink a {

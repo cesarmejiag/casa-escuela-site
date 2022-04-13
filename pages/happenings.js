@@ -29,7 +29,7 @@ const Happenings = () => {
             <Card {...card} key={index} type2 />
           ))}
           slidesPerView={mobile ? 1 : 3}
-          spaceBetween={mobile ? 0 : 50}
+          spaceBetween={mobile ? 0 : 60}
         />
       </Section>
 
