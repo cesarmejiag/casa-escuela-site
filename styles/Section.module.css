@@ -2,8 +2,12 @@
   padding: 60px 0;
 }
 
+.marginTop {
+  margin-top: 10px;
+}
+
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 83px;
 }
 
 .title {
@@ -18,8 +22,16 @@
   font-family: "RecifeDisplayLight", sans-serif;
   font-size: 20px;
   line-height: 24px;
-  margin: 45px auto 0;
+  margin: 0 auto;
   max-width: 1030px;
+  text-align: center;
+}
+
+.introText {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0 auto;
+  max-width: 680px;
   text-align: center;
 }
 
@@ -41,17 +53,30 @@
 
 @media screen and (min-width: 768px) {
   .section {
-    padding: 90px 0;
+    padding: 100px 0;
+  }
+
+  .marginTop {
+    margin-top: 110px;
+  }
+
+  .header {
+    margin-bottom: 131px;
   }
 
   .title {
     font-size: 110px;
+    margin-bottom: 52px;
   }
 
   .intro {
     font-size: 40px;
     line-height: 50px;
-    margin-top: 50px;
+  }
+
+  .introText {
+    font-size: 20px;
+    line-height: 23px;
   }
 
   .image {

@@ -17,10 +17,10 @@ const Residensies = () => {
         intro={intro.intro}
         imagesSrc={intro.imagesSrc}
         footer={intro.footerText}
+        withMarginTop
       >
         <BottomLink path="/contact" text="Current artist in residence" />
-        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="50%">
-        </BackgroundColor>
+        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="50%" />
       </Section>
 
       <Section id={exhibition.id} title={exhibition.title}>

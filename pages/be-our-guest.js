@@ -3,15 +3,10 @@ import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 
-
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
 
 const BeOurGuest = () => {
-
- 
-
-
   const { intro, host, sayab, sayabBottom } = data.beOurGuest;
 
   return (
@@ -23,6 +18,7 @@ const BeOurGuest = () => {
         intro={intro.intro}
         imagesSrc={intro.imagesSrc}
         footer={intro.footerText}
+        withMarginTop
       />
 
       {/* Bottom Link Section */}
@@ -30,8 +26,7 @@ const BeOurGuest = () => {
 
       {/* Host Section */}
       <Section id={host.id} title={host.title}>
-        <BackgroundColor cSrc="" cColor="#b96241" cHeight="80%">
-        </BackgroundColor>
+        <BackgroundColor cSrc="" cColor="#b96241" cHeight="80%" />
         <div className="host-wrapper">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">

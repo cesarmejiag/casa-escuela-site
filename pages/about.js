@@ -24,6 +24,7 @@ const About = () => {
         title={intro.title}
         intro={intro.intro}
         imagesSrc={intro.imagesSrc}
+        withMarginTop
       />
 
       {/* Built Section */}

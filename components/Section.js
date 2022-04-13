@@ -2,15 +2,26 @@ import styles from "../styles/Section.module.css";
 import PropTypes from "prop-types";
 import ImageSwicher from "./ImageSwicher";
 
-const Section = ({ id, title, intro, imagesSrc, footer, noHolder = false, children }) => {
+const Section = ({
+  id,
+  title,
+  intro,
+  introText,
+  imagesSrc,
+  footer,
+  noHolder = false,
+  withMarginTop = false,
+  children,
+}) => {
   return (
     <section className={styles.section} id={id}>
-      <div className={!noHolder ? 'holder' : ''}>
-        <div className={!noHolder ? 'container-fluid' : ''}>
+      <div className={!noHolder ? "holder" : ""}>
+        <div className={!noHolder ? "container-fluid" : ""}>
           {(title || intro) && (
-            <div className={styles.header}>
+            <div className={`${styles.header} ${withMarginTop ? styles.marginTop : ''}`}>
               {title && <h2 className={styles.title}>{title}</h2>}
               {intro && <div className={styles.intro}>{intro}</div>}
+              {introText && <div className={styles.introText}>{introText}</div>}
             </div>
           )}
           <div className={styles.content}>
@@ -37,9 +48,11 @@ Section.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string,
   intro: PropTypes.string,
+  introText: PropTypes.string,
   imagesSrc: PropTypes.arrayOf(PropTypes.string),
   footer: PropTypes.string,
-  noHolder: PropTypes.bool
+  noHolder: PropTypes.bool,
+  withMarginTop: PropTypes.bool
 };
 
 export default Section;
