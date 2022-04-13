@@ -5,7 +5,6 @@ import Link from "next/link";
 
 import Layout from "../components/Layout";
 import Section from "../components/Section";
-import BottomLink from "../components/BottomLink";
 import ImageSwicher from "../components/ImageSwicher";
 
 import data from "../data";
@@ -36,13 +35,11 @@ const Contact = () => {
     }, 3000);
   };
 
-  console.log(formState);
-
   const { intro } = data.contact;
 
   return (
     <Layout pageTitle="Contact">
-      <Section id={intro.id} title={intro.title} noHolder>
+      <Section id={intro.id} title={intro.title} noHolder withMarginTop>
         <div className="contact-intro-image">
           <ImageSwicher imagesSrc={intro.imagesSrc} />
         </div>

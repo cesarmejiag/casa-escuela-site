@@ -2,7 +2,7 @@ export default {
   home: {
     hero: {
       id: "hero",
-      imagesSrc: ["/images/cover.png", "/images/what-we-do-image.png"],
+      imagesSrc: ["/images/home-cover.webp", "/images/home-cover.webp"],
       text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
     },
     whatWeDo: {
@@ -11,8 +11,8 @@ export default {
       intro:
         "Casa Escuela is a multi-disciplinary residency based in the center of Merida, Yucatan.  Sited in a former schoolhouse, we host artists, creatives, teachers, and chefs to bring inspiration in their disciplines and create unique shared experiences with the local community.",
       imagesSrc: [
-        "/images/what-we-do-image.png",
-        "/images/what-we-do-image.png",
+        "/images/home-what-we-do.webp",
+        "/images/home-what-we-do.webp",
       ],
     },
     homeTo: {
@@ -20,8 +20,8 @@ export default {
       intro:
         "Home to tellers of stories, makers of art, and lovers of happenstance.",
       text: "Your sanctuary in the center of Merida’s abundant and diverse city life. <br /><br />Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
-      imageSrc1: "/images/home-to-tellers-image-1.png",
-      imageSrc2: "/images/home-to-tellers-image-2.png",
+      imageSrc1: "/images/home-to-tellers-image-1.webp",
+      imageSrc2: "/images/home-to-tellers-image-2.webp",
     },
   },
   about: {
@@ -30,13 +30,17 @@ export default {
       title: "La casa de todos",
       intro:
         "Every space tells the story of the people who inhabit it. Every room carefully safeguards the emotions, experiences, conversations, and traditions of a time well-lived.",
-      imagesSrc: ["/images/about-cover.png"],
+      imagesSrc: ["/images/about-cover.webp"],
     },
     built: {
       id: "build",
       intro:
         "Built in 1919, Casa Escuela (School House) was originally designed as a private residence for a local family in Merida, Yucatan.",
-      imagesSrc: ["/images/about-image.jpg", "/images/about-image.jpg"],
+      imagesSrc: [
+        "/images/about-image-1.webp",
+        "/images/about-image-2.webp",
+        "/images/about-image-3.webp",
+      ],
       footerText:
         "In 1965 it was converted to a co-ed school in the rapidly growing center of town. Casa Escuela closed its doors in 2011 until it was purchased by its current owners in 2018 who re-opened the space with the idea of transforming it into a community hub for learning and lived experiences across a variety of cultural and artistic disciplines.",
     },
@@ -47,17 +51,17 @@ export default {
         {
           title: "Mónica Calderón",
           text: "Monica Calderon is a Los Angeles-based, Mexican designer and independent curator with a background in design that spans over 20 years. An authority in producing immersive exhibits, popups, events, and experiential projects and programming, Calderon makes connections to build bridges between borders, by bringing together the Latin American creative community of designers, artists, architects, artisans and chefs into the California scene.",
-          image: "/images/about-1.png",
+          image: "/images/about-monica-calderon.webp",
         },
         {
           title: "Ezequiel Farca",
           text: "Ezequiel Farca was born in Mexico City (1967). Today he is Creative Director and General Director of Ezequiel Farca + Cristina Grappin, a multi-disciplinary studio comprising 30 architects, interior, furniture and graphic designers, based in Mexico City with offices in Los Angeles and Milan, Italy.",
-          image: "/images/about-2.png",
+          image: "/images/about-ezequiel-farca.webp",
         },
         {
           title: "Sylvia Chivaratanod",
           text: "Sylvia Chivaratanond is a curator, writer and arts consultant. Most recently, she was adjunct curator of American Art at the Centre Pompidou Museum and Foundation in Paris. She studied Art History at the University of California at Los Angeles before completing her M.A. in Cultural Studies and Cultural Anthropology from the University of Leicester in Leicester, England.",
-          image: "/images/about-3.png",
+          image: "/images/about-sylvia-chivaratanod.webp",
         },
       ],
     },
@@ -91,8 +95,8 @@ export default {
       intro:
         "Stay with us to indulge in the quiet refuge within our walls and explore Merida, Yucatan, Mexico’s most colorful and vibrant city.",
       imagesSrc: [
-        "/images/be-our-guest-cover.png",
-        "/images/be-our-guest-cover.png",
+        "/images/be-our-guest-cover.webp",
+        "/images/be-our-guest-cover.webp",
       ],
       footerText:
         "Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
@@ -101,9 +105,9 @@ export default {
       id: "host-an-event",
       title: "Host an event",
       imagesSrc: [
-        "/images/host-image-1.png",
-        "/images/host-image-2.png",
-        "/images/host-image-3.png",
+        "/images/be-our-guest-image-1.webp",
+        "/images/be-our-guest-image-2.webp",
+        "/images/be-our-guest-image-3.webp",
       ],
       text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a href='/contact'>Contact us to learn more about booking Casa Escuela to host your next event.</a></div>",
     },
@@ -111,7 +115,10 @@ export default {
       id: "sayab",
       title: "Sayab",
       intro: "Water source to heal, nourish and transform",
-      imagesSrc: ["/images/sayab-image.webp", "/images/sayab-image.webp"],
+      imagesSrc: [
+        "/images/be-our-guest-sayab.webp",
+        "/images/be-our-guest-sayab.webp",
+      ],
       footerText:
         "Sayab is a space within our walls to honor and recognize the magnificent healing power of water, where our guests can rest and rejuvenate during their stay.",
     },
@@ -128,8 +135,8 @@ export default {
       intro:
         "We create atmospheres for people to find new experiences, learn new skills, and connect with one another.",
       imagesSrc: [
-        "/images/happenings-cover.png",
-        "/images/happenings-cover.png",
+        "/images/happenings-cover.webp",
+        "/images/happenings-cover.webp",
       ],
     },
     cards: {
@@ -138,17 +145,17 @@ export default {
         {
           title: "Workshops         ",
           text: "Workshop participants develop works of art in various media, such as creative writing, photography, and other visual mediums that are featured in different expositions or pop-up shows.",
-          image: "/images/happenings-1.png",
+          image: "/images/happenings-1.webp",
         },
         {
           title: "Wellness",
           text: "Casa Escuela invites world-renowned experts in the field of yoga, meditation, fitness, as well as Ayurvedic and local Mayan medicinal traditions to promote spiritual and physical health as a way to nurture our creative mind.",
-          image: "/images/happenings-2.png",
+          image: "/images/happenings-2.webp",
         },
         {
           title: "La Cocina",
           text: "Our kitchen is an epicenter for culinary experiences where some of the most innovative chefs in the world host workshops, cooking classes and field trips through the creative interplay of fresh ingredients, traditional cuisine and culinary innovation that expand our senses and indulge our spirit.",
-          image: "/images/happenings-3.png",
+          image: "/images/happenings-3.webp",
         },
       ],
     },
@@ -160,8 +167,8 @@ export default {
       intro:
         "Art is not just what we can do or what we want to do, it is what we must do to bring the world back together.",
       imagesSrc: [
-        "/images/residencies-cover.png",
-        "/images/residencies-cover.png",
+        "/images/residencies-cover.webp",
+        "/images/residencies-cover.webp",
       ],
       footerText:
         "We invite visual artists and designers from all over the world to live and work in Casa Escuela. This wonderful experience inspires participants, allows them to get immersed in the local culture and exhibit their finished work in our gallery.",
@@ -170,16 +177,16 @@ export default {
       id: "exhibition-space",
       title: "Exhibition space",
       imagesSrc: [
-        "/images/exhibition-image.png",
-        "/images/exhibition-image.png",
+        "/images/residencies-image-1.webp",
+        "/images/residencies-image-1.webp",
       ],
       text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><div><a href='/contact'>Current exhibitions (PDF)</a></div>",
     },
     footer: {
       id: "footer",
       imagesSrc: [
-        "/images/exhibition-image.png",
-        "/images/exhibition-image.png",
+        "/images/residencies-image-2.webp",
+        "/images/residencies-image-2.webp",
       ],
     },
   },
@@ -187,7 +194,7 @@ export default {
     intro: {
       id: "contact",
       title: "Contact",
-      imagesSrc: ["/images/contact-cover.png"],
+      imagesSrc: ["/images/contact-cover.webp"],
       text: "<div>Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn't. We have an obligation to re-member these stories back to life.</div><br /><div>To weave each thread carefully,<br />every word a new strand,<br />every braid a conversation,<br />every dialogue, a bridge.</div>",
       addressTitle: "address",
       address: "C65 no. 530 Centro C.P. 97000 Merida, Yucatan, Mexico.",

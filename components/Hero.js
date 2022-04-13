@@ -15,7 +15,7 @@ const Hero = ({ id, imagesSrc, text }) => {
         <div className="container-fluid">
           <div className={styles.wrapper}>
             <div className={styles.image}>
-              <ImageSwicher imagesSrc={imagesSrc} />
+              <ImageSwicher imagesSrc={imagesSrc} textPosition={4} />
             </div>
             <div
               className={styles.text}

@@ -14,15 +14,14 @@ const Happenings = () => {
 
   return (
     <Layout pageTitle="Happenings">
-      
       <Section
         id={intro.id}
         title={intro.title}
         intro={intro.intro}
         imagesSrc={intro.imagesSrc}
+        withMarginTop
       />
-      <BackgroundColor cSrc="" cColor="#efebe5" cHeight="80%">
-      </BackgroundColor>
+      <BackgroundColor cSrc="" cColor="#efebe5" cHeight="80%" />
 
       <Section id={cards.id}>
         <Carrousel

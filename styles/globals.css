@@ -139,13 +139,6 @@ body {
   background: #ecf0f8;
 }
 
-#contact-background {
-  background: url("../public/images/contact-cover.png") no-repeat center;
-  background-size: cover;
-  height: 450px;
-  width: 100%;
-}
-
 .contact-form {
   margin: 0 auto;
   max-width: 320px;

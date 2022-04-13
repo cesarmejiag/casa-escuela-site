@@ -4,20 +4,11 @@ import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
-import { useInView } from 'react-hook-inview'
 
 import data from "../data";
 
 export default function Home() {
   const { hero, whatWeDo, homeTo } = data.home;
-
-  const [ref, isVisible] = useInView({
-    threshold: 1,
-  })
-  const [ref1, isVisible1] = useInView({
-    threshold: 0,
-  })
-
 
   return (
     <Layout>
@@ -25,11 +16,9 @@ export default function Home() {
       <Hero id={hero.id} text={hero.text} imagesSrc={hero.imagesSrc} />
 
       {/* What We Do Section */}
-      <Section id={whatWeDo.id} title={whatWeDo.title}>
-        
-        <div ref={ref}  className={`section-intro ${isVisible ? "inview" : "hidden"}`}>{whatWeDo.intro}</div>
-        <div  className={"section-image "}>
-          <div ref={ref1} className={`what-we-do-image ${isVisible1 ? "inview" : "hidden"}`}>
+      <Section id={whatWeDo.id} title={whatWeDo.title} introText={whatWeDo.intro}>
+        <div  className="section-image">
+          <div className="what-we-do-image">
             <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
           </div>
         </div>
@@ -37,8 +26,7 @@ export default function Home() {
 
       {/* Home To Section */}
       <Section id={homeTo.id} intro={homeTo.intro}>
-        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="75%">
-        </BackgroundColor>
+        <BackgroundColor cSrc="" cColor="#dfe3da" cHeight="75%" />
         <div className="home-to-wrapper">
           <div className="row">
             <div className="col-12 col-lg-8">
