@@ -13,11 +13,6 @@ const Carrousel = ({ slides, slidesPerView = 3, spaceBetween = 30 }) => {
 
   return (
     <div className={styles.carrousel}>
-      <div className={styles.controls}>
-        <button className={styles.prevBtn}></button>
-        {index} / {slides.length}
-        <button className={styles.nextBtn}></button>
-      </div>
       <Swiper
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
@@ -27,6 +22,11 @@ const Carrousel = ({ slides, slidesPerView = 3, spaceBetween = 30 }) => {
           <SwiperSlide key={index}>{slide}</SwiperSlide>
         ))}
       </Swiper>
+      <div className={styles.controls}>
+        <button className={styles.prevBtn}></button>
+        {index} / {slides.length}
+        <button className={styles.nextBtn}></button>
+      </div>
     </div>
   );
 };

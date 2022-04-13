@@ -62,7 +62,7 @@ ImageSwicher.propTypes = {
 ImageSwicher.defaultProps = {
   imagesSrc: [],
   textPosition: 1,
-  parallaxSpeed: -5,
+  parallaxSpeed: 3,
 };
 
 export default ImageSwicher;
