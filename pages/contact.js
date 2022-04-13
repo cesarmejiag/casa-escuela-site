@@ -6,6 +6,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
+import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 
@@ -44,15 +45,17 @@ const Contact = () => {
           <ImageSwicher imagesSrc={intro.imagesSrc} />
         </div>
       </Section>
-      <Section id="contact-your-story">
-        <div className="contact-intro-body">
-          <div className="section-body text-center">
-            <h3>We want to hear your story</h3>
-            <br />
-            <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
+      <BackgroundColor cSrcD="./images/bckContactD.svg" cSrcM="./images/bckContactM.svg" cColor="#ecf0f8" cHeight="100%">
+        <Section id="contact-your-story">
+          <div className="contact-intro-body">
+            <div className="section-body text-center">
+              <h3>We want to hear your story</h3>
+              <br />
+              <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
+            </div>
           </div>
-        </div>
-      </Section>
+        </Section>
+      </BackgroundColor>
       <Section id="contact-form">
         <div
           className={`contact-response${formState.data ? " displayed" : ""}`}
