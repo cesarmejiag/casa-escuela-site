@@ -56,6 +56,7 @@ const Residensies = () => {
         }
 
         .exhibition-image {
+          margin-bottom: 80px;
           padding-bottom: 110.4%;
           position: relative;
         }
@@ -68,6 +69,10 @@ const Residensies = () => {
         @media screen and (min-width: 768px) {
           .exhibition-wrapper {
             margin-top: 140px;
+          }
+
+          .exhibition-image {
+            margin-bottom: 0;
           }
         }
       `}</style>
