@@ -47,7 +47,7 @@ const About = () => {
               <Card {...card} key={index} />
             ))}
             slidesPerView={mobile ? 1 : 3}
-            spaceBetween={mobile ? 0 : 50}
+            spaceBetween={mobile ? 0 : 100}
           />
         </div>
       </Section>
