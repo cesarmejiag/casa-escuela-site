@@ -7,7 +7,7 @@ const BackgroundColor = ({cSrcD, cSrcM, cColor,cHeight,children,cPosition}) => {
 
   let styleBack;
   if(cSrcD || cSrcM){
-    styleBack = size.width > 767 ? {backgroundImage:`url(${cSrcD})`,height:cHeight,bottom:cValues} : {backgroundImage:`url(${cSrcM})`,height:"100%"};
+    styleBack = size.width > 767 ? {backgroundImage:`url(${cSrcD})`,height:cHeight} : {backgroundImage:`url(${cSrcM})`,height:"100%"};
      
   }else{
     styleBack =  {background:cColor,height:cHeight};
