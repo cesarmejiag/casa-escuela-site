@@ -11,7 +11,7 @@ const Residensies = () => {
 
   return (
     <Layout pageTitle="Residencies">
-      <BackgroundColor cSrcD="./images/bckResidenciesD.svg" cSrcM="./images/bckResidenciesM.svg" cColor="#dfe3da" cHeight="55%">
+      <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section
           id={intro.id}
           title={intro.title}

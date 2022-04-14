@@ -14,7 +14,7 @@ const initFormState = { loading: false, data: undefined, error: undefined };
 
 const Contact = () => {
   const [formState, setFormState] = useState({ ...initFormState });
-  const { register, errors, handleSubmit } = useForm();
+  const { register, handleSubmit,formState:{errors} } = useForm();
   const onSubmit = async (data) => {
     setFormState({ ...initFormState, loading: true });
 
@@ -90,6 +90,7 @@ const Contact = () => {
                   className="inputField"
                   {...register("name", { required: true, maxLength: 30 })}
                 />
+                {errors?.name?.type === "required" && <p className="errorMessage">This field is required</p>}
               </div>
               <div className="contact-group-button">
                 <label htmlFor="email" className="labels">
@@ -105,6 +106,7 @@ const Contact = () => {
                       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                   })}
                 />
+                {errors?.email?.type === "required" && <p className="errorMessage">This field is required</p>}
               </div>
             </div>
             <div className="contact-subject-information">
@@ -140,6 +142,7 @@ const Contact = () => {
               placeholder="Hello ..."
               {...register("message", { required: true, maxLength: 100 })}
             ></textarea>
+            {errors?.message?.type === "required" && <p className="errorMessage">This field is required</p>}
           </div>
           <div className="contact-wrapper-submit">
             <input type="submit" value="Send" className="submit-button" />
