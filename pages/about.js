@@ -19,16 +19,18 @@ const About = () => {
   return (
     <Layout pageTitle="About">
       {/* La Casa de Todos Section */}
-      <Section
-        id={intro.id}
-        title={intro.title}
-        intro={intro.intro}
-        imagesSrc={intro.imagesSrc}
-        withMarginTop
-      />
+      <BackgroundColor cSrcD="./images/bckAboutD.svg" cSrcM="./images/bckHomeM.svg" cColor="#ecf0f8" cHeight="40%" cPosition="bottom">
+        <Section
+          id={intro.id}
+          title={intro.title}
+          intro={intro.intro}
+          imagesSrc={intro.imagesSrc}
+          withMarginTop
+        />
+      </BackgroundColor>
 
       {/* Built Section */}
-      <BackgroundColor cSrcD="./images/bckAboutD.svg" cSrcM="./images/bckAboutM.svg" cColor="#ecf0f8" cHeight="40%">
+      <BackgroundColor cSrcD="./images/bckAboutD.svg" cSrcM="./images/bckHomeM.svg" cColor="#ecf0f8" cHeight="40%">
         <Section id={built.id} intro={built.intro}>
           <div className="section-image">
             <div className="built-image">

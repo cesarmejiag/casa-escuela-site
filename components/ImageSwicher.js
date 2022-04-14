@@ -7,7 +7,7 @@ import Image from "next/image";
 import useCounter from "../hooks/useCounter";
 import useResize from "../hooks/useResize";
 
-const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed }) => {
+const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
   const { mobile } = useResize();
   const total = imagesSrc.length - 1;
   const { count, increase } = useCounter(0, total, true);
@@ -33,7 +33,7 @@ const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed }) => {
       ref={parallax.ref}
     >
       {total > 0 && textPosition !== 4 && (
-        <div className={styles.clickText}>Click on the image</div>
+        <div className={styles.clickText} style={{color:cColor}}>Click on the image</div>
       )}
       <div className={styles.wrapper}>
         {imagesSrc.map((src, index) => (
@@ -49,7 +49,7 @@ const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed }) => {
         ))}
       </div>
       {total > 0 && textPosition === 4 && (
-        <div className={styles.clickText}>Click on the image</div>
+        <div className={styles.clickText} style={{color:cColor}}>Click on the image</div>
       )}
     </div>
   );

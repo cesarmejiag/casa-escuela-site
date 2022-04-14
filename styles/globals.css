@@ -55,22 +55,16 @@ body {
 }
 
 /* Section */
-#home-to,
-#build,
-#host-an-event,
-#happenings,
-#residencies{
-  position: relative;
-}
 #build{
   margin-top: -65px;
 }
 #host-an-event h2{
   color: #020202;
 }
+
 #host-an-event h3,
 #host-an-event a{
-  color: #000;
+  color: #f5f3ef;
 }
 
 .section-intro {
@@ -174,6 +168,7 @@ select.inputField {
 .contact-message {
   display: flex;
   flex-flow: column;
+  padding: 0 15px;
 }
 
 .message {
@@ -399,6 +394,6 @@ select.inputField {
   transform: translateY(0px);
 }
 
-  
+
 
 

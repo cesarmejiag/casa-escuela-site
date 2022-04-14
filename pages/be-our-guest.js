@@ -30,7 +30,7 @@ const BeOurGuest = () => {
             <div className="row align-items-center">
               <div className="col-12 col-md-6">
                 <div className="host-image">
-                  <ImageSwicher imagesSrc={host.imagesSrc} />
+                  <ImageSwicher imagesSrc={host.imagesSrc} cColor="#f5f3ef"/>
                 </div>
               </div>
               <div className="col-12 col-md-6">
@@ -57,7 +57,7 @@ const BeOurGuest = () => {
       </Section>
 
       {/* Sayab Bottom Section */}
-      <BackgroundColor cSrcD="./images/bckBOGD2.svg" cSrcM="./images/bckBOGM2.svg" cColor="" cHeight="100%">
+      <BackgroundColor cSrcD="./images/bckBOGD2.svg" cSrcM="./images/bckBOGM2.svg" cColor="" cHeight="100%" >
         <Section id={sayabBottom.id} intro={sayabBottom.intro}></Section>
 
         {/* Bottom Link Section */}
