@@ -59,7 +59,7 @@ const BeOurGuest = () => {
       {/* Sayab Bottom Section */}
       <BackgroundColor cSrcD="./images/bckBOGD2.svg" cSrcM="./images/bckBOGM2.svg" cColor="" cHeight="100%">
         <Section id={sayabBottom.id} intro={sayabBottom.intro}>
-          <BottomLink path="/contact" text="Coming soon" paddingStyle={2}/>
+          <BottomLink path="/contact" text="Coming soon" paddingStyle={4}/>
         </Section>
       </BackgroundColor>
       <style jsx>{`

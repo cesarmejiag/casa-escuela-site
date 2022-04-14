@@ -62,12 +62,15 @@ body {
 #residencies {
   position: relative;
 }
+
 #build {
   margin-top: -65px;
 }
+
 #host-an-event h2 {
   color: #020202;
 }
+
 #host-an-event h3,
 #host-an-event a {
   color: #000;
@@ -102,6 +105,11 @@ body {
   body {
     font-size: 20px;
   }
+
+  .outer-wrapper {
+    padding-bottom: 100px;
+  }
+
   #host-an-event h3,
   #host-an-event a {
     color: #f5f3ef;
@@ -370,12 +378,14 @@ select.inputField {
   max-width: 90%;
   width: 100%;
 }
+
 .privacy-title,
 .terms-title,
 .covid-title {
   font-size: 21px;
   font-weight: 600;
 }
+
 .privacy-title.main,
 .terms-title.main,
 .covid-title.main {

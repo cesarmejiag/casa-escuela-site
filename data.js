@@ -197,7 +197,7 @@ export default {
       imagesSrc: ["/images/contact-cover.webp"],
       text: "<div>Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn't. We have an obligation to re-member these stories back to life.</div><br /><div>To weave each thread carefully,<br />every word a new strand,<br />every braid a conversation,<br />every dialogue, a bridge.</div>",
       addressTitle: "address",
-      address: "C65 no. 530 Centro C.P. 97000 Merida, Yucatan, Mexico.",
+      address: "C65 no. 530 Centro<br />C.P. 97000<br />Merida, Yucatan, Mexico.",
       appreciation: "Thank You",
       contactMessage: "We'll contact you shortly",
     },

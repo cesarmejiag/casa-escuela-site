@@ -1,0 +1,63 @@
+.preloader {
+  background: #fff no-repeat center center url("/images/preloader-cover.webp");
+  background-size: cover;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  opacity: 0;
+  transition: opacity 550ms;
+  top: 0;
+  width: 100vw;
+  z-index: 11;
+}
+
+.preloader.displayed {
+  opacity: 1;
+}
+
+.preloader::before {
+  background: rgba(0, 0, 0, 0.3);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.wrapper {
+  left: 50%;
+  max-width: 550px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 100%;
+  z-index: 1;
+}
+
+.title,
+.subtitle {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 36px;
+}
+
+.subtitle {
+  font-family: "RecifeDisplayLight", sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    font-size: 66px;
+  }
+
+  .subtitle {
+    font-size: 30px;
+  }
+}

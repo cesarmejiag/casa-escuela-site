@@ -12,6 +12,8 @@ const BottomLink = ({ path, text, paddingStyle = 0}) => {
     paddingClass = ` ${styles.padding2}`;
   } else if (paddingStyle === 3) {
     paddingClass = ` ${styles.padding3}`;
+  } else if (paddingStyle === 4) {
+    paddingClass = ` ${styles.padding4}`;
   }
 
   return (

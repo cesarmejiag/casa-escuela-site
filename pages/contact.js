@@ -45,7 +45,12 @@ const Contact = () => {
           <ImageSwicher imagesSrc={intro.imagesSrc} />
         </div>
       </Section>
-      <BackgroundColor cSrcD="./images/bckContactD.svg" cSrcM="./images/bckContactM.svg" cColor="#ecf0f8" cHeight="100%">
+      <BackgroundColor
+        cSrcD="./images/bckContactD.svg"
+        cSrcM="./images/bckContactM.svg"
+        cColor="#ecf0f8"
+        cHeight="100%"
+      >
         <Section id="contact-your-story">
           <div className="contact-intro-body">
             <div className="section-body text-center">
@@ -142,7 +147,10 @@ const Contact = () => {
         </form>
         <div className="contact-address" id={intro.addressTitle}>
           <div className="contact-title-address">{intro.addressTitle}</div>
-          <div className="contact-address-text">{intro.address}</div>
+          <div
+            className="contact-address-text"
+            dangerouslySetInnerHTML={{ __html: intro.address }}
+          ></div>
         </div>
       </Section>
 
