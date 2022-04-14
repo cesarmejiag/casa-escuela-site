@@ -142,6 +142,7 @@ const Contact = () => {
               placeholder="Hello ..."
               {...register("message", { required: true, maxLength: 100 })}
             ></textarea>
+            {errors?.message?.type === "required" && <p className="errorMessage">This field is required</p>}
           </div>
           <div className="contact-wrapper-submit">
             <input type="submit" value="Send" className="submit-button" />

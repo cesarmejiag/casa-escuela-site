@@ -25,4 +25,4 @@ Mobile Home
 3. Imagenes full width - Tuks
 
 Be our guest Mobile
-1. Revisar el margen - Chai
+1. Revisar el margen - Chai [OK]
