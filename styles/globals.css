@@ -55,15 +55,7 @@ body {
 }
 
 /* Section */
-#home-to,
-#build,
-#host-an-event,
-#happenings,
-#residencies {
-  position: relative;
-}
-
-#build {
+#build{
   margin-top: -65px;
 }
 
@@ -182,6 +174,7 @@ select.inputField {
 .contact-message {
   display: flex;
   flex-flow: column;
+  padding: 0 15px;
 }
 
 .message {
@@ -402,3 +395,7 @@ select.inputField {
   opacity: 1;
   transform: translateY(0px);
 }
+
+
+
+

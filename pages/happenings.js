@@ -14,7 +14,7 @@ const Happenings = () => {
 
   return (
     <Layout pageTitle="Happenings">
-      <BackgroundColor cSrcD="./images/bckHappenigsD.svg" cSrcM="./images/bckHappenigsM.svg" cColor="#efebe5" cHeight="80%">
+      <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section
           id={intro.id}
           title={intro.title}

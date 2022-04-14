@@ -30,7 +30,7 @@ const BeOurGuest = () => {
             <div className="row align-items-center">
               <div className="col-12 col-md-6">
                 <div className="host-image">
-                  <ImageSwicher imagesSrc={host.imagesSrc} />
+                  <ImageSwicher imagesSrc={host.imagesSrc} cColor="#f5f3ef"/>
                 </div>
               </div>
               <div className="col-12 col-md-6">
