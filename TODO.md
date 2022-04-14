@@ -1,20 +1,28 @@
-1. Componente de background - Chai - [OK]
-2. Compoenten de side (separaciones) - Tuks - [OK]
-3. Componente de select box - Tuks - [OK]
-4. Echar a andar el formulario - Chai - [OK]
-5. Menú móvil - Tuks - [OK]
+Home
+1. Efecto inview.
+2. Botón español - Tuks
+3. Corregir todo el footer - Tuks
 
------
+About
+1. Quitar el margion top negativo - Chai
+2. Corregir carrusel pillars - Tuks
 
-2. Hacer el post del formulario - Tuks [OK]
-3. Mostrar la pantalla de agradecimiento - Tuks [OK]
-4. Agregar el componente de background a todas las secciones - Chai [OK]
+Our guest
+1. Agregar al componente ImageSwicher el pie de imagen - Tuks
+2. Background en la última imagen debe ir hasta la mitad - Chai
 
------
+Residencies
+1. Agregar la imagen de background en el cover - Chai
 
-1. Agregar flechitas carrousel de pillars en about - Tuks
-2. Agregar inview - Chai
-3. Cambiar color blanco en be our guest - Chai [OK]
-4. Contact margen negativo para la parte azul - Chai [OK]
-5. Revisar background de inputs y que estén bien alineados - Chai [OK]
-6. Revisar opciones de footer - Chai
+Contacto
+1. Quitar la franja blanca en el cover - Chai
+2. Crear componente CustomSelect - Tuks
+
+
+Mobile Home
+1. Modificar espacios del holder - Tuks
+2. Cambiar imagenes para mobile ImageSwicher componente - Tuks
+3. Imagenes full width - Tuks
+
+Be our guest Mobile
+1. Revisar el margen - Chai
