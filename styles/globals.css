@@ -55,17 +55,16 @@ body {
 }
 
 /* Section */
-#build{
-  margin-top: -65px;
+#contact-your-story{
+  margin-top: -135px;
 }
-
 #host-an-event h2 {
   color: #020202;
 }
 
 #host-an-event h3,
 #host-an-event a {
-  color: #000;
+  color: #f5f3ef;;
 }
 
 .section-intro {
@@ -300,6 +299,12 @@ select.inputField {
   font-weight: var(--fontWeight3);
   line-height: 24px;
 }
+.errorMessage{
+  color: #ff0000;
+  padding: 10px 0;
+  position: relative;
+}
+
 
 @media (min-width: 767px) {
   .contact-form {

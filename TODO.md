@@ -4,18 +4,18 @@ Home
 3. Corregir todo el footer - Tuks
 
 About
-1. Quitar el margion top negativo - Chai
+1. Quitar el margion top negativo - Chai [OK]
 2. Corregir carrusel pillars - Tuks
 
 Our guest
 1. Agregar al componente ImageSwicher el pie de imagen - Tuks
-2. Background en la última imagen debe ir hasta la mitad - Chai
+2. Background en la última imagen debe ir hasta la mitad - Chai [OK]
 
 Residencies
-1. Agregar la imagen de background en el cover - Chai
+1. Agregar la imagen de background en el cover - Chai [OK]
 
 Contacto
-1. Quitar la franja blanca en el cover - Chai
+1. Quitar la franja blanca en el cover - Chai [OK]
 2. Crear componente CustomSelect - Tuks
 
 
