@@ -45,6 +45,21 @@ body {
   font-weight: var(--fontWeight3);
 }
 
+.lang-a {
+  color: #000;
+  font-size: 13px;
+  left: 1%;
+  position: fixed;
+  text-decoration: none;
+  text-transform: uppercase;
+  top: 60%;
+}
+
+.lang-a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
 .outer-wrapper {
   margin-top: 80px;
 }
@@ -55,7 +70,7 @@ body {
 }
 
 /* Section */
-#build{
+#build {
   margin-top: -65px;
 }
 
@@ -395,7 +410,3 @@ select.inputField {
   opacity: 1;
   transform: translateY(0px);
 }
-
-
-
-
