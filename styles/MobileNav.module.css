@@ -10,7 +10,8 @@
   width: 100%;
 }
 
-.mobileNav > div {
+.mobileNav > div,
+.mobileNav > div > div {
   height: 100%;
 }
 

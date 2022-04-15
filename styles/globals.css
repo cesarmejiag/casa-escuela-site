@@ -67,10 +67,11 @@ body {
 .holder {
   margin: 0 auto;
   max-width: 1200px;
+  padding: 0 16px;
 }
 
 /* Section */
-#contact-your-story{
+#contact-your-story {
   margin-top: -135px;
 }
 #host-an-event h2 {
@@ -79,7 +80,7 @@ body {
 
 #host-an-event h3,
 #host-an-event a {
-  color: #f5f3ef;;
+  color: #f5f3ef;
 }
 
 .section-intro {
@@ -114,6 +115,10 @@ body {
 
   .outer-wrapper {
     padding-bottom: 100px;
+  }
+
+  .holder {
+    padding: 0;
   }
 
   #host-an-event h3,
@@ -314,12 +319,11 @@ select.inputField {
   font-weight: var(--fontWeight3);
   line-height: 24px;
 }
-.errorMessage{
+.errorMessage {
   color: #ff0000;
   padding: 10px 0;
   position: relative;
 }
-
 
 @media (min-width: 767px) {
   .contact-form {

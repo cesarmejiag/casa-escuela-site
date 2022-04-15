@@ -6,6 +6,7 @@ import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 import Preloader from "../components/Preloader";
+import { useRouter } from "next/router";
 
 const Layout = ({ children, pageTitle }) => {
   const siteTitle = "Casa Escuela - Welcome Home";
@@ -15,6 +16,7 @@ const Layout = ({ children, pageTitle }) => {
     inDOM: true,
   });
 
+  const router = useRouter();
   const { inDOM, loading } = preloaderState;
 
   // This is a fucking bad idea!
@@ -24,12 +26,12 @@ const Layout = ({ children, pageTitle }) => {
       setTimeout(() => {
         setPreloaderState({ ...preloaderState, inDOM: false });
       }, 600);
-    }, 800);
+    }, 1500);
   }, []);
 
   return (
     <>
-      {inDOM && <Preloader loading={loading} />}
+      {inDOM && router.asPath === "/" && <Preloader loading={loading} />}
       <ParallaxProvider>
         <Head>
           <title>{title}</title>
