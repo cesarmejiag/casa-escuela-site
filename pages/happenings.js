@@ -28,7 +28,7 @@ const Happenings = () => {
       <Section id={cards.id}>
         <div className="row">
           {cards.cards.map((card, index) => (
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-4" key={index}>
               <InviewElement>
                 <div className="happenings-card">
                   <Card {...card} key={index} type2 />
