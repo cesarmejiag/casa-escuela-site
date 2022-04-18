@@ -71,15 +71,16 @@
     content: "";
     display: block;
     height: 1px;
-    left: 50%;
+    left: 100%;
     position: absolute;
-    transform: translateX(-50%);
-    transition: width 550ms;
+    transition: width 550ms ease-out, left 550ms ease-out;
     width: 0;
   }
 
   .link.active:before,
   .link:hover:before {
+    left: 0;
+    transition: width 550ms ease-out;
     width: 100%;
   }
 }

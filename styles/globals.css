@@ -115,6 +115,14 @@ body {
   text-align: center;
 }
 
+.contact-message {
+  padding: 0 10px;
+}
+
+.contact-wrapper-submit {
+  right: 10px;
+}
+
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
@@ -209,7 +217,7 @@ select.inputField {
 .contact-message {
   display: flex;
   flex-flow: column;
-  padding: 0 15px;
+  padding: 0;
 }
 
 .message {
@@ -229,6 +237,7 @@ select.inputField {
   margin-top: 45px;
   max-width: 50px;
   position: relative;
+  right: 0;
   width: 100%;
 }
 
@@ -346,6 +355,14 @@ select.inputField {
     margin-top: 50px;
     max-width: 90%;
     width: 100%;
+  }
+
+  .contact-message {
+    padding: 0 10px;
+  }
+  
+  .contact-wrapper-submit {
+    right: 10px;
   }
 
   .contact-information {
