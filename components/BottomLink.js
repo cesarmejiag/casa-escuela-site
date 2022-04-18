@@ -2,9 +2,10 @@ import styles from "../styles/BottomLink.module.css";
 
 import PropTypes from "prop-types";
 import Link from "next/link";
+import InviewElement from "./InviewElement";
 
-const BottomLink = ({ path, text, paddingStyle = 0}) => {
-  let paddingClass = '';
+const BottomLink = ({ path, text, paddingStyle = 0 }) => {
+  let paddingClass = "";
 
   if (paddingStyle === 1) {
     paddingClass = ` ${styles.padding1}`;
@@ -18,9 +19,11 @@ const BottomLink = ({ path, text, paddingStyle = 0}) => {
 
   return (
     <div className={`${styles.bottomLink}${paddingClass}`}>
-      <Link href={path}>
-        <a>{text}</a>
-      </Link>
+      <InviewElement>
+        <Link href={path}>
+          <a>{text}</a>
+        </Link>
+      </InviewElement>
     </div>
   );
 };
@@ -28,7 +31,7 @@ const BottomLink = ({ path, text, paddingStyle = 0}) => {
 BottomLink.propTypes = {
   path: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  paddingStyle: PropTypes.number
+  paddingStyle: PropTypes.number,
 };
 
 export default BottomLink;

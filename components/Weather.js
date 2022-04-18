@@ -7,9 +7,9 @@ const padZero = (number) => {
 
 const formatTime = (datetime) => {
   const date = datetime ? new Date(datetime) : new Date();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const m = "AM";
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let m = "AM";
 
   if (hours > 12) {
     hours -= 12;
@@ -29,18 +29,18 @@ const Weather = () => {
   // Extract data from weatherapi.
   const temp_f = data?.current?.temp_f || "-";
   const temp_c = data?.current?.temp_c || "-";
-  const localtime = data?.location?.localtime || "-";
+  const localtime = data?.location?.localtime;
 
   return (
     <div className={styles.weather}>
       <div className="row">
-        <div className="col-6">
+        <div className="col-6 col-md-12">
           <div className={styles.name}>
             <div>Mérida, Yucatán.</div>
             <div>México</div>
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-6 col-md-12">
           <div className={styles.info}>
             <div>{formatTime(localtime)}</div>
             <div>

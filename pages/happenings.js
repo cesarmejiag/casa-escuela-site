@@ -7,6 +7,7 @@ import useResize from "../hooks/useResize";
 import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
+import InviewElement from "../components/InviewElement";
 
 const Happenings = () => {
   const { mobile } = useResize();
@@ -25,16 +26,33 @@ const Happenings = () => {
       </BackgroundColor>
 
       <Section id={cards.id}>
-        <Carrousel
-          slides={cards.cards.map((card, index) => (
-            <Card {...card} key={index} type2 />
+        <div className="row">
+          {cards.cards.map((card, index) => (
+            <div className="col-12 col-md-4">
+              <InviewElement>
+                <div className="happenings-card">
+                  <Card {...card} key={index} type2 />
+                </div>
+              </InviewElement>
+            </div>
           ))}
-          slidesPerView={mobile ? 1 : 3}
-          spaceBetween={mobile ? 0 : 60}
-        />
+        </div>
       </Section>
 
       <BottomLink path="/contact" text="Happening now"></BottomLink>
+
+      <style jsx>{`
+        .happenings-card {
+          margin-bottom: 45px;
+        }
+
+        @media screen and (min-width: 768px) {
+          .happenings-card {
+            margin-bottom: 0;
+            padding: 0 20px;
+          }
+        }
+      `}</style>
     </Layout>
   );
 };

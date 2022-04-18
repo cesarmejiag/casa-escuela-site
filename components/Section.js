@@ -1,5 +1,8 @@
 import styles from "../styles/Section.module.css";
+
 import PropTypes from "prop-types";
+
+import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
 
 const Section = ({
@@ -18,23 +21,35 @@ const Section = ({
       <div className={!noHolder ? "holder" : ""}>
         <div className={!noHolder ? "container-fluid" : ""}>
           {(title || intro) && (
-            <div className={`${styles.header} ${withMarginTop ? styles.marginTop : ''}`}>
-              {title && <h2 className={styles.title}>{title}</h2>}
-              {intro && <div className={styles.intro}>{intro}</div>}
-              {introText && <div className={styles.introText}>{introText}</div>}
-            </div>
+            <InviewElement>
+              <div
+                className={`${styles.header} ${
+                  withMarginTop ? styles.marginTop : ""
+                }`}
+              >
+                {title && <h2 className={styles.title}>{title}</h2>}
+                {intro && <div className={styles.intro}>{intro}</div>}
+                {introText && (
+                  <div className={styles.introText}>{introText}</div>
+                )}
+              </div>
+            </InviewElement>
           )}
           <div className={styles.content}>
             {imagesSrc && (
-              <div className={styles.image}>
-                <ImageSwicher imagesSrc={imagesSrc} />
-              </div>
+              <InviewElement>
+                <div className={styles.image}>
+                  <ImageSwicher imagesSrc={imagesSrc} />
+                </div>
+              </InviewElement>
             )}
             {footer && (
-              <div
-                className={styles.footer}
-                dangerouslySetInnerHTML={{ __html: footer }}
-              ></div>
+              <InviewElement>
+                <div
+                  className={styles.footer}
+                  dangerouslySetInnerHTML={{ __html: footer }}
+                ></div>
+              </InviewElement>
             )}
             <div>{children}</div>
           </div>
@@ -52,7 +67,7 @@ Section.propTypes = {
   imagesSrc: PropTypes.arrayOf(PropTypes.string),
   footer: PropTypes.string,
   noHolder: PropTypes.bool,
-  withMarginTop: PropTypes.bool
+  withMarginTop: PropTypes.bool,
 };
 
 export default Section;

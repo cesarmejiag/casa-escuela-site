@@ -5,10 +5,8 @@ import { useParallax } from "react-scroll-parallax";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import useCounter from "../hooks/useCounter";
-import useResize from "../hooks/useResize";
 
 const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
-  const { mobile } = useResize();
   const total = imagesSrc.length - 1;
   const { count, increase } = useCounter(0, total, true);
   const parallax = useParallax({
@@ -33,7 +31,9 @@ const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
       ref={parallax.ref}
     >
       {total > 0 && textPosition !== 4 && (
-        <div className={styles.clickText} style={{color:cColor}}>Click on the image</div>
+        <div className={styles.clickText} style={{ color: cColor }}>
+          Click on the image
+        </div>
       )}
       <div className={styles.wrapper}>
         {imagesSrc.map((src, index) => (
@@ -49,7 +49,9 @@ const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
         ))}
       </div>
       {total > 0 && textPosition === 4 && (
-        <div className={styles.clickText} style={{color:cColor}}>Click on the image</div>
+        <div className={styles.clickText} style={{ color: cColor }}>
+          Click on the image
+        </div>
       )}
     </div>
   );

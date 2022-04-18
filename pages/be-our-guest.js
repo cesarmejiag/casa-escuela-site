@@ -5,12 +5,19 @@ import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
+import InviewElement from "../components/InviewElement";
 
 const BeOurGuest = () => {
   const { intro, host, sayab, sayabBottom } = data.beOurGuest;
 
   return (
-    <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="10%" cPosition="bottom">
+    <BackgroundColor
+      cSrcD=""
+      cSrcM=""
+      cColor="#ecf0f8"
+      cHeight="10%"
+      cPosition="bottom"
+    >
       <Layout pageTitle="Be Our Guest">
         {/* Intro Section */}
         <Section
@@ -25,21 +32,33 @@ const BeOurGuest = () => {
         </Section>
 
         {/* Host Section */}
-        <BackgroundColor cSrcD="./images/bckBOGD1.svg" cSrcM="./images/bckBOGM1.svg" cColor="#b96241" cHeight="80%">
+        <BackgroundColor
+          cSrcD="./images/bckBOGD1.svg"
+          cSrcM="./images/bckBOGM1.svg"
+          cColor="#b96241"
+          cHeight="80%"
+        >
           <Section id={host.id} title={host.title}>
             <div className="host-wrapper">
               <div className="row align-items-center">
                 <div className="col-12 col-md-6">
-                  <div className="host-image">
-                    <ImageSwicher imagesSrc={host.imagesSrc} cColor="#f5f3ef"/>
-                  </div>
+                  <InviewElement>
+                    <div className="host-image">
+                      <ImageSwicher
+                        imagesSrc={host.imagesSrc}
+                        cColor="#f5f3ef"
+                      />
+                    </div>
+                  </InviewElement>
                 </div>
                 <div className="col-12 col-md-6">
                   <div className="host-body">
-                    <div
-                      className="section-body"
-                      dangerouslySetInnerHTML={{ __html: host.text }}
-                    ></div>
+                    <InviewElement>
+                      <div
+                        className="section-body"
+                        dangerouslySetInnerHTML={{ __html: host.text }}
+                      ></div>
+                    </InviewElement>
                   </div>
                 </div>
               </div>
@@ -48,13 +67,23 @@ const BeOurGuest = () => {
         </BackgroundColor>
 
         {/* Sayab Section */}
-        <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="25%" cPosition="bottom">
+        <BackgroundColor
+          cSrcD=""
+          cSrcM=""
+          cColor="#ecf0f8"
+          cHeight="25%"
+          cPosition="bottom"
+        >
           <Section id={sayab.id} title={sayab.title} intro={sayab.intro}>
-            <div className="sayab-footer">{sayab.footerText}</div>
+            <InviewElement>
+              <div className="sayab-footer">{sayab.footerText}</div>
+            </InviewElement>
             <div className="section-image">
-              <div className="sayab-image">
-                <ImageSwicher imagesSrc={sayab.imagesSrc} />
-              </div>
+              <InviewElement>
+                <div className="sayab-image">
+                  <ImageSwicher imagesSrc={sayab.imagesSrc} />
+                </div>
+              </InviewElement>
             </div>
           </Section>
         </BackgroundColor>
@@ -62,7 +91,7 @@ const BeOurGuest = () => {
         {/* Sayab Bottom Section */}
         <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="100%">
           <Section id={sayabBottom.id} intro={sayabBottom.intro}>
-            <BottomLink path="/contact" text="Coming soon" paddingStyle={4}/>
+            <BottomLink path="/contact" text="Coming soon" paddingStyle={4} />
           </Section>
         </BackgroundColor>
         <style jsx>{`

@@ -5,8 +5,8 @@ import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 
-
 import data from "../data";
+import InviewElement from "../components/InviewElement";
 
 export default function Home() {
   const { hero, whatWeDo, homeTo } = data.home;
@@ -16,40 +16,54 @@ export default function Home() {
       {/* Hero Section */}
       <Hero id={hero.id} text={hero.text} imagesSrc={hero.imagesSrc} />
 
-
       {/* What We Do Section */}
-      <Section id={whatWeDo.id} title={whatWeDo.title} introText={whatWeDo.intro}>
-        <div  className="section-image">
-          <div className="what-we-do-image">
-            <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
+      <Section
+        id={whatWeDo.id}
+        title={whatWeDo.title}
+        introText={whatWeDo.intro}>
+        <InviewElement>
+          <div className="section-image">
+            <div className="what-we-do-image">
+              <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
+            </div>
           </div>
-        </div>
+        </InviewElement>
       </Section>
 
       {/* Home To Section */}
-      <BackgroundColor cSrcD="./images/bckhomeD.svg" cSrcM="./images/bckHomeM.svg" cColor="#dfe3da" cHeight="75%">
+      <BackgroundColor
+        cSrcD="./images/bckhomeD.svg"
+        cSrcM="./images/bckHomeM.svg"
+        cColor="#dfe3da"
+        cHeight="75%">
         <Section id={homeTo.id} intro={homeTo.intro}>
           <div className="home-to-wrapper">
             <div className="row">
               <div className="col-12 col-lg-8">
-                <div className="home-to-image-1">
-                  <ImageSwicher
-                    imagesSrc={[homeTo.imageSrc1, homeTo.imageSrc1]}
-                    parallaxSpeed={3}
-                  />
-                </div>
-                <div className="home-to-image-2">
-                  <ImageSwicher
-                    imagesSrc={[homeTo.imageSrc2, homeTo.imageSrc2]}
-                    parallaxSpeed={8}
-                  />
-                </div>
+                <InviewElement>
+                  <div className="home-to-image-1">
+                    <ImageSwicher
+                      imagesSrc={[homeTo.imageSrc1, homeTo.imageSrc1]}
+                      parallaxSpeed={3}
+                    />
+                  </div>
+                </InviewElement>
+                <InviewElement>
+                  <div className="home-to-image-2">
+                    <ImageSwicher
+                      imagesSrc={[homeTo.imageSrc2, homeTo.imageSrc2]}
+                      parallaxSpeed={8}
+                    />
+                  </div>
+                </InviewElement>
               </div>
               <div className="col-12 col-lg-4">
-                <div
-                  className="home-to-text"
-                  dangerouslySetInnerHTML={{ __html: homeTo.text }}
-                ></div>
+                <InviewElement>
+                  <div
+                    className="home-to-text"
+                    dangerouslySetInnerHTML={{ __html: homeTo.text }}
+                  ></div>
+                </InviewElement>
               </div>
             </div>
           </div>
@@ -58,10 +72,10 @@ export default function Home() {
 
       {/* Bottom Section */}
       <BottomLink path="/contact" text="Book your stay" />
-      
+
       <style jsx>{`
         .what-we-do-image {
-          padding-bottom: 46%;
+          padding-bottom: 78%;
           position: relative;
         }
 
@@ -89,6 +103,10 @@ export default function Home() {
         }
 
         @media screen and (min-width: 768px) {
+          .what-we-do-image {
+            padding-bottom: 46%;
+          }
+
           .home-to-wrapper {
             margin-top: 100px;
           }

@@ -4,13 +4,20 @@
   font-size: 10px;
   padding: 50px 0;
 }
-.customAnchor,
-.customAnchor:hover {
+
+.footer a {
   color: #000;
+  line-height: 240%;
   text-decoration: none;
 }
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 .logo {
   margin-bottom: 30px;
+  width: 32px;
 }
 
 .weatherWrapper {
@@ -21,5 +28,9 @@
   .footer {
     font-size: 12px;
     padding: 80px 0;
+  }
+
+  .logo {
+    width: 49px;
   }
 }

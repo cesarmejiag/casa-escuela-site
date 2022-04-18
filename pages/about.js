@@ -11,6 +11,7 @@ import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
+import InviewElement from "../components/InviewElement";
 
 const About = () => {
   const { mobile } = useResize();
@@ -19,7 +20,13 @@ const About = () => {
   return (
     <Layout pageTitle="About">
       {/* La Casa de Todos Section */}
-      <BackgroundColor cSrcD="./images/bckAboutD.svg" cSrcM="./images/bckHomeM.svg" cColor="#ecf0f8" cHeight="40%" cPosition="bottom">
+      <BackgroundColor
+        cSrcD="./images/bckAboutD.svg"
+        cSrcM="./images/bckHomeM.svg"
+        cColor="#ecf0f8"
+        cHeight="40%"
+        cPosition="bottom"
+      >
         <Section
           id={intro.id}
           title={intro.title}
@@ -30,12 +37,19 @@ const About = () => {
       </BackgroundColor>
 
       {/* Built Section */}
-      <BackgroundColor cSrcD="./images/bckAboutD.svg" cSrcM="./images/bckHomeM.svg" cColor="#ecf0f8" cHeight="40%">
+      <BackgroundColor
+        cSrcD="./images/bckAboutD.svg"
+        cSrcM="./images/bckHomeM.svg"
+        cColor="#ecf0f8"
+        cHeight="40%"
+      >
         <Section id={built.id} intro={built.intro}>
           <div className="section-image">
-            <div className="built-image">
-              <ImageSwicher imagesSrc={built.imagesSrc} />
-            </div>
+            <InviewElement>
+              <div className="built-image">
+                <ImageSwicher imagesSrc={built.imagesSrc} />
+              </div>
+            </InviewElement>
           </div>
           <div className="section-footer">{built.footerText}</div>
         </Section>
@@ -44,30 +58,34 @@ const About = () => {
       {/* Team Section */}
       <Section id={team.id} title={team.title}>
         <div className="team-wrapper">
-          <Carrousel
-            slides={team.cards.map((card, index) => (
-              <Card {...card} key={index} />
-            ))}
-            slidesPerView={mobile ? 1 : 3}
-            spaceBetween={mobile ? 0 : 100}
-          />
+          <InviewElement>
+            <Carrousel
+              slides={team.cards.map((card, index) => (
+                <Card {...card} key={index} />
+              ))}
+              slidesPerView={mobile ? 1 : 3}
+              spaceBetween={mobile ? 0 : 100}
+            />
+          </InviewElement>
         </div>
       </Section>
 
       {/* Pillars Section */}
       <Section id={pillars.id} title={pillars.title}>
-        <Carrousel
-          slides={pillars.cards.map((card, index) => (
-            <PillarCard
-              id={index + 1}
-              title={card.title}
-              text={card.text}
-              key={index}
-            />
-          ))}
-          slidesPerView={1}
-          spaceBetween={0}
-        />
+        <InviewElement>
+          <Carrousel
+            slides={pillars.cards.map((card, index) => (
+              <PillarCard
+                id={index + 1}
+                title={card.title}
+                text={card.text}
+                key={index}
+              />
+            ))}
+            slidesPerView={1}
+            spaceBetween={0}
+          />
+        </InviewElement>
       </Section>
 
       {/* Bottom Link Section */}

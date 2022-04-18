@@ -71,9 +71,16 @@ body {
 }
 
 /* Section */
-#contact-your-story {
-  margin-top: -135px;
+#build {
+  margin-top: -35px;
+  padding-top: 45px;
 }
+
+#contact-your-story {
+  margin-top: -85px;
+  padding-top: 100px;
+}
+
 #host-an-event h2 {
   color: #020202;
 }
@@ -119,6 +126,15 @@ body {
 
   .holder {
     padding: 0;
+  }
+
+  #build {
+    margin-top: -20px;
+  }
+
+  #contact-your-story {
+    margin-top: -145px;
+    padding-top: 155px;
   }
 
   #host-an-event h3,

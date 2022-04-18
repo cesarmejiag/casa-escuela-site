@@ -9,12 +9,17 @@ import ImageSwicher from "../components/ImageSwicher";
 import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
+import InviewElement from "../components/InviewElement";
 
 const initFormState = { loading: false, data: undefined, error: undefined };
 
 const Contact = () => {
   const [formState, setFormState] = useState({ ...initFormState });
-  const { register, handleSubmit,formState:{errors} } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = async (data) => {
     setFormState({ ...initFormState, loading: true });
 
@@ -41,9 +46,11 @@ const Contact = () => {
   return (
     <Layout pageTitle="Contact">
       <Section id={intro.id} title={intro.title} noHolder withMarginTop>
-        <div className="contact-intro-image">
-          <ImageSwicher imagesSrc={intro.imagesSrc} />
-        </div>
+        <InviewElement>
+          <div className="contact-intro-image">
+            <ImageSwicher imagesSrc={intro.imagesSrc} />
+          </div>
+        </InviewElement>
       </Section>
       <BackgroundColor
         cSrcD="./images/bckContactD.svg"
@@ -53,11 +60,13 @@ const Contact = () => {
       >
         <Section id="contact-your-story">
           <div className="contact-intro-body">
-            <div className="section-body text-center">
-              <h3>We want to hear your story</h3>
-              <br />
-              <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
-            </div>
+            <InviewElement>
+              <div className="section-body text-center">
+                <h3>We want to hear your story</h3>
+                <br />
+                <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
+              </div>
+            </InviewElement>
           </div>
         </Section>
       </BackgroundColor>
@@ -77,90 +86,106 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <form className="contact-form" id="" onSubmit={handleSubmit(onSubmit)}>
-          <div className="contact-information">
-            <div className="contact-personal-information">
-              <div className="contact-group-button">
-                <label htmlFor="name" className="labels">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="inputField"
-                  {...register("name", { required: true, maxLength: 30 })}
-                />
-                {errors?.name?.type === "required" && <p className="errorMessage">This field is required</p>}
+        {/* Contact Form */}
+        <InviewElement>
+          <form
+            className="contact-form"
+            id=""
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className="contact-information">
+              <div className="contact-personal-information">
+                <div className="contact-group-button">
+                  <label htmlFor="name" className="labels">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="inputField"
+                    {...register("name", { required: true, maxLength: 30 })}
+                  />
+                  {errors?.name?.type === "required" && (
+                    <p className="errorMessage">This field is required</p>
+                  )}
+                </div>
+                <div className="contact-group-button">
+                  <label htmlFor="email" className="labels">
+                    Email
+                  </label>
+                  <input
+                    type="text"
+                    id="email"
+                    className="inputField"
+                    {...register("email", {
+                      required: true,
+                      pattern:
+                        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    })}
+                  />
+                  {errors?.email?.type === "required" && (
+                    <p className="errorMessage">This field is required</p>
+                  )}
+                </div>
               </div>
-              <div className="contact-group-button">
-                <label htmlFor="email" className="labels">
-                  Email
-                </label>
-                <input
-                  type="text"
-                  id="email"
-                  className="inputField"
-                  {...register("email", {
-                    required: true,
-                    pattern:
-                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  })}
-                />
-                {errors?.email?.type === "required" && <p className="errorMessage">This field is required</p>}
+              <div className="contact-subject-information">
+                <div className="contact-group-button">
+                  <label htmlFor="name" className="labels">
+                    Subject
+                  </label>
+                  <select
+                    {...register("subject", { required: true })}
+                    className="inputField"
+                  >
+                    <option value="Collaborate">Collaborate</option>
+                    <option value="Stay with us">Stay with us</option>
+                    <option value="Host an event">Host an event</option>
+                    <option value="Sayab">Sayab</option>
+                    <option value="Residencies">Residencies</option>
+                    <option value="Shop">Shop</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="General Inquiries">General Inquiries</option>
+                    <option value="Press">Press</option>
+                    <option value="Visit Gallery">Visit Gallery</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div className="contact-subject-information">
-              <div className="contact-group-button">
-                <label htmlFor="name" className="labels">
-                  Subject
-                </label>
-                <select
-                  {...register("subject", { required: true })}
-                  className="inputField"
-                >
-                  <option value="Collaborate">Collaborate</option>
-                  <option value="Stay with us">Stay with us</option>
-                  <option value="Host an event">Host an event</option>
-                  <option value="Sayab">Sayab</option>
-                  <option value="Residencies">Residencies</option>
-                  <option value="Shop">Shop</option>
-                  <option value="Collaboration">Collaboration</option>
-                  <option value="General Inquiries">General Inquiries</option>
-                  <option value="Press">Press</option>
-                  <option value="Visit Gallery">Visit Gallery</option>
-                </select>
-              </div>
+            <div className="contact-message">
+              <label htmlFor="message" className="labels">
+                Message
+              </label>
+              <textarea
+                id="message"
+                className="message"
+                placeholder="Hello ..."
+                {...register("message", { required: true, maxLength: 100 })}
+              ></textarea>
+              {errors?.message?.type === "required" && (
+                <p className="errorMessage">This field is required</p>
+              )}
             </div>
+            <div className="contact-wrapper-submit">
+              <input type="submit" value="Send" className="submit-button" />
+            </div>
+          </form>
+        </InviewElement>
+
+        <InviewElement>
+          <div className="contact-address" id={intro.addressTitle}>
+            <div className="contact-title-address">{intro.addressTitle}</div>
+
+            <div
+              className="contact-address-text"
+              dangerouslySetInnerHTML={{ __html: intro.address }}
+            ></div>
           </div>
-          <div className="contact-message">
-            <label htmlFor="message" className="labels">
-              Message
-            </label>
-            <textarea
-              id="message"
-              className="message"
-              placeholder="Hello ..."
-              {...register("message", { required: true, maxLength: 100 })}
-            ></textarea>
-            {errors?.message?.type === "required" && <p className="errorMessage">This field is required</p>}
-          </div>
-          <div className="contact-wrapper-submit">
-            <input type="submit" value="Send" className="submit-button" />
-          </div>
-        </form>
-        <div className="contact-address" id={intro.addressTitle}>
-          <div className="contact-title-address">{intro.addressTitle}</div>
-          <div
-            className="contact-address-text"
-            dangerouslySetInnerHTML={{ __html: intro.address }}
-          ></div>
-        </div>
+        </InviewElement>
       </Section>
 
       <style jsx>{`
         .contact-intro-image {
           height: 450px;
-          margin-top: 70px;
           position: relative;
         }
 

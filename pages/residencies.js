@@ -5,6 +5,7 @@ import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
+import InviewElement from "../components/InviewElement";
 
 const Residensies = () => {
   const { intro, exhibition, footer } = data.residencies;
@@ -20,7 +21,11 @@ const Residensies = () => {
           footer={intro.footerText}
           withMarginTop
         >
-          <BottomLink path="/contact" text="Current artist in residence" paddingStyle={3} />
+          <BottomLink
+            path="/contact"
+            text="Current artist in residence"
+            paddingStyle={3}
+          />
         </Section>
       </BackgroundColor>
 
@@ -28,16 +33,20 @@ const Residensies = () => {
         <div className="exhibition-wrapper">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
-              <div className="exhibition-image">
-                <ImageSwicher imagesSrc={exhibition.imagesSrc} />
-              </div>
+              <InviewElement>
+                <div className="exhibition-image">
+                  <ImageSwicher imagesSrc={exhibition.imagesSrc} />
+                </div>
+              </InviewElement>
             </div>
             <div className="col-12 col-md-6">
               <div className="exhibition-body">
-                <div
-                  className="section-body"
-                  dangerouslySetInnerHTML={{ __html: exhibition.text }}
-                ></div>
+                <InviewElement>
+                  <div
+                    className="section-body"
+                    dangerouslySetInnerHTML={{ __html: exhibition.text }}
+                  ></div>
+                </InviewElement>
               </div>
             </div>
           </div>
