@@ -180,7 +180,7 @@ export default {
         "/images/residencies-image-1.webp",
         "/images/residencies-image-1.webp",
       ],
-      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br /><br /><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><br /><div><a href='/contact'>Current exhibitions (PDF)</a></div>",
+      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br /><br /><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><br /><div><a href='/files/exhibitions.pdf' target='_blank' rel='noreferrer'>Current exhibitions (PDF)</a></div>",
     },
     footer: {
       id: "footer",
