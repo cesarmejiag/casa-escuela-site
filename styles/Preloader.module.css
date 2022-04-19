@@ -59,7 +59,7 @@
 }
 
 .preloader h1 {
-  animation: preloaderText 550ms;
+  animation: preloaderText 850ms;
 }
 
 .preloader.displayed {
