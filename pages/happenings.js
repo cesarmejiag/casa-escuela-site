@@ -1,16 +1,13 @@
 import Layout from "../components/Layout";
 import Section from "../components/Section";
-import Carrousel from "../components/Carrousel";
 import Card from "../components/Card";
 import BottomLink from "../components/BottomLink";
-import useResize from "../hooks/useResize";
 import BackgroundColor from "../components/BackgroundColor";
 
 import data from "../data";
 import InviewElement from "../components/InviewElement";
 
 const Happenings = () => {
-  const { mobile } = useResize();
   const { intro, cards } = data.happenings;
 
   return (
@@ -39,7 +36,11 @@ const Happenings = () => {
         </div>
       </Section>
 
-      <BottomLink path="/contact" text="Happening now"></BottomLink>
+      <BottomLink
+        path="https://www.instagram.com/casa.escuela/"
+        text="Happening now"
+        target="_blank"
+      ></BottomLink>
 
       <style jsx>{`
         .happenings-card {

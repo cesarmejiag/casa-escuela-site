@@ -14,6 +14,8 @@
   color: #384c48;
   font-family: "RecifeDisplayLight", sans-serif;
   font-size: 40px;
+  margin: 0 auto;
+  max-width: 670px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -23,8 +25,8 @@
   font-size: 20px;
   line-height: 24px;
   margin: 0 auto;
-  /* max-width: 1030px; */
-  max-width: 854px;
+  max-width: 1065px;
+  /* max-width: 854px; */
   text-align: center;
 }
 
@@ -43,7 +45,7 @@
 }
 
 .footer {
-  margin: 65px auto 0;
+  margin: 95px auto 0;
   max-width: 505px;
   text-align: center;
 }

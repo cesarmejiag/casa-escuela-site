@@ -5,7 +5,7 @@
   left: 0;
   position: fixed;
   opacity: 0;
-  transition: opacity 550ms;
+  transition: opacity 500ms ease;
   top: 0;
   width: 100vw;
   z-index: 11;

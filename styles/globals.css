@@ -61,7 +61,11 @@ body {
 }
 
 .outer-wrapper {
+  background-color: #f5f3ef;
+  margin-bottom: 335px;
   margin-top: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .holder {
@@ -129,6 +133,7 @@ body {
   }
 
   .outer-wrapper {
+    margin-bottom: 315px;
     padding-bottom: 100px;
   }
 
@@ -253,6 +258,7 @@ select.inputField {
 }
 
 .submit-button {
+  appearance: none;
   background: var(--transparent);
   border: 0;
   color: var(--blackColor);
@@ -360,7 +366,7 @@ select.inputField {
   .contact-message {
     padding: 0 10px;
   }
-  
+
   .contact-wrapper-submit {
     right: 10px;
   }

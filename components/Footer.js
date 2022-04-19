@@ -45,8 +45,8 @@ const Footer = () => {
                     </Link>
                   </div>
                   <div className="instagram-link">
-                    <Link href="#">
-                      <a className="text-uppercase">Instagram</a>
+                    <Link href="https://www.instagram.com/casa.escuela/">
+                      <a className="text-uppercase" target="_blank">Instagram</a>
                     </Link>
                   </div>
                 </div>

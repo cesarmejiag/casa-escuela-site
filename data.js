@@ -109,7 +109,7 @@ export default {
         "/images/be-our-guest-image-2.webp",
         "/images/be-our-guest-image-3.webp",
       ],
-      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a href='/contact'>Contact us to learn more about booking Casa Escuela to host your next event.</a></div>",
+      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a href='/contact'>Contact us to learn more about booking<br />Casa Escuela to host your next event.</a></div>",
     },
     sayab: {
       id: "sayab",

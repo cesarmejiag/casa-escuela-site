@@ -73,14 +73,14 @@
     height: 1px;
     left: 100%;
     position: absolute;
-    transition: width 550ms ease-out, left 550ms ease-out;
+    transition: width 500ms ease, left 500ms ease;
     width: 0;
   }
 
   .link.active:before,
   .link:hover:before {
     left: 0;
-    transition: width 550ms ease-out;
+    transition: width 500ms ease;
     width: 100%;
   }
 }

@@ -22,8 +22,9 @@ const Residensies = () => {
           withMarginTop
         >
           <BottomLink
-            path="/contact"
+            path="https://www.instagram.com/casa.escuela/"
             text="Current artist in residence"
+            target="_blank"
             paddingStyle={3}
           />
         </Section>

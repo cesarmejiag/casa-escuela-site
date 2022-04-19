@@ -71,19 +71,21 @@ const Contact = () => {
         </Section>
       </BackgroundColor>
       <Section id="contact-form">
-        <div
-          className={`contact-response${formState.data ? " displayed" : ""}`}
-        >
+        <div className={`contact-response${formState.data || formState.loading ? " displayed" : ""}`}>
           <div className="contact-wrapper-response">
-            <div className="contact-text-response">{intro.appreciation}</div>
-            <div className="contact-message-response">
-              {intro.contactMessage}
-              <div className="contact-link-response">
-                <Link href="/">
-                  <a>Back home</a>
-                </Link>
-              </div>
+            <div className="contact-text-response">
+              {formState.loading ? "Enviando..." : intro.appreciation}
             </div>
+            {formState.data && (
+              <div className="contact-message-response">
+                {intro.contactMessage}
+                <div className="contact-link-response">
+                  <Link href="/">
+                    <a>Back home</a>
+                  </Link>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         {/* Contact Form */}
