@@ -7,17 +7,7 @@
 }
 
 .header {
-  margin-bottom: 83px;
-}
-
-.title {
-  color: #384c48;
-  font-family: "RecifeDisplayLight", sans-serif;
-  font-size: 40px;
-  margin: 0 auto;
-  max-width: 854px;
-  text-align: center;
-  text-transform: uppercase;
+  margin-bottom: 70px;
 }
 
 .intro {
@@ -65,11 +55,6 @@
 
   .header {
     margin-bottom: 131px;
-  }
-
-  .title {
-    font-size: 110px;
-    margin-bottom: 52px;
   }
 
   .intro {

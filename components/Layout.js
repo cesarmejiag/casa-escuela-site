@@ -1,6 +1,6 @@
 import { ParallaxProvider } from "react-scroll-parallax";
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import Script from "next/script";
 
 import Head from "next/head";
 import Header from "./Header";
