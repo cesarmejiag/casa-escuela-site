@@ -9,20 +9,18 @@ const Title = ({ text }) => {
 
   return (
     <h2 className={styles.title} ref={ref}>
-      {inView && (
-        <AnimatedText
+      <AnimatedText
           type="chars"
           animation={{
             y: "30px",
             ease: "ease",
           }}
           interval={0.06}
-          duration={0.8}
+          duration={inView ? 0.8 : 0}
           className="animated-chars"
         >
           {text}
         </AnimatedText>
-      )}
     </h2>
   );
 };
