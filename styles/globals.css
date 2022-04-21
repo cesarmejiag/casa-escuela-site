@@ -45,6 +45,41 @@ body {
   font-weight: var(--fontWeight3);
 }
 
+.gplk-btn {
+  border: 1px solid #E6E3DE;
+  display: block;
+  font-size: 26px;
+  letter-spacing: 0;
+  padding: 12px 18px 14px 19px;
+  position: relative;
+  text-decoration: none;
+  transition: all 550ms ease-in-out;
+  width: fit-content;
+}
+
+.gplk-btn:before {
+  background: #E6E3DE;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 100%;
+  position: absolute;
+  top: 0;
+  transition: width 550ms ease-in-out, left 550ms ease-in-out;
+  width: 0;
+  z-index: -1;
+}
+
+.gplk-btn:hover {
+  color: #000000 !important;
+}
+
+.gplk-btn:hover:before {
+  left: 0;
+  transition: width 550ms ease-in-out;
+  width: 100%;
+}
+
 .lang-a {
   color: #000;
   font-size: 13px;

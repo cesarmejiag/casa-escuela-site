@@ -193,7 +193,7 @@ const Contact = () => {
 
         .contact-intro-body {
           margin: 0 auto;
-          max-width: 480px;
+          max-width: 486px;
         }
 
         @media screen and (min-width: 768px) {

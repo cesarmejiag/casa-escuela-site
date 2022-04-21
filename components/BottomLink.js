@@ -21,7 +21,7 @@ const BottomLink = ({ path, text, target = "_self", paddingStyle = 0 }) => {
     <div className={`${styles.bottomLink}${paddingClass}`}>
       <InviewElement>
         <Link href={path}>
-          <a target={target}>{text}</a>
+          <a className="gplk-btn" target={target}>{text}</a>
         </Link>
       </InviewElement>
     </div>
