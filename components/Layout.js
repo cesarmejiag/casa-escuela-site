@@ -1,12 +1,11 @@
-import { ParallaxProvider } from "react-scroll-parallax";
 import { useState, useEffect } from "react";
-import Script from "next/script";
+import { useRouter } from "next/router";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 import Preloader from "../components/Preloader";
-import { useRouter } from "next/router";
 
 const Layout = ({ children, pageTitle }) => {
   const siteTitle = "Casa Escuela - Welcome Home";

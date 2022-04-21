@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const isMobile = (width) => width < 768;
 
-const useResize = () => {
+const useWindowSize = () => {
   const [size, setSize] = useState({ height: 0, width: 0, mobile: false });
 
   useEffect(() => {
@@ -25,4 +25,4 @@ const useResize = () => {
   return size;
 };
 
-export default useResize;
+export default useWindowSize;

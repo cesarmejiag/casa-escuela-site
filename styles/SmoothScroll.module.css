@@ -1,0 +1,9 @@
+.parent {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

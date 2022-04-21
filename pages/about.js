@@ -1,20 +1,18 @@
-import Image from "next/image";
-
 import Layout from "./../components/Layout";
 import Section from "../components/Section";
 import Carrousel from "../components/Carrousel";
 import Card from "../components/Card";
 import BottomLink from "../components/BottomLink";
 import PillarCard from "../components/PillarCard";
-import useResize from "../hooks/useResize";
 import BackgroundColor from "../components/BackgroundColor";
-
-import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
+import useWindowSize from "../hooks/useWindowSize";
+
+import data from "../data";
 
 const About = () => {
-  const { mobile } = useResize();
+  const { mobile } = useWindowSize();
   const { intro, built, team, pillars } = data.about;
 
   return (
