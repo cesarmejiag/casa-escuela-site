@@ -48,11 +48,11 @@ body {
 .gplk-btn {
   border: 1px solid #E6E3DE;
   display: block;
-  font-size: 26px;
   letter-spacing: 0;
   margin: 0 auto;
   padding: 12px 18px 14px 19px;
   position: relative;
+  text-align: center;
   text-decoration: none;
   transition: all 550ms ease-in-out;
   width: fit-content;
