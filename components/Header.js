@@ -3,7 +3,6 @@ import { useState } from "react";
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
 
-
 const Header = () => {
   const [visible, setVisible] = useState(false);
 
@@ -11,7 +10,10 @@ const Header = () => {
     <header className={styles.header}>
       <div className="holder">
         <div className="container-fluid">
-          <Nav onToggleClick={() => setVisible(!visible)} />
+          <Nav
+            mobileVisible={visible}
+            onToggleClick={() => setVisible(!visible)}
+          />
           <MobileNav visible={visible} />
         </div>
       </div>

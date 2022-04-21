@@ -38,7 +38,6 @@
   border: none;
   cursor: pointer;
   display: block;
-  height: 20px;
   margin-left: auto;
   outline: none;
   padding: 0;
@@ -51,17 +50,28 @@
   border-bottom: 1px solid #000;
   content: "";
   display: block;
-  position: absolute;
   left: 0;
+  position: absolute;
+  transition: top 250ms ease-in-out, transform 250ms ease-in-out;
   width: 100%;
 }
 
 .toggleBtn::before {
-  top: 7px;
+  top: -3px;
 }
 
 .toggleBtn::after {
-  top: 12px;
+  top: 3px;
+}
+
+.toggleBtn.active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.toggleBtn.active::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 @media screen and (min-width: 768px) {

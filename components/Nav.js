@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-const Nav = ({ onToggleClick }) => {
+const Nav = ({ mobileVisible, onToggleClick }) => {
   const router = useRouter();
 
   const createLink = (path, text) => {
@@ -52,7 +52,7 @@ const Nav = ({ onToggleClick }) => {
             {createLink("#", "Shop")}
           </div>
           <div className="d-flex d-md-none">
-            <button className={styles.toggleBtn} onClick={handleClick}></button>
+            <button className={`${styles.toggleBtn}${mobileVisible ? ` ${styles.active}` : ''}`} onClick={handleClick}></button>
           </div>
         </div>
       </div>
