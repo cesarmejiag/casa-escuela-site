@@ -5,10 +5,20 @@ import { useParallax } from "react-scroll-parallax";
 import PropTypes from "prop-types";
 import Image from "next/image";
 import useCounter from "../hooks/useCounter";
+import useWindowSize from "../hooks/useWindowSize";
 
-const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
-  const total = imagesSrc.length - 1;
+const ImageSwicher = ({
+  imagesSrc,
+  mobileImagesSrc,
+  textPosition,
+  parallaxSpeed,
+  cColor,
+}) => {
+  const { mobile } = useWindowSize();
+  const images = mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
+  const total = images.length - 1;
   const { count, increase } = useCounter(0, total, true);
+
   const parallax = useParallax({
     speed: parallaxSpeed,
   });
@@ -36,7 +46,7 @@ const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
         </div>
       )}
       <div className={styles.wrapper}>
-        {imagesSrc.map((src, index) => (
+        {images.map((src, index) => (
           <div className={getImageClass(index, count)} key={index}>
             <Image
               priority
@@ -59,12 +69,14 @@ const ImageSwicher = ({ imagesSrc, textPosition, parallaxSpeed, cColor }) => {
 
 ImageSwicher.propTypes = {
   imagesSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
+  mobileImagesSrc: PropTypes.arrayOf(PropTypes.string),
   textPosition: PropTypes.number,
   parallaxSpeed: PropTypes.number,
 };
 
 ImageSwicher.defaultProps = {
   imagesSrc: [],
+  mobileImagesSrc: [],
   textPosition: 1,
   parallaxSpeed: 3,
 };

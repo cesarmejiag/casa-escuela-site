@@ -48,7 +48,7 @@ const Contact = () => {
       <Section id={intro.id} title={intro.title} noHolder withMarginTop>
         <InviewElement>
           <div className="contact-intro-image">
-            <ImageSwicher imagesSrc={intro.imagesSrc} />
+            <ImageSwicher imagesSrc={intro.imagesSrc} mobileImagesSrc={intro.mobileImagesSrc} />
           </div>
         </InviewElement>
       </Section>

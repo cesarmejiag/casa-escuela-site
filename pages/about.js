@@ -30,6 +30,7 @@ const About = () => {
           title={intro.title}
           intro={intro.intro}
           imagesSrc={intro.imagesSrc}
+          mobileImagesSrc={intro.mobileImagesSrc}
           withMarginTop
         />
       </BackgroundColor>
@@ -95,6 +96,8 @@ const About = () => {
         }
 
         .built-image {
+          margin-left: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
+          margin-right: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
           padding-bottom: 66%;
           position: relative;
         }
@@ -102,6 +105,11 @@ const About = () => {
         @media screen and (min-width: 768px) {
           .team-wrapper {
             margin-top: 100px;
+          }
+
+          .built-image {
+            margin-left: 0;
+            margin-right: 0;
           }
         }
       `}</style>

@@ -14,17 +14,26 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <Hero id={hero.id} text={hero.text} imagesSrc={hero.imagesSrc} />
+      <Hero
+        id={hero.id}
+        text={hero.text}
+        imagesSrc={hero.imagesSrc}
+        mobileImagesSrc={hero.mobileImagesSrc}
+      />
 
       {/* What We Do Section */}
       <Section
         id={whatWeDo.id}
         title={whatWeDo.title}
-        introText={whatWeDo.intro}>
+        introText={whatWeDo.intro}
+      >
         <InviewElement>
           <div className="section-image">
             <div className="what-we-do-image">
-              <ImageSwicher imagesSrc={whatWeDo.imagesSrc} />
+              <ImageSwicher
+                imagesSrc={whatWeDo.imagesSrc}
+                mobileImagesSrc={whatWeDo.mobileImagesSrc}
+              />
             </div>
           </div>
         </InviewElement>
@@ -35,7 +44,8 @@ export default function Home() {
         cSrcD="./images/bckhomeD.svg"
         cSrcM="./images/bckHomeM.svg"
         cColor="#dfe3da"
-        cHeight="75%">
+        cHeight="75%"
+      >
         <Section id={homeTo.id} intro={homeTo.intro}>
           <div className="home-to-wrapper">
             <div className="row">
@@ -43,7 +53,8 @@ export default function Home() {
                 <InviewElement>
                   <div className="home-to-image-1">
                     <ImageSwicher
-                      imagesSrc={[homeTo.imageSrc1, homeTo.imageSrc1]}
+                      imagesSrc={homeTo.imagesSrc}
+                      mobileImagesSrc={homeTo.mobileImagesSrc}
                       parallaxSpeed={3}
                     />
                   </div>
@@ -51,7 +62,7 @@ export default function Home() {
                 <InviewElement>
                   <div className="home-to-image-2">
                     <ImageSwicher
-                      imagesSrc={[homeTo.imageSrc2, homeTo.imageSrc2]}
+                      imagesSrc={homeTo.imagesSrc2}
                       parallaxSpeed={8}
                     />
                   </div>
@@ -75,6 +86,8 @@ export default function Home() {
 
       <style jsx>{`
         .what-we-do-image {
+          margin-left: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
+          margin-right: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
           padding-bottom: 78%;
           position: relative;
         }
@@ -84,31 +97,37 @@ export default function Home() {
         }
 
         .home-to-image-1 {
-          padding-bottom: 80.252%;
+          padding-bottom: 120.252%;
           position: relative;
           width: 90.207%;
         }
 
         .home-to-image-2 {
           left: 15%;
-          margin-top: -12%;
-          padding-bottom: 80.494%;
+          margin-top: -20%;
+          padding-bottom: 81.494%;
           position: relative;
           width: 85%;
         }
 
         .home-to-text {
           margin-top: 60px;
-          max-width: 350px;
+          max-width: 245px;
         }
 
         @media screen and (min-width: 768px) {
           .what-we-do-image {
+            margin-left: 0;
+            margin-right: 0;
             padding-bottom: 46%;
           }
 
           .home-to-wrapper {
             margin-top: 100px;
+          }
+          
+          .home-to-text {
+            max-width: 350px;
           }
         }
 

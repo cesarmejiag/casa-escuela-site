@@ -25,6 +25,7 @@ const BeOurGuest = () => {
           title={intro.title}
           intro={intro.intro}
           imagesSrc={intro.imagesSrc}
+          mobileImagesSrc={intro.mobileImagesSrc}
           footer={intro.footerText}
           withMarginTop
         >
@@ -46,6 +47,7 @@ const BeOurGuest = () => {
                     <div className="host-image">
                       <ImageSwicher
                         imagesSrc={host.imagesSrc}
+                        mobileImagesSrc={host.mobileImagesSrc}
                         cColor="#f5f3ef"
                       />
                     </div>
@@ -81,7 +83,10 @@ const BeOurGuest = () => {
             <div className="section-image">
               <InviewElement>
                 <div className="sayab-image">
-                  <ImageSwicher imagesSrc={sayab.imagesSrc} />
+                  <ImageSwicher
+                    imagesSrc={sayab.imagesSrc}
+                    mobileImagesSrc={sayab.mobileImagesSrc}
+                  />
                 </div>
               </InviewElement>
             </div>
@@ -100,8 +105,8 @@ const BeOurGuest = () => {
           }
 
           .host-image {
-            margin-bottom: 90px;
-            padding-bottom: 112%;
+            margin-bottom: 60px;
+            padding-bottom: 125%;
             position: relative;
           }
 
@@ -119,7 +124,9 @@ const BeOurGuest = () => {
           }
 
           .sayab-image {
-            padding-bottom: 46.6%;
+            margin-left: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
+            margin-right: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
+            padding-bottom: 78%;
             position: relative;
           }
 
@@ -130,6 +137,7 @@ const BeOurGuest = () => {
 
             .host-image {
               margin-bottom: 0;
+              padding-bottom: 112%;
             }
 
             .host-body {
@@ -138,6 +146,12 @@ const BeOurGuest = () => {
 
             .sayab-footer {
               margin: 50px auto 0;
+            }
+
+            .sayab-image {
+              margin-left: 0;
+              margin-right: 0;
+              padding-bottom: 46.6%;
             }
           }
         `}</style>

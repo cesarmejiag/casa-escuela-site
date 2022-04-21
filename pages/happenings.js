@@ -18,6 +18,7 @@ const Happenings = () => {
           title={intro.title}
           intro={intro.intro}
           imagesSrc={intro.imagesSrc}
+          mobileImagesSrc={intro.mobileImagesSrc}
           withMarginTop
         />
       </BackgroundColor>

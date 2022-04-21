@@ -18,6 +18,7 @@ const Residensies = () => {
           title={intro.title}
           intro={intro.intro}
           imagesSrc={intro.imagesSrc}
+          mobileImagesSrc={intro.mobileImagesSrc}
           footer={intro.footerText}
           withMarginTop
         >
@@ -54,7 +55,16 @@ const Residensies = () => {
         </div>
       </Section>
 
-      <Section id={footer.id} imagesSrc={footer.imagesSrc}></Section>
+      <Section id={footer.id}>
+        <InviewElement>
+          <div className="footer-image">
+            <ImageSwicher
+              imagesSrc={footer.imagesSrc}
+              mobileImagesSrc={footer.mobileImagesSrc}
+            />
+          </div>
+        </InviewElement>
+      </Section>
 
       <BottomLink
         path="/contact"
@@ -77,6 +87,13 @@ const Residensies = () => {
           max-width: 430px;
         }
 
+        .footer-image {
+          margin-left: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
+          margin-right: calc((var(--bs-gutter-x, 0.75rem) + 16px) * -1);
+          padding-bottom: 78.321%;
+          position: relative;
+        }
+
         @media screen and (min-width: 768px) {
           .exhibition-wrapper {
             margin-top: 140px;
@@ -84,6 +101,12 @@ const Residensies = () => {
 
           .exhibition-image {
             margin-bottom: 0;
+          }
+
+          .footer-image {
+            margin-left: 0;
+            margin-right: 0;
+            padding-bottom: 48%;
           }
         }
       `}</style>

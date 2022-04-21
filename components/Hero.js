@@ -6,7 +6,7 @@ import { useParallax } from "react-scroll-parallax";
 import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
 
-const Hero = ({ id, imagesSrc, text }) => {
+const Hero = ({ id, imagesSrc, mobileImagesSrc, text }) => {
   const parallax = useParallax({
     speed: 4,
   });
@@ -18,7 +18,11 @@ const Hero = ({ id, imagesSrc, text }) => {
           <InviewElement>
             <div className={styles.wrapper}>
               <div className={styles.image}>
-                <ImageSwicher imagesSrc={imagesSrc} textPosition={4} />
+                <ImageSwicher
+                  imagesSrc={imagesSrc}
+                  mobileImagesSrc={mobileImagesSrc}
+                  textPosition={4}
+                />
               </div>
               <div
                 className={styles.text}
@@ -34,8 +38,9 @@ const Hero = ({ id, imagesSrc, text }) => {
 
 Hero.propTypes = {
   id: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  imageSrc: PropTypes.arrayOf(PropTypes.string),
+  mobileImagesSrc: PropTypes.arrayOf(PropTypes.string),
+  text: PropTypes.string,
 };
 
 export default Hero;
