@@ -137,7 +137,7 @@ export default {
         "/images/be-our-guest-image-3.webp",
       ],
       mobileImagesSrc: ["/images/be-our-guest-mobile-image-1.png"],
-      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a href='/contact'>Contact us to learn more about booking<br />Casa Escuela to host your next event.</a></div>",
+      text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a class='gplk-btn' href='/contact'>Contact us to learn more about booking<br />Casa Escuela to host your next event.</a></div>",
     },
     sayab: {
       id: "sayab",
@@ -217,7 +217,7 @@ export default {
         "/images/residencies-image-1.webp",
         "/images/residencies-image-1.webp",
       ],
-      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br /><br /><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><br /><div><a href='/files/exhibitions.pdf' target='_blank' rel='noreferrer'>Current exhibitions (PDF)</a></div>",
+      text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br /><br /><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><br /><div><a href='/files/exhibitions.pdf' target='_blank' rel='noreferrer'>Current exhibitions</a></div>",
     },
     footer: {
       id: "footer",
