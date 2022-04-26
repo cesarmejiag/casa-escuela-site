@@ -99,6 +99,7 @@
     background: #000;
     bottom: 2px;
     content: "";
+    content: none;
     display: block;
     height: 1px;
     left: 100%;
