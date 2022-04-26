@@ -4,10 +4,10 @@ export default {
       id: "hero",
       imagesSrc: ["/images/home-cover.webp", "/images/home-cover.webp"],
       mobileImagesSrc: [
-        "/images/home-mobile-cover.png",
-        "/images/home-mobile-cover.png",
+        "/images/home-mobile-cover.webp",
+        "/images/home-mobile-cover.webp",
       ],
-      text: "Casa escuela is more than a destination.<br />It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
+      text: "Casa escuela is more than a destination. It is a place to create deep connections through exploration and discovery of art, design, food, and wellness.",
     },
     whatWeDo: {
       id: "what-we-do",
@@ -19,8 +19,8 @@ export default {
         "/images/home-what-we-do.webp",
       ],
       mobileImagesSrc: [
-        "/images/home-mobile-what-we-do.png",
-        "/images/home-mobile-what-we-do.png",
+        "/images/home-mobile-what-we-do.webp",
+        "/images/home-mobile-what-we-do.webp",
       ],
     },
     homeTo: {
@@ -33,16 +33,16 @@ export default {
         "/images/home-to-tellers-image-1.webp",
       ],
       mobileImagesSrc: [
-        "/images/home-mobile-to-tellers-image-1.png",
-        "/images/home-mobile-to-tellers-image-1.png",
+        "/images/home-mobile-to-tellers-image-1.webp",
+        "/images/home-mobile-to-tellers-image-1.webp",
       ],
       imagesSrc2: [
         "/images/home-to-tellers-image-2.webp",
         "/images/home-to-tellers-image-2.webp",
       ],
       mobileImagesSrc2: [
-        "/images/home-mobile-to-tellers-image-2.png",
-        "/images/home-mobile-to-tellers-image-2.png",
+        "/images/home-mobile-to-tellers-image-2.webp",
+        "/images/home-mobile-to-tellers-image-2.webp",
       ],
     },
   },
@@ -53,7 +53,7 @@ export default {
       intro:
         "Every space tells the story of the people who inhabit it. Every room carefully safeguards the emotions, experiences, conversations, and traditions of a time well-lived.",
       imagesSrc: ["/images/about-cover.webp"],
-      mobileImagesSrc: ["/images/about-mobile-cover.png"],
+      mobileImagesSrc: ["/images/about-mobile-cover.webp"],
     },
     built: {
       id: "build",
@@ -118,12 +118,16 @@ export default {
       intro:
         "Stay with us to indulge in the quiet refuge within our walls and explore Merida, Yucatan, Mexico’s most colorful and vibrant city.",
       imagesSrc: [
-        "/images/be-our-guest-cover.webp",
-        "/images/be-our-guest-cover.webp",
+        "/images/be-our-guest-cover-01.webp",
+        "/images/be-our-guest-cover-02.webp",
+        "/images/be-our-guest-cover-03.webp",
+        "/images/be-our-guest-cover-04.webp",
       ],
       mobileImagesSrc: [
-        "/images/be-our-guest-mobile-cover.png",
-        "/images/be-our-guest-mobile-cover.png",
+        "/images/be-our-guest-mobile-cover-01.webp",
+        "/images/be-our-guest-mobile-cover-02.webp",
+        "/images/be-our-guest-mobile-cover-03.webp",
+        "/images/be-our-guest-mobile-cover-04.webp",
       ],
       footerText:
         "Casa Escuela is a century old architectural beauty where memories of the past and hopes for the future have found a home.",
@@ -136,7 +140,7 @@ export default {
         "/images/be-our-guest-image-2.webp",
         "/images/be-our-guest-image-3.webp",
       ],
-      mobileImagesSrc: ["/images/be-our-guest-mobile-image-1.png"],
+      mobileImagesSrc: ["/images/be-our-guest-mobile-image-1.webp"],
       text: "<h3>Let the energy of our space help you create unforgettable experiences.</h3><br /><div><a class='gplk-btn' href='/contact'>Contact us to learn more about booking<br />Casa Escuela to host your next event.</a></div>",
     },
     sayab: {
@@ -147,7 +151,7 @@ export default {
         "/images/be-our-guest-sayab.webp",
         "/images/be-our-guest-sayab.webp",
       ],
-      mobileImagesSrc: ["/images/be-our-guest-mobile-sayab.png"],
+      mobileImagesSrc: ["/images/be-our-guest-mobile-sayab.webp"],
       footerText:
         "Sayab is a space within our walls to honor and recognize the magnificent healing power of water, where our guests can rest and rejuvenate during their stay.",
     },
@@ -168,8 +172,8 @@ export default {
         "/images/happenings-cover.webp",
       ],
       mobileImagesSrc: [
-        "/images/happenings-mobile-cover.png",
-        "/images/happenings-mobile-cover.png",
+        "/images/happenings-mobile-cover.webp",
+        "/images/happenings-mobile-cover.webp",
       ],
     },
     cards: {
@@ -204,8 +208,8 @@ export default {
         "/images/residencies-cover.webp",
       ],
       mobileImagesSrc: [
-        "/images/residencies-mobile-cover.png",
-        "/images/residencies-mobile-cover.png",
+        "/images/residencies-mobile-cover.webp",
+        "/images/residencies-mobile-cover.webp",
       ],
       footerText:
         "We invite visual artists and designers from all over the world to live and work in Casa Escuela. This wonderful experience inspires participants, allows them to get immersed in the local culture and exhibit their finished work in our gallery.",
@@ -217,6 +221,10 @@ export default {
         "/images/residencies-image-1.webp",
         "/images/residencies-image-1.webp",
       ],
+      mobileImagesSrc: [
+        "/images/residencies-mobile-image-1.webp",
+        "/images/residencies-mobile-image-1.webp",
+      ],
       text: "<h3>Casa Escuela hosts art exhibitions throughout the year.</h3><br /><br /><div>Our flexible space can be set up as a traditional art gallery or for performing arts to fit the specific needs of our residents and their creative process.</div><br /><br /><div><a href='/files/exhibitions.pdf' target='_blank' rel='noreferrer'>Current exhibitions</a></div>",
     },
     footer: {
@@ -226,8 +234,8 @@ export default {
         "/images/residencies-image-2.webp",
       ],
       mobileImagesSrc: [
-        "/images/residencies-mobile-image-2.png",
-        "/images/residencies-mobile-image-2.png",
+        "/images/residencies-mobile-image-2.webp",
+        "/images/residencies-mobile-image-2.webp",
       ],
     },
   },
@@ -236,7 +244,7 @@ export default {
       id: "contact",
       title: "Contact",
       imagesSrc: ["/images/contact-cover.webp"],
-      mobileImagesSrc: ["/images/contact-mobile-cover.png"],
+      mobileImagesSrc: ["/images/contact-mobile-cover.webp"],
       text: "<div>Together we can remember to praise the magnificence around us. We can learn to discover what time hides in plain sight…the stories that we needed to tell, but didn't. We have an obligation to re-member these stories back to life.</div><br /><div>To weave each thread carefully,<br />every word a new strand,<br />every braid a conversation,<br />every dialogue, a bridge.</div>",
       addressTitle: "address",
       address:

@@ -2,6 +2,7 @@ import styles from "../styles/Hero.module.css";
 
 import PropTypes from "prop-types";
 import { useParallax } from "react-scroll-parallax";
+import AnimatedText from "react-animated-text-content";
 
 import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
@@ -24,10 +25,18 @@ const Hero = ({ id, imagesSrc, mobileImagesSrc, text }) => {
                   textPosition={4}
                 />
               </div>
-              <div
+              <AnimatedText
+                type="words"
+                interval={0.04}
+                duration={1.25}
+                animation={{
+                  y: "20px",
+                  ease: "ease",
+                }}
                 className={styles.text}
-                dangerouslySetInnerHTML={{ __html: text }}
-              ></div>
+              >
+                {text}
+              </AnimatedText>
             </div>
           </InviewElement>
         </div>

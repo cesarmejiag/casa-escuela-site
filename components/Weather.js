@@ -23,7 +23,7 @@ const Weather = () => {
   // https://www.weatherapi.com/api-explorer.aspx
   const apikey = "491e1bf6e76e4bad84e43123221803";
   const query = "20.9800512,-89.7029589";
-  const url = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${query}&aqi=no`;
+  const url = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${query}&aqi=no`;
   const { loading, data, error } = useFetch(url);
 
   // Extract data from weatherapi.

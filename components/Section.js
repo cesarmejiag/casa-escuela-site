@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
-import Title from "./Title";
+import AnimText from "./AnimText";
 
 const Section = ({
   id,
@@ -29,8 +29,8 @@ const Section = ({
                   withMarginTop ? styles.marginTop : ""
                 }`}
               >
-                {title && <Title text={title}></Title>}
-                {intro && <div className={styles.intro}>{intro}</div>}
+                {title && <AnimText text={title} type="title" />}
+                {intro && <AnimText text={intro} />}
                 {introText && (
                   <div className={styles.introText}>{introText}</div>
                 )}
@@ -41,7 +41,10 @@ const Section = ({
             {imagesSrc && (
               <InviewElement>
                 <div className={styles.image}>
-                  <ImageSwicher imagesSrc={imagesSrc} mobileImagesSrc={mobileImagesSrc} />
+                  <ImageSwicher
+                    imagesSrc={imagesSrc}
+                    mobileImagesSrc={mobileImagesSrc}
+                  />
                 </div>
               </InviewElement>
             )}

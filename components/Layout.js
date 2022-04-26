@@ -7,6 +7,9 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Preloader from "../components/Preloader";
 
+const getSessionItem = (key) => typeof sessionStorage !== 'undefined' && sessionStorage.getItem(key);
+const setSessionItem = (key, value) => typeof sessionStorage !== 'undefined' && sessionStorage.setItem(key, value);
+
 const Layout = ({ children, pageTitle }) => {
   const siteTitle = "Casa Escuela - Welcome Home";
   const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
@@ -17,6 +20,7 @@ const Layout = ({ children, pageTitle }) => {
 
   const router = useRouter();
   const { inDOM, loading } = preloaderState;
+  const preloaderShown = getSessionItem("preloader-shown");
 
   // This is a fucking bad idea!
   useEffect(() => {
@@ -24,13 +28,16 @@ const Layout = ({ children, pageTitle }) => {
       setPreloaderState({ ...preloaderState, loading: false });
       setTimeout(() => {
         setPreloaderState({ ...preloaderState, inDOM: false });
+        setSessionItem("preloader-shown", true);
       }, 600);
     }, 1500);
   }, []);
 
   return (
     <>
-      {inDOM && router.asPath === "/" && <Preloader loading={loading} />}
+      {inDOM && router.asPath === "/" && !preloaderShown && false &&  (
+        <Preloader loading={loading} />
+      )}
       <ParallaxProvider>
         <Head>
           <title>{title}</title>

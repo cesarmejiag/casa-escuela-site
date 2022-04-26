@@ -46,7 +46,7 @@ body {
 }
 
 .gplk-btn {
-  border: 1px solid #E6E3DE;
+  border: 1px solid #e6e3de;
   display: block;
   letter-spacing: 0;
   margin: 0 auto;
@@ -59,8 +59,8 @@ body {
 }
 
 .gplk-btn:before {
-  background: #E6E3DE;
-  content: '';
+  background: #e6e3de;
+  content: "";
   display: block;
   height: 100%;
   left: 100%;
@@ -190,6 +190,12 @@ body {
     color: #f5f3ef;
   }
 
+  #host-an-event .gplk-btn {
+    font-size: 14px;
+    margin-left: 0;
+    text-align: left;
+  }
+
   /* Section */
   .section-intro {
     font-size: 20px;
@@ -221,6 +227,7 @@ body {
 .contact-form {
   margin: 0 auto;
   max-width: 320px;
+  padding: 50px 0;
 }
 
 .contact-group-button {
@@ -308,29 +315,6 @@ select.inputField {
   width: 100%;
 }
 
-.contact-address {
-  margin: 0 auto;
-  max-width: 320px;
-  padding: 55px 0 100px;
-  width: 100%;
-}
-
-.contact-title-address {
-  color: var(--labelColor);
-  font-family: "RecifeDisplayLight", sans-serif;
-  font-size: var(--fontSize2);
-  line-height: 24px;
-  margin-bottom: 26px;
-  text-transform: capitalize;
-}
-
-.contact-address-text {
-  color: var(--grayColor);
-  line-height: 20px;
-  max-width: 250px;
-  width: 100%;
-}
-
 .contact-response {
   background: #dfe3da;
   bottom: 0;
@@ -394,7 +378,7 @@ select.inputField {
 
 @media (min-width: 767px) {
   .contact-form {
-    margin-top: 50px;
+    padding: 80px 0;
     max-width: 90%;
     width: 100%;
   }
@@ -437,20 +421,12 @@ select.inputField {
     font-size: 30px;
   }
 
-  .contact-address {
-    max-width: 90%;
-  }
-
   .contact-text-response {
     font-size: 110px;
   }
 
   .contact-message-response {
     font-size: 40px;
-  }
-
-  .contact-address-text {
-    line-height: 28px;
   }
 
   .contact-link-response {

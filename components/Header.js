@@ -8,15 +8,8 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className="holder">
-        <div className="container-fluid">
-          <Nav
-            mobileVisible={visible}
-            onToggleClick={() => setVisible(!visible)}
-          />
-          <MobileNav visible={visible} />
-        </div>
-      </div>
+      <Nav mobileVisible={visible} onToggleClick={() => setVisible(!visible)} />
+      <MobileNav visible={visible} />
     </header>
   );
 };

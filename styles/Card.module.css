@@ -24,6 +24,14 @@
 }
 
 @media screen and (min-width: 768px) {
+  .image img {
+    transition: transform 750ms;
+  }
+
+  .card:hover .image img {
+    transform: scale(1.1);
+  }
+
   .title {
     font-size: 22px;
     text-align: initial;

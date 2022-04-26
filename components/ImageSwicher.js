@@ -15,7 +15,8 @@ const ImageSwicher = ({
   cColor,
 }) => {
   const { mobile } = useWindowSize();
-  const images = mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
+  const images =
+    mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
   const total = images.length - 1;
   const { count, increase } = useCounter(0, total, true);
 
