@@ -8,11 +8,22 @@ import { useInView } from "react-hook-inview";
 
 // TODO: This component should use animatedTextProps instead
 //       configure AnimatedText component directly in his props.
+
+/**
+ <AnimatedText
+        animation={{
+          y: "20px",
+          ease: "ease",
+        }}
+        duration={inView ? 1.25 : 0}
+        interval={0.04}
+        type="words"
+      >
+        {text}
+      </AnimatedText>
+ */
 const AnimText = ({ text, type, animatedTextProps }) => {
   const [ref, inView] = useInView({ threshold: 0 });
-  const animComponent = (text = "") => (
-    <AnimatedText {...animatedTextProps}>{text}</AnimatedText>
-  );
 
   return type === "title" ? (
     <h2 className={styles.title} ref={ref}>
@@ -30,17 +41,7 @@ const AnimText = ({ text, type, animatedTextProps }) => {
     </h2>
   ) : (
     <div ref={ref} className={styles.intro}>
-      <AnimatedText
-        animation={{
-          y: "20px",
-          ease: "ease",
-        }}
-        duration={inView ? 1.25 : 0}
-        interval={0.04}
-        type="words"
-      >
-        {text}
-      </AnimatedText>
+      {text}
     </div>
   );
 };
