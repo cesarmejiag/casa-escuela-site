@@ -1,3 +1,14 @@
+.nav {
+  background-color: #f5f3ef;
+  height: 80px;
+  padding: 30px 0;
+  transition: background-color 550ms;
+}
+
+.mobileVisible {
+  background-color: #ecf0f8;
+}
+
 .logo {
   display: block;
   margin: 0 auto;
@@ -75,6 +86,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .nav {
+    background-color: #f5f3ef;
+    height: auto;
+  }
+
   .logo {
     max-width: 205px;
   }

@@ -172,17 +172,6 @@ const Contact = () => {
             </div>
           </form>
         </InviewElement>
-
-        <InviewElement>
-          <div className="contact-address" id={intro.addressTitle}>
-            <div className="contact-title-address">{intro.addressTitle}</div>
-
-            <div
-              className="contact-address-text"
-              dangerouslySetInnerHTML={{ __html: intro.address }}
-            ></div>
-          </div>
-        </InviewElement>
       </Section>
 
       <style jsx>{`

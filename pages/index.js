@@ -64,6 +64,7 @@ export default function Home() {
                     <ImageSwicher
                       imagesSrc={homeTo.imagesSrc2}
                       parallaxSpeed={8}
+                      textPosition={4}
                     />
                   </div>
                 </InviewElement>
@@ -125,7 +126,7 @@ export default function Home() {
           .home-to-wrapper {
             margin-top: 100px;
           }
-          
+
           .home-to-text {
             max-width: 350px;
           }

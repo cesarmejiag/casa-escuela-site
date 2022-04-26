@@ -10,16 +10,6 @@
   margin-bottom: 70px;
 }
 
-.intro {
-  font-family: "RecifeDisplayLight", sans-serif;
-  font-size: 20px;
-  line-height: 24px;
-  margin: 0 auto;
-  max-width: 1065px;
-  /* max-width: 854px; */
-  text-align: center;
-}
-
 .introText {
   font-size: 16px;
   line-height: 20px;
@@ -55,11 +45,6 @@
 
   .header {
     margin-bottom: 131px;
-  }
-
-  .intro {
-    font-size: 40px;
-    line-height: 50px;
   }
 
   .introText {
