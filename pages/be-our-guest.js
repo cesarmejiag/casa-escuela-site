@@ -16,7 +16,7 @@ import {
   getImages,
 } from "../utils/utils";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "be-our-guest"][0]{
       slug,

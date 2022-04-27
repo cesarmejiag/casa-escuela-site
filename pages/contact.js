@@ -8,11 +8,9 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
-import BackgroundColor from "../components/BackgroundColor";
 
 import {
   findContentBySlug,
-  findContentByType,
   getImages,
 } from "../utils/utils";
 
@@ -42,7 +40,7 @@ const initFormState = { loading: false, data: undefined, error: undefined };
 </BackgroundColor>
 */
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "contact"][0]{
       slug,

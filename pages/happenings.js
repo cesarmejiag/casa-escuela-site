@@ -12,7 +12,7 @@ import {
   findContentByType,
 } from "../utils/utils";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "happenings"][0]{
       slug,
