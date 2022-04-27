@@ -1,6 +1,6 @@
 export default {
-  name: "hero",
-  title: "Hero",
+  name: "sectionCards",
+  title: "Section Cards",
   type: "object",
   fields: [
     {
@@ -15,21 +15,16 @@ export default {
       },
     },
     {
-      name: "desktopImages",
-      title: "Desktop Images",
-      type: "array",
-      of: [{ type: "image" }],
-    },
-    {
-      name: "mobileImages",
-      title: "Mobile Images",
-      type: "array",
-      of: [{ type: "image" }],
-    },
-    {
-      name: "text",
-      title: "Text",
+      name: "title",
+      title: "Title",
       type: "string",
+      description: "Title should be catchy, descriptive and not too long",
+    },
+    {
+      name: "cards",
+      title: "Cards",
+      type: "array",
+      of: [{ type: "card" }],
     },
   ],
 };

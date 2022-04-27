@@ -1,20 +1,45 @@
+import sanityClient from "../client";
+
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import Card from "../components/Card";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
-
-import data from "../data";
 import InviewElement from "../components/InviewElement";
 
-const Happenings = () => {
-  const { intro, cards } = data.happenings;
+import {
+  findContentBySlug,
+  findContentByType,
+} from "../utils/utils";
+
+export async function getStaticProps() {
+  const data = await sanityClient.fetch(
+    `*[_type == "page" && slug.current == "happenings"][0]{
+      slug,
+      title,
+      content,
+    }`
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const Happenings = ({ data: sectionsData }) => {
+  const { title, content } = sectionsData;
+
+  const intro = findContentBySlug("happenings", content);
+  const cards = findContentBySlug("cards", content);
+  const link = findContentByType("link", content);
 
   return (
-    <Layout pageTitle="Happenings">
+    <Layout pageTitle={title}>
       <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section
-          id={intro.id}
+          id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
           imagesSrc={intro.imagesSrc}
@@ -23,7 +48,7 @@ const Happenings = () => {
         />
       </BackgroundColor>
 
-      <Section id={cards.id}>
+      <Section id={cards.slug.current}>
         <div className="row">
           {cards.cards.map((card, index) => (
             <div className="col-12 col-md-4" key={index}>
@@ -38,8 +63,8 @@ const Happenings = () => {
       </Section>
 
       <BottomLink
-        path="https://www.instagram.com/casa.escuela/"
-        text="Happening now"
+        path={link.href}
+        text={link.text}
         target="_blank"
       ></BottomLink>
 

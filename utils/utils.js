@@ -12,5 +12,9 @@ export const findContentByType = (type, sanityContents) => {
 };
 
 export const getImages = (sources) => {
-  return sources.map((source) => builder.image(source).url());
+  if (sources instanceof Array) {
+    return sources.map((source) => builder.image(source).url());
+  } else {
+    return builder.image(sources).url();
+  }
 };

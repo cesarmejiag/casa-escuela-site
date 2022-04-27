@@ -181,7 +181,7 @@ export default {
       id: "cards",
       cards: [
         {
-          title: "Workshops         ",
+          title: "Workshops",
           text: "Workshop participants develop works of art in various media, such as creative writing, photography, and other visual mediums that are featured in different expositions or pop-up shows.",
           image: "/images/happenings-1.webp",
         },

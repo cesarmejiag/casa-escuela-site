@@ -1,25 +1,56 @@
+import sanityClient from "../client";
+import BlockContent from "@sanity/block-content-to-react";
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
-
-import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
 
-const Residensies = () => {
-  const { intro, exhibition, footer } = data.residencies;
+import {
+  findContentBySlug,
+  findContentByType,
+  getImages,
+} from "../utils/utils";
+
+export async function getStaticProps() {
+  const data = await sanityClient.fetch(
+    `*[_type == "page" && slug.current == "residencies"][0]{
+      slug,
+      title,
+      content,
+    }`
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const Residensies = ({ data: sectionsData }) => {
+  const { title, content } = sectionsData;
+
+  const intro = findContentBySlug("residencies", content);
+  const exhibition = findContentBySlug("exhibition-space", content);
+  const footer = findContentBySlug("footer", content);
+  const link = findContentByType("link", content);
+
+  console.log(content);
 
   return (
-    <Layout pageTitle="Residencies">
+    <Layout pageTitle={title}>
       <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section
-          id={intro.id}
+          id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={intro.imagesSrc}
-          mobileImagesSrc={intro.mobileImagesSrc}
-          footer={intro.footerText}
+          imagesSrc={getImages(intro.desktopImages)}
+          mobileImagesSrc={getImages(intro.mobileImages)}
+          footer={intro.footer}
           withMarginTop
         >
           <BottomLink
@@ -31,23 +62,28 @@ const Residensies = () => {
         </Section>
       </BackgroundColor>
 
-      <Section id={exhibition.id} title={exhibition.title}>
+      <Section id={exhibition.slug.current} title={exhibition.title}>
         <div className="exhibition-wrapper">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
               <InviewElement>
                 <div className="exhibition-image">
-                  <ImageSwicher imagesSrc={exhibition.imagesSrc} />
+                  <ImageSwicher
+                    imagesSrc={getImages(exhibition.desktopImages)}
+                  />
                 </div>
               </InviewElement>
             </div>
             <div className="col-12 col-md-6">
               <div className="exhibition-body">
                 <InviewElement>
-                  <div
-                    className="section-body"
-                    dangerouslySetInnerHTML={{ __html: exhibition.text }}
-                  ></div>
+                  <div className="section-body">
+                    <BlockContent blocks={exhibition.body} />
+                    <br />
+                    <Link href="/files/exhibitions.pdf">
+                      <a className="gplk-btn">Current exhibitions</a>
+                    </Link>
+                  </div>
                 </InviewElement>
               </div>
             </div>
@@ -55,21 +91,18 @@ const Residensies = () => {
         </div>
       </Section>
 
-      <Section id={footer.id}>
+      <Section id={footer.slug.current}>
         <InviewElement>
           <div className="footer-image">
             <ImageSwicher
-              imagesSrc={footer.imagesSrc}
-              mobileImagesSrc={footer.mobileImagesSrc}
+              imagesSrc={getImages(footer.desktopImages)}
+              mobileImagesSrc={getImages(footer.mobileImages)}
             />
           </div>
         </InviewElement>
       </Section>
 
-      <BottomLink
-        path="/contact"
-        text="Contact us to visit our exhibition space"
-      />
+      <BottomLink path={link.href} text={link.text} />
 
       <style jsx>{`
         .exhibition-wrapper {

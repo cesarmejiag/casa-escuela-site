@@ -1,3 +1,5 @@
+import sanityClient from "../client";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -8,12 +10,55 @@ import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import BackgroundColor from "../components/BackgroundColor";
 
+import {
+  findContentBySlug,
+  findContentByType,
+  getImages,
+} from "../utils/utils";
+
 import data from "../data";
 import InviewElement from "../components/InviewElement";
 
 const initFormState = { loading: false, data: undefined, error: undefined };
 
-const Contact = () => {
+/*
+<BackgroundColor
+  cSrcD="./images/bckContactD.svg"
+  cSrcM="./images/bckContactM.svg"
+  cColor="#ecf0f8"
+  cHeight="100%"
+>
+  <Section id="contact-your-story">
+    <div className="contact-intro-body">
+      <InviewElement>
+        <div className="section-body text-center">
+          <h3>We want to hear your story</h3>
+          <br />
+          <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
+        </div>
+      </InviewElement>
+    </div>
+  </Section>
+</BackgroundColor>
+*/
+
+export async function getStaticProps() {
+  const data = await sanityClient.fetch(
+    `*[_type == "page" && slug.current == "contact"][0]{
+      slug,
+      title,
+      content,
+    }`
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const Contact = ({ data: sectionsData }) => {
   const [formState, setFormState] = useState({ ...initFormState });
   const {
     register,
@@ -41,37 +86,29 @@ const Contact = () => {
     }, 3000);
   };
 
+  const { title, content } = sectionsData;
   const { intro } = data.contact;
 
+  const introSanity = findContentBySlug("contact", content);
+
   return (
-    <Layout pageTitle="Contact">
-      <Section id={intro.id} title={intro.title} noHolder withMarginTop>
+    <Layout pageTitle={title}>
+      <Section id={introSanity.slug.current} title={introSanity.title} noHolder withMarginTop>
         <InviewElement>
           <div className="contact-intro-image">
-            <ImageSwicher imagesSrc={intro.imagesSrc} mobileImagesSrc={intro.mobileImagesSrc} />
+            <ImageSwicher
+              imagesSrc={getImages(introSanity.desktopImages)}
+              mobileImagesSrc={getImages(introSanity.mobileImages)}
+            />
           </div>
         </InviewElement>
       </Section>
-      <BackgroundColor
-        cSrcD="./images/bckContactD.svg"
-        cSrcM="./images/bckContactM.svg"
-        cColor="#ecf0f8"
-        cHeight="100%"
-      >
-        <Section id="contact-your-story">
-          <div className="contact-intro-body">
-            <InviewElement>
-              <div className="section-body text-center">
-                <h3>We want to hear your story</h3>
-                <br />
-                <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
-              </div>
-            </InviewElement>
-          </div>
-        </Section>
-      </BackgroundColor>
       <Section id="contact-form">
-        <div className={`contact-response${formState.data || formState.loading ? " displayed" : ""}`}>
+        <div
+          className={`contact-response${
+            formState.data || formState.loading ? " displayed" : ""
+          }`}
+        >
           <div className="contact-wrapper-response">
             <div className="contact-text-response">
               {formState.loading ? "Enviando..." : intro.appreciation}

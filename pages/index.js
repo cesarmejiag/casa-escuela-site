@@ -1,4 +1,5 @@
 import sanityClient from "../client";
+import BlockContent from "@sanity/block-content-to-react";
 
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
@@ -8,7 +9,11 @@ import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 import InviewElement from "../components/InviewElement";
 
-import { findContentBySlug, findContentByType, getImages } from "../utils/utils";
+import {
+  findContentBySlug,
+  findContentByType,
+  getImages,
+} from "../utils/utils";
 
 export async function getStaticProps() {
   const data = await sanityClient.fetch(
@@ -95,10 +100,9 @@ export default function Home({ data: sectionsData }) {
               </div>
               <div className="col-12 col-lg-4">
                 <InviewElement>
-                  <div
-                    className="home-to-text"
-                    dangerouslySetInnerHTML={{ __html: homeTo.text }}
-                  ></div>
+                  <div className="home-to-text">
+                    <BlockContent blocks={homeTo.text} />
+                  </div>
                 </InviewElement>
               </div>
             </div>

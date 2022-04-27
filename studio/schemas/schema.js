@@ -8,6 +8,10 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import hero from "./objects/hero";
 import section from "./objects/section";
 import sectionText from "./objects/sectionText";
+import sectionCards from "./objects/sectionCards";
+import sectionPillars from "./objects/sectionPillars";
+import card from "./objects/card";
+import pillar from "./objects/pillar";
 import link from "./objects/link";
 import page from "./documents/page";
 
@@ -22,6 +26,10 @@ export default createSchema({
     hero,
     section,
     sectionText,
+    sectionCards,
+    sectionPillars,
+    card,
+    pillar,
     link,
     page,
   ]),

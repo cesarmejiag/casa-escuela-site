@@ -1,5 +1,9 @@
 import styles from "../styles/Card.module.css";
+
+import BlockContent from "@sanity/block-content-to-react";
 import Image from "next/image";
+
+import { getImages } from "../utils/utils";
 
 const Card = ({ image, title, text, type2 }) => {
   const width = type2 ? 629 : 498;
@@ -11,7 +15,7 @@ const Card = ({ image, title, text, type2 }) => {
       {image && (
         <div className={styles.image}>
           <Image
-            src={image}
+            src={getImages(image)}
             width={width}
             height={height}
             layout="responsive"
@@ -21,7 +25,9 @@ const Card = ({ image, title, text, type2 }) => {
         </div>
       )}
       {!type2 && <h3 className={styles.title}>{title}</h3>}
-      <div className={styles.text}>{text}</div>
+      <div className={styles.text}>
+        <BlockContent blocks={text} />
+      </div>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+import sanityClient from "../client";
+
 import Layout from "./../components/Layout";
 import Section from "../components/Section";
 import Carrousel from "../components/Carrousel";
@@ -9,14 +11,40 @@ import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
 import useWindowSize from "../hooks/useWindowSize";
 
-import data from "../data";
+import {
+  findContentBySlug,
+  findContentByType,
+  getImages,
+} from "../utils/utils";
 
-const About = () => {
+export async function getStaticProps() {
+  const data = await sanityClient.fetch(
+    `*[_type == "page" && slug.current == "about"][0]{
+      slug,
+      title,
+      content,
+    }`
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const About = ({ data: sectionsData }) => {
   const { mobile } = useWindowSize();
-  const { intro, built, team, pillars } = data.about;
+  const { title, content } = sectionsData;
+
+  const intro = findContentBySlug("la-casa-de-todos", content);
+  const built = findContentBySlug("built", content);
+  const team = findContentBySlug("team", content);
+  const pillars = findContentBySlug("pillars", content);
+  const link = findContentByType("link", content);
 
   return (
-    <Layout pageTitle="About">
+    <Layout pageTitle={title}>
       {/* La Casa de Todos Section */}
       <BackgroundColor
         cSrcD="./images/bckAboutD.svg"
@@ -26,11 +54,11 @@ const About = () => {
         cPosition="bottom"
       >
         <Section
-          id={intro.id}
+          id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={intro.imagesSrc}
-          mobileImagesSrc={intro.mobileImagesSrc}
+          imagesSrc={getImages(intro.desktopImages)}
+          mobileImagesSrc={getImages(intro.mobileImages)}
           withMarginTop
         />
       </BackgroundColor>
@@ -42,25 +70,30 @@ const About = () => {
         cColor="#ecf0f8"
         cHeight="40%"
       >
-        <Section id={built.id} intro={built.intro}>
+        <Section id={built.slug.current} intro={built.intro}>
           <div className="section-image">
             <InviewElement>
               <div className="built-image">
-                <ImageSwicher imagesSrc={built.imagesSrc} />
+                <ImageSwicher imagesSrc={getImages(built.desktopImages)} />
               </div>
             </InviewElement>
           </div>
-          <div className="section-footer">{built.footerText}</div>
+          <div className="section-footer">{built.footer}</div>
         </Section>
       </BackgroundColor>
 
       {/* Team Section */}
-      <Section id={team.id} title={team.title}>
+      <Section id={team.slug.current} title={team.title}>
         <div className="team-wrapper">
           <InviewElement>
             <Carrousel
               slides={team.cards.map((card, index) => (
-                <Card {...card} key={index} />
+                <Card
+                  image={card.image}
+                  title={card.title}
+                  text={card.text}
+                  key={index}
+                />
               ))}
               slidesPerView={mobile ? 1 : 3}
               spaceBetween={mobile ? 0 : 100}
@@ -70,10 +103,10 @@ const About = () => {
       </Section>
 
       {/* Pillars Section */}
-      <Section id={pillars.id} title={pillars.title}>
+      <Section id={pillars.slug.current} title={pillars.title}>
         <InviewElement>
           <Carrousel
-            slides={pillars.cards.map((card, index) => (
+            slides={pillars.pillars.map((card, index) => (
               <PillarCard
                 id={index + 1}
                 title={card.title}
@@ -88,7 +121,7 @@ const About = () => {
       </Section>
 
       {/* Bottom Link Section */}
-      <BottomLink path="/contact" text="Contact us"></BottomLink>
+      <BottomLink path={link.href} text={link.text}></BottomLink>
 
       <style jsx>{`
         .team-wrapper {

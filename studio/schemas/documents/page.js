@@ -33,6 +33,8 @@ export default {
         { type: "hero" },
         { type: "section" },
         { type: "sectionText" },
+        { type: "sectionCards" },
+        { type: "sectionPillars" },
         { type: "link" },
       ],
     },

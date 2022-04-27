@@ -26,7 +26,8 @@ export default {
     {
       name: "text",
       title: "Text",
-      type: "text",
+      type: "array",
+      of: [{ type: "block" }],
     },
     {
       name: "desktopImages1",

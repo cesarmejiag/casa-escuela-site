@@ -1,14 +1,45 @@
+import sanityClient from "../client";
+import BlockContent from "@sanity/block-content-to-react";
+import Link from "next/link";
+
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 
-import data from "../data";
 import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
 
-const BeOurGuest = () => {
-  const { intro, host, sayab, sayabBottom } = data.beOurGuest;
+import {
+  findContentBySlug,
+  findContentByType,
+  getImages,
+} from "../utils/utils";
+
+export async function getStaticProps() {
+  const data = await sanityClient.fetch(
+    `*[_type == "page" && slug.current == "be-our-guest"][0]{
+      slug,
+      title,
+      content,
+    }`
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const BeOurGuest = ({ data: sectionsData }) => {
+  const { title, content } = sectionsData;
+
+  const intro = findContentBySlug("be-our-guest", content);
+  const host = findContentBySlug("host-an-event", content);
+  const sayab = findContentBySlug("sayab", content);
+  const sayabBottom = findContentBySlug("sayab-bottom", content);
+  const link = findContentByType("link", content);
 
   return (
     <BackgroundColor
@@ -18,15 +49,15 @@ const BeOurGuest = () => {
       cHeight="10%"
       cPosition="bottom"
     >
-      <Layout pageTitle="Be Our Guest">
+      <Layout pageTitle={title}>
         {/* Intro Section */}
         <Section
-          id={intro.id}
+          id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={intro.imagesSrc}
-          mobileImagesSrc={intro.mobileImagesSrc}
-          footer={intro.footerText}
+          imagesSrc={getImages(intro.desktopImages)}
+          mobileImagesSrc={getImages(intro.mobileImages)}
+          footer={intro.footer}
           withMarginTop
         >
           <BottomLink path="/contact" text="Book your stay" paddingStyle={1} />
@@ -39,15 +70,15 @@ const BeOurGuest = () => {
           cColor="#b96241"
           cHeight="80%"
         >
-          <Section id={host.id} title={host.title}>
+          <Section id={host.slug.current} title={host.title}>
             <div className="host-wrapper">
               <div className="row align-items-center">
                 <div className="col-12 col-md-6">
                   <InviewElement>
                     <div className="host-image">
                       <ImageSwicher
-                        imagesSrc={host.imagesSrc}
-                        mobileImagesSrc={host.mobileImagesSrc}
+                        imagesSrc={getImages(host.desktopImages)}
+                        mobileImagesSrc={getImages(host.mobileImages)}
                         cColor="#f5f3ef"
                       />
                     </div>
@@ -56,10 +87,17 @@ const BeOurGuest = () => {
                 <div className="col-12 col-md-6">
                   <div className="host-body">
                     <InviewElement>
-                      <div
-                        className="section-body"
-                        dangerouslySetInnerHTML={{ __html: host.text }}
-                      ></div>
+                      <div className="section-body">
+                        <BlockContent blocks={host.body} />
+                        <br />
+                        <Link href="/contact">
+                          <a className="gplk-btn">
+                            Contact us to learn more about booking
+                            <br />
+                            Casa Escuela to host your next event.
+                          </a>
+                        </Link>
+                      </div>
                     </InviewElement>
                   </div>
                 </div>
@@ -76,16 +114,18 @@ const BeOurGuest = () => {
           cHeight="25%"
           cPosition="bottom"
         >
-          <Section id={sayab.id} title={sayab.title} intro={sayab.intro}>
-            <InviewElement>
-              <div className="sayab-footer">{sayab.footerText}</div>
-            </InviewElement>
+          <Section
+            id={sayab.slug.current}
+            title={sayab.title}
+            intro={sayab.intro}
+            footer={sayab.footer}
+          >
             <div className="section-image">
               <InviewElement>
                 <div className="sayab-image">
                   <ImageSwicher
-                    imagesSrc={sayab.imagesSrc}
-                    mobileImagesSrc={sayab.mobileImagesSrc}
+                    imagesSrc={getImages(sayab.desktopImages)}
+                    mobileImagesSrc={getImages(sayab.mobileImages)}
                   />
                 </div>
               </InviewElement>
@@ -95,8 +135,8 @@ const BeOurGuest = () => {
 
         {/* Sayab Bottom Section */}
         <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="100%">
-          <Section id={sayabBottom.id} intro={sayabBottom.intro}>
-            <BottomLink path="/contact" text="Coming soon" paddingStyle={4} />
+          <Section id={sayabBottom.slug.current} intro={sayabBottom.intro}>
+            <BottomLink path={link.href} text={link.text} paddingStyle={4} />
           </Section>
         </BackgroundColor>
         <style jsx>{`
