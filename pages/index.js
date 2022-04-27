@@ -1,29 +1,52 @@
+import sanityClient from "../client";
+
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
-
-import data from "../data";
 import InviewElement from "../components/InviewElement";
 
-export default function Home() {
-  const { hero, whatWeDo, homeTo } = data.home;
+import { findContentBySlug, findContentByType, getImages } from "../utils/utils";
+
+export async function getStaticProps() {
+  const data = await sanityClient.fetch(
+    `*[_type == "page" && slug.current == "home"][0]{
+      slug,
+      title,
+      content,
+    }`
+  );
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+export default function Home({ data: sectionsData }) {
+  const { content } = sectionsData;
+
+  const hero = findContentBySlug("hero", content);
+  const whatWeDo = findContentBySlug("what-we-do", content);
+  const homeTo = findContentBySlug("home-to", content);
+  const link = findContentByType("link", content);
 
   return (
     <Layout>
       {/* Hero Section */}
       <Hero
-        id={hero.id}
+        id={hero.slug.current}
         text={hero.text}
-        imagesSrc={hero.imagesSrc}
-        mobileImagesSrc={hero.mobileImagesSrc}
+        imagesSrc={getImages(hero.desktopImages)}
+        mobileImagesSrc={getImages(hero.mobileImages)}
       />
 
       {/* What We Do Section */}
       <Section
-        id={whatWeDo.id}
+        id={whatWeDo.slug.current}
         title={whatWeDo.title}
         introText={whatWeDo.intro}
       >
@@ -31,8 +54,8 @@ export default function Home() {
           <div className="section-image">
             <div className="what-we-do-image">
               <ImageSwicher
-                imagesSrc={whatWeDo.imagesSrc}
-                mobileImagesSrc={whatWeDo.mobileImagesSrc}
+                imagesSrc={getImages(whatWeDo.desktopImages)}
+                mobileImagesSrc={getImages(whatWeDo.mobileImages)}
               />
             </div>
           </div>
@@ -46,15 +69,15 @@ export default function Home() {
         cColor="#dfe3da"
         cHeight="75%"
       >
-        <Section id={homeTo.id} intro={homeTo.intro}>
+        <Section id={homeTo.slug.current} intro={homeTo.intro}>
           <div className="home-to-wrapper">
             <div className="row">
               <div className="col-12 col-lg-8">
                 <InviewElement>
                   <div className="home-to-image-1">
                     <ImageSwicher
-                      imagesSrc={homeTo.imagesSrc}
-                      mobileImagesSrc={homeTo.mobileImagesSrc}
+                      imagesSrc={getImages(homeTo.desktopImages1)}
+                      mobileImagesSrc={getImages(homeTo.mobileImages1)}
                       parallaxSpeed={3}
                     />
                   </div>
@@ -62,7 +85,8 @@ export default function Home() {
                 <InviewElement>
                   <div className="home-to-image-2">
                     <ImageSwicher
-                      imagesSrc={homeTo.imagesSrc2}
+                      imagesSrc={getImages(homeTo.desktopImages2)}
+                      mobileImagesSrc={getImages(homeTo.mobileImages2)}
                       parallaxSpeed={8}
                       textPosition={4}
                     />
@@ -83,7 +107,7 @@ export default function Home() {
       </BackgroundColor>
 
       {/* Bottom Section */}
-      <BottomLink path="/contact" text="Book your stay" />
+      <BottomLink path={link.href} text={link.text} />
 
       <style jsx>{`
         .what-we-do-image {

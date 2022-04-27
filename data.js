@@ -63,6 +63,7 @@ export default {
         "/images/about-image-1.webp",
         "/images/about-image-2.webp",
         "/images/about-image-3.webp",
+        "/images/about-image-4.webp",
       ],
       footerText:
         "In 1965 it was converted to a co-ed school in the rapidly growing center of town. Casa Escuela closed its doors in 2011 until it was purchased by its current owners in 2018 who re-opened the space with the idea of transforming it into a community hub for learning and lived experiences across a variety of cultural and artistic disciplines.",

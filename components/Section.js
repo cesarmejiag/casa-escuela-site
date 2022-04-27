@@ -32,7 +32,10 @@ const Section = ({
                 {title && <AnimText text={title} type="title" />}
                 {intro && <AnimText text={intro} />}
                 {introText && (
-                  <div className={styles.introText}>{introText}</div>
+                  <div
+                    className={styles.introText}
+                    dangerouslySetInnerHTML={{ __html: introText }}
+                  ></div>
                 )}
               </div>
             </InviewElement>
