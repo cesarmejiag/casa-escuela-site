@@ -79,6 +79,7 @@ const BeOurGuest = ({ data: sectionsData }) => {
                       <ImageSwicher
                         imagesSrc={getImages(host.desktopImages)}
                         mobileImagesSrc={getImages(host.mobileImages)}
+                        imageDescription="Terraza Mérida"
                         cColor="#f5f3ef"
                       />
                     </div>

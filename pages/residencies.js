@@ -50,6 +50,7 @@ const Residensies = ({ data: sectionsData }) => {
           intro={intro.intro}
           imagesSrc={getImages(intro.desktopImages)}
           mobileImagesSrc={getImages(intro.mobileImages)}
+          imageDescription="Angela Damman at Casa Escuela Studio"
           footer={intro.footer}
           withMarginTop
         >

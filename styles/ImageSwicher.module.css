@@ -31,3 +31,15 @@
   margin: 10px 0;
   text-transform: uppercase;
 }
+
+.imageDescription {
+  color: #000;
+  font-size: 12px;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .imageDescription {
+    font-size: 14px;
+  }
+}

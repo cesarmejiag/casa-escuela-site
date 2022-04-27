@@ -10,6 +10,7 @@ import InviewElement from "../components/InviewElement";
 import {
   findContentBySlug,
   findContentByType,
+  getImages
 } from "../utils/utils";
 
 export async function getServerSideProps() {
@@ -42,8 +43,9 @@ const Happenings = ({ data: sectionsData }) => {
           id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={intro.imagesSrc}
-          mobileImagesSrc={intro.mobileImagesSrc}
+          imagesSrc={getImages(intro.desktopImages)}
+          mobileImagesSrc={getImages(intro.mobileImages)}
+          imageDescription="Luz Vega - Taller de Cerámica"
           withMarginTop
         />
       </BackgroundColor>

@@ -10,6 +10,7 @@ import useWindowSize from "../hooks/useWindowSize";
 const ImageSwicher = ({
   imagesSrc,
   mobileImagesSrc,
+  imageDescription,
   textPosition,
   parallaxSpeed,
   cColor,
@@ -59,7 +60,8 @@ const ImageSwicher = ({
           </div>
         ))}
       </div>
-      {total > 0 && textPosition === 4 && (
+      {imageDescription && <div className={styles.imageDescription}>{imageDescription}</div>}
+      {total > 0 && textPosition === 4 && !imageDescription && (
         <div className={styles.clickText} style={{ color: cColor }}>
           Click on the image
         </div>
@@ -71,6 +73,7 @@ const ImageSwicher = ({
 ImageSwicher.propTypes = {
   imagesSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
   mobileImagesSrc: PropTypes.arrayOf(PropTypes.string),
+  imageDescription: PropTypes.string,
   textPosition: PropTypes.number,
   parallaxSpeed: PropTypes.number,
 };
@@ -78,6 +81,7 @@ ImageSwicher.propTypes = {
 ImageSwicher.defaultProps = {
   imagesSrc: [],
   mobileImagesSrc: [],
+  imageDescription: "",
   textPosition: 1,
   parallaxSpeed: 3,
 };

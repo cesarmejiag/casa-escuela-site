@@ -13,6 +13,7 @@ const Section = ({
   introText,
   imagesSrc,
   mobileImagesSrc,
+  imageDescription,
   footer,
   noHolder = false,
   withMarginTop = false,
@@ -47,6 +48,7 @@ const Section = ({
                   <ImageSwicher
                     imagesSrc={imagesSrc}
                     mobileImagesSrc={mobileImagesSrc}
+                    imageDescription={imageDescription}
                   />
                 </div>
               </InviewElement>
@@ -74,6 +76,7 @@ Section.propTypes = {
   introText: PropTypes.string,
   imagesSrc: PropTypes.arrayOf(PropTypes.string),
   mobileImagesSrc: PropTypes.arrayOf(PropTypes.string),
+  imageDescription: PropTypes.string,
   footer: PropTypes.string,
   noHolder: PropTypes.bool,
   withMarginTop: PropTypes.bool,
