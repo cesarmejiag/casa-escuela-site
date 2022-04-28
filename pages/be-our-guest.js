@@ -10,11 +10,7 @@ import BackgroundColor from "../components/BackgroundColor";
 import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
 
-import {
-  findContentBySlug,
-  findContentByType,
-  getImages,
-} from "../utils/utils";
+import { findContentBySlug, findContentByType } from "../utils/utils";
 
 export async function getServerSideProps() {
   const data = await sanityClient.fetch(
@@ -55,8 +51,8 @@ const BeOurGuest = ({ data: sectionsData }) => {
           id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={getImages(intro.desktopImages)}
-          mobileImagesSrc={getImages(intro.mobileImages)}
+          imagesSrc={intro.desktopImages}
+          mobileImagesSrc={intro.mobileImages}
           footer={intro.footer}
           withMarginTop
         >
@@ -77,8 +73,8 @@ const BeOurGuest = ({ data: sectionsData }) => {
                   <InviewElement>
                     <div className="host-image">
                       <ImageSwicher
-                        imagesSrc={getImages(host.desktopImages)}
-                        mobileImagesSrc={getImages(host.mobileImages)}
+                        imagesSrc={host.desktopImages}
+                        mobileImagesSrc={host.mobileImages}
                         imageDescription="Terraza Mérida"
                         cColor="#f5f3ef"
                       />
@@ -125,8 +121,8 @@ const BeOurGuest = ({ data: sectionsData }) => {
               <InviewElement>
                 <div className="sayab-image">
                   <ImageSwicher
-                    imagesSrc={getImages(sayab.desktopImages)}
-                    mobileImagesSrc={getImages(sayab.mobileImages)}
+                    imagesSrc={sayab.desktopImages}
+                    mobileImagesSrc={sayab.mobileImages}
                   />
                 </div>
               </InviewElement>

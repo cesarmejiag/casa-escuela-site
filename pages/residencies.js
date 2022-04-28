@@ -9,11 +9,7 @@ import BackgroundColor from "../components/BackgroundColor";
 import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
 
-import {
-  findContentBySlug,
-  findContentByType,
-  getImages,
-} from "../utils/utils";
+import { findContentBySlug, findContentByType } from "../utils/utils";
 
 export async function getServerSideProps() {
   const data = await sanityClient.fetch(
@@ -39,17 +35,16 @@ const Residensies = ({ data: sectionsData }) => {
   const footer = findContentBySlug("footer", content);
   const link = findContentByType("link", content);
 
-  console.log(content);
-
   return (
     <Layout pageTitle={title}>
+      {/* Residencies */}
       <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section
           id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={getImages(intro.desktopImages)}
-          mobileImagesSrc={getImages(intro.mobileImages)}
+          imagesSrc={intro.desktopImages}
+          mobileImagesSrc={intro.mobileImages}
           imageDescription="Angela Damman at Casa Escuela Studio"
           footer={intro.footer}
           withMarginTop
@@ -63,15 +58,14 @@ const Residensies = ({ data: sectionsData }) => {
         </Section>
       </BackgroundColor>
 
+      {/* Exhibition Space */}
       <Section id={exhibition.slug.current} title={exhibition.title}>
         <div className="exhibition-wrapper">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
               <InviewElement>
                 <div className="exhibition-image">
-                  <ImageSwicher
-                    imagesSrc={getImages(exhibition.desktopImages)}
-                  />
+                  <ImageSwicher imagesSrc={exhibition.desktopImages} />
                 </div>
               </InviewElement>
             </div>
@@ -92,12 +86,13 @@ const Residensies = ({ data: sectionsData }) => {
         </div>
       </Section>
 
+      {/* Footer */}
       <Section id={footer.slug.current}>
         <InviewElement>
           <div className="footer-image">
             <ImageSwicher
-              imagesSrc={getImages(footer.desktopImages)}
-              mobileImagesSrc={getImages(footer.mobileImages)}
+              imagesSrc={footer.desktopImages}
+              mobileImagesSrc={footer.mobileImages}
             />
           </div>
         </InviewElement>

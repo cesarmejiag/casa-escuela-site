@@ -1,11 +1,12 @@
 import styles from "../styles/ImageSwicher.module.css";
 
+import Image from "next/image";
+import PropTypes from "prop-types";
 import { useParallax } from "react-scroll-parallax";
 
-import PropTypes from "prop-types";
-import Image from "next/image";
 import useCounter from "../hooks/useCounter";
 import useWindowSize from "../hooks/useWindowSize";
+import { getImages } from "../utils/utils";
 
 const ImageSwicher = ({
   imagesSrc,
@@ -16,8 +17,7 @@ const ImageSwicher = ({
   cColor,
 }) => {
   const { mobile } = useWindowSize();
-  const images =
-    mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
+  const images = mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
   const total = images.length - 1;
   const { count, increase } = useCounter(0, total, true);
 
@@ -52,7 +52,7 @@ const ImageSwicher = ({
           <div className={getImageClass(index, count)} key={index}>
             <Image
               priority
-              src={src}
+              src={getImages(src)}
               layout="fill"
               objectFit="cover"
               quality={100}
@@ -60,7 +60,9 @@ const ImageSwicher = ({
           </div>
         ))}
       </div>
-      {imageDescription && <div className={styles.imageDescription}>{imageDescription}</div>}
+      {imageDescription && (
+        <div className={styles.imageDescription}>{imageDescription}</div>
+      )}
       {total > 0 && textPosition === 4 && !imageDescription && (
         <div className={styles.clickText} style={{ color: cColor }}>
           Click on the image
@@ -71,8 +73,8 @@ const ImageSwicher = ({
 };
 
 ImageSwicher.propTypes = {
-  imagesSrc: PropTypes.arrayOf(PropTypes.string).isRequired,
-  mobileImagesSrc: PropTypes.arrayOf(PropTypes.string),
+  imagesSrc: PropTypes.arrayOf(PropTypes.object).isRequired,
+  mobileImagesSrc: PropTypes.arrayOf(PropTypes.object),
   imageDescription: PropTypes.string,
   textPosition: PropTypes.number,
   parallaxSpeed: PropTypes.number,

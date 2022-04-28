@@ -19,7 +19,7 @@ const PillarCard = ({ id, title, text }) => {
 PillarCard.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default PillarCard;

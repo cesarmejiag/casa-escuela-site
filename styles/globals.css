@@ -370,10 +370,27 @@ select.inputField {
   font-weight: var(--fontWeight3);
   line-height: 24px;
 }
+
 .errorMessage {
   color: #ff0000;
   padding: 10px 0;
   position: relative;
+}
+
+.plain-text h1,
+.plain-text h2,
+.plain-text h3,
+.plain-text h4,
+.plain-text h5 {
+  color: #000;
+  font-family: "RecifeDisplayRegular", sans-serif;
+  text-align: center;
+}
+
+.plain-text b,
+.plain-text strong {
+  color: #000;
+  font-weight: bold;
 }
 
 @media (min-width: 767px) {
@@ -439,14 +456,6 @@ select.inputField {
 }
 
 /*footer styles*/
-#terms-conditions,
-#privacy-policy,
-#covid-policy {
-  margin: 0 auto;
-  max-width: 90%;
-  width: 100%;
-}
-
 .privacy-title,
 .terms-title,
 .covid-title {

@@ -7,11 +7,7 @@ import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 import InviewElement from "../components/InviewElement";
 
-import {
-  findContentBySlug,
-  findContentByType,
-  getImages
-} from "../utils/utils";
+import { findContentBySlug, findContentByType } from "../utils/utils";
 
 export async function getServerSideProps() {
   const data = await sanityClient.fetch(
@@ -38,18 +34,20 @@ const Happenings = ({ data: sectionsData }) => {
 
   return (
     <Layout pageTitle={title}>
+      {/* Happenings */}
       <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section
           id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={getImages(intro.desktopImages)}
-          mobileImagesSrc={getImages(intro.mobileImages)}
+          imagesSrc={intro.desktopImages}
+          mobileImagesSrc={intro.mobileImages}
           imageDescription="Luz Vega - Taller de Cerámica"
           withMarginTop
         />
       </BackgroundColor>
 
+      {/* Cards */}
       <Section id={cards.slug.current}>
         <div className="row">
           {cards.cards.map((card, index) => (

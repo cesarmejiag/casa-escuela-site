@@ -6,7 +6,7 @@
   overflow: hidden;
   position: fixed;
   transition: transform 500ms ease;
-  transform: translateX(100%);
+  transform: translateY(-100%);
   width: 100%;
 }
 
@@ -62,11 +62,11 @@
 }
 
 .mobileNav.expanded {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 @media screen and (min-width: 768px) {
   .mobileNav.expanded {
-    transform: translateX(100%);
+    transform: translateY(-100%);
   }
 }

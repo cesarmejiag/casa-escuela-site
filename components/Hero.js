@@ -1,8 +1,8 @@
 import styles from "../styles/Hero.module.css";
 
 import PropTypes from "prop-types";
-import { useParallax } from "react-scroll-parallax";
 import AnimatedText from "react-animated-text-content";
+import { useParallax } from "react-scroll-parallax";
 
 import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
@@ -47,8 +47,8 @@ const Hero = ({ id, imagesSrc, mobileImagesSrc, text }) => {
 
 Hero.propTypes = {
   id: PropTypes.string.isRequired,
-  imageSrc: PropTypes.arrayOf(PropTypes.string),
-  mobileImagesSrc: PropTypes.arrayOf(PropTypes.string),
+  imageSrc: PropTypes.arrayOf(PropTypes.object),
+  mobileImagesSrc: PropTypes.arrayOf(PropTypes.object),
   text: PropTypes.string,
 };
 

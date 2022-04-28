@@ -11,11 +11,7 @@ import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
 import useWindowSize from "../hooks/useWindowSize";
 
-import {
-  findContentBySlug,
-  findContentByType,
-  getImages,
-} from "../utils/utils";
+import { findContentBySlug, findContentByType } from "../utils/utils";
 
 export async function getServerSideProps() {
   const data = await sanityClient.fetch(
@@ -57,8 +53,8 @@ const About = ({ data: sectionsData }) => {
           id={intro.slug.current}
           title={intro.title}
           intro={intro.intro}
-          imagesSrc={getImages(intro.desktopImages)}
-          mobileImagesSrc={getImages(intro.mobileImages)}
+          imagesSrc={intro.desktopImages}
+          mobileImagesSrc={intro.mobileImages}
           withMarginTop
         />
       </BackgroundColor>
@@ -74,7 +70,7 @@ const About = ({ data: sectionsData }) => {
           <div className="section-image">
             <InviewElement>
               <div className="built-image">
-                <ImageSwicher imagesSrc={getImages(built.desktopImages)} />
+                <ImageSwicher imagesSrc={built.desktopImages} />
               </div>
             </InviewElement>
           </div>
@@ -88,12 +84,7 @@ const About = ({ data: sectionsData }) => {
           <InviewElement>
             <Carrousel
               slides={team.cards.map((card, index) => (
-                <Card
-                  image={card.image}
-                  title={card.title}
-                  text={card.text}
-                  key={index}
-                />
+                <Card {...card} key={index} />
               ))}
               slidesPerView={mobile ? 1 : 3}
               spaceBetween={mobile ? 0 : 100}
@@ -107,12 +98,7 @@ const About = ({ data: sectionsData }) => {
         <InviewElement>
           <Carrousel
             slides={pillars.pillars.map((card, index) => (
-              <PillarCard
-                id={index + 1}
-                title={card.title}
-                text={card.text}
-                key={index}
-              />
+              <PillarCard {...card} id={index + 1} key={index} />
             ))}
             slidesPerView={1}
             spaceBetween={0}

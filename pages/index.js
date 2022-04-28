@@ -9,11 +9,7 @@ import BottomLink from "../components/BottomLink";
 import BackgroundColor from "../components/BackgroundColor";
 import InviewElement from "../components/InviewElement";
 
-import {
-  findContentBySlug,
-  findContentByType,
-  getImages,
-} from "../utils/utils";
+import { findContentBySlug, findContentByType } from "../utils/utils";
 
 export async function getServerSideProps() {
   const data = await sanityClient.fetch(
@@ -45,8 +41,8 @@ export default function Home({ data: sectionsData }) {
       <Hero
         id={hero.slug.current}
         text={hero.text}
-        imagesSrc={getImages(hero.desktopImages)}
-        mobileImagesSrc={getImages(hero.mobileImages)}
+        imagesSrc={hero.desktopImages}
+        mobileImagesSrc={hero.mobileImages}
       />
 
       {/* What We Do Section */}
@@ -59,8 +55,8 @@ export default function Home({ data: sectionsData }) {
           <div className="section-image">
             <div className="what-we-do-image">
               <ImageSwicher
-                imagesSrc={getImages(whatWeDo.desktopImages)}
-                mobileImagesSrc={getImages(whatWeDo.mobileImages)}
+                imagesSrc={whatWeDo.desktopImages}
+                mobileImagesSrc={whatWeDo.mobileImages}
               />
             </div>
           </div>
@@ -81,8 +77,8 @@ export default function Home({ data: sectionsData }) {
                 <InviewElement>
                   <div className="home-to-image-1">
                     <ImageSwicher
-                      imagesSrc={getImages(homeTo.desktopImages1)}
-                      mobileImagesSrc={getImages(homeTo.mobileImages1)}
+                      imagesSrc={homeTo.desktopImages1}
+                      mobileImagesSrc={homeTo.mobileImages1}
                       parallaxSpeed={3}
                     />
                   </div>
@@ -90,8 +86,8 @@ export default function Home({ data: sectionsData }) {
                 <InviewElement>
                   <div className="home-to-image-2">
                     <ImageSwicher
-                      imagesSrc={getImages(homeTo.desktopImages2)}
-                      mobileImagesSrc={getImages(homeTo.mobileImages2)}
+                      imagesSrc={homeTo.desktopImages2}
+                      mobileImagesSrc={homeTo.mobileImages2}
                       parallaxSpeed={8}
                       textPosition={4}
                     />

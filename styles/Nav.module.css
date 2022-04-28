@@ -2,7 +2,9 @@
   background-color: #f5f3ef;
   height: 80px;
   padding: 30px 0;
+  position: relative;
   transition: background-color 550ms;
+  z-index: 1;
 }
 
 .mobileVisible {

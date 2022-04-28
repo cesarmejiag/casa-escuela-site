@@ -8,16 +8,10 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
-
-import {
-  findContentBySlug,
-  getImages,
-} from "../utils/utils";
+import InviewElement from "../components/InviewElement";
+import { findContentBySlug } from "../utils/utils";
 
 import data from "../data";
-import InviewElement from "../components/InviewElement";
-
-const initFormState = { loading: false, data: undefined, error: undefined };
 
 /*
 <BackgroundColor
@@ -39,6 +33,8 @@ const initFormState = { loading: false, data: undefined, error: undefined };
   </Section>
 </BackgroundColor>
 */
+
+const initFormState = { loading: false, data: undefined, error: undefined };
 
 export async function getServerSideProps() {
   const data = await sanityClient.fetch(
@@ -91,16 +87,24 @@ const Contact = ({ data: sectionsData }) => {
 
   return (
     <Layout pageTitle={title}>
-      <Section id={introSanity.slug.current} title={introSanity.title} noHolder withMarginTop>
+      {/* Contact */}
+      <Section
+        id={introSanity.slug.current}
+        title={introSanity.title}
+        noHolder
+        withMarginTop
+      >
         <InviewElement>
           <div className="contact-intro-image">
             <ImageSwicher
-              imagesSrc={getImages(introSanity.desktopImages)}
-              mobileImagesSrc={getImages(introSanity.mobileImages)}
+              imagesSrc={introSanity.desktopImages}
+              mobileImagesSrc={introSanity.mobileImages}
             />
           </div>
         </InviewElement>
       </Section>
+
+      {/* Form */}
       <Section id="contact-form">
         <div
           className={`contact-response${
