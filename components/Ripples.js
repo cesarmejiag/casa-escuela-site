@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 
 const Ripples = ({
   rippleSettings = {
-    maxSize: 100,
+    maxSize: 301,
     animationSpeed: 5,
-    strokeColor: [148, 217, 255],
+    strokeColor: [255, 255, 255],
   },
-  canvasSettings = { blur: 8, ratio: 1 },
+  canvasSettings = { blur: 10, ratio: 1 },
 }) => {
   const el = useRef();
   useEffect(() => {
@@ -84,8 +84,10 @@ const Ripples = ({
 
     // Function which is executed on mouse hover on canvas
     const canvasMouseOver = (e) => {
-      const x = e.clientX * canvasSettings.ratio;
-      const y = e.clientY * canvasSettings.ratio;
+      // const x = e.clientX * canvasSettings.ratio;
+      // const y = e.clientY * canvasSettings.ratio;
+      const x = e.offsetX * canvasSettings.ratio;
+      const y = e.offsetY * canvasSettings.ratio;
       ripples.unshift(new Ripple(x, y, 2, ctx));
     };
 

@@ -111,7 +111,7 @@ body {
 }
 
 /* Section */
-#build {
+#built {
   margin-top: -35px;
   padding-top: 45px;
 }
@@ -176,7 +176,7 @@ body {
     padding: 0;
   }
 
-  #build {
+  #built {
     margin-top: -20px;
   }
 

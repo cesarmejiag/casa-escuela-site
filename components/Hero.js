@@ -9,12 +9,12 @@ import ImageSwicher from "./ImageSwicher";
 import Ripples from "./Ripples";
 
 const Hero = ({ id, imagesSrc, mobileImagesSrc, text }) => {
-  const parallax = useParallax({
+  /* const parallax = useParallax({
     speed: 4,
-  });
+  }); */
 
   return (
-    <section className={styles.hero} id={id} ref={parallax.ref}>
+    <section className={styles.hero} id={id}>
       <div className="holder">
         <div className="container-fluid">
           <InviewElement>

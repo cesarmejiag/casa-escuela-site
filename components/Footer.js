@@ -77,14 +77,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @media screen and (min-width: 768px) {
-          .instagram-link {
-            margin-top: 30px;
-          }
-        }
-      `}</style>
     </footer>
   );
 };
