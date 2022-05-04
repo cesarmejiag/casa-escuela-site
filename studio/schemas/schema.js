@@ -13,7 +13,9 @@ import sectionPillars from "./objects/sectionPillars";
 import card from "./objects/card";
 import pillar from "./objects/pillar";
 import link from "./objects/link";
+import address from "./objects/address";
 import page from "./documents/page";
+import siteConfig from "./documents/siteConfig";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,6 +33,8 @@ export default createSchema({
     card,
     pillar,
     link,
+    address,
     page,
+    siteConfig,
   ]),
 });

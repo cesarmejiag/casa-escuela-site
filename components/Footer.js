@@ -35,11 +35,6 @@ const Footer = () => {
               <div className="row">
                 <div className="col-6 col-md-4">
                   <div>
-                    <Link href="#">
-                      <a className="text-uppercase">Location</a>
-                    </Link>
-                  </div>
-                  <div>
                     <Link href="/contact">
                       <a className="text-uppercase">Contact</a>
                     </Link>

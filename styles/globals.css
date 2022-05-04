@@ -315,6 +315,28 @@ select.inputField {
   width: 100%;
 }
 
+.contact-address {
+  margin: 0 auto;
+  max-width: 320px;
+  padding: 55px 0 100px;
+  width: 100%;
+}
+
+.contact-title-address {
+  color: var(--labelColor);
+  font-family: "RecifeDisplayLight", sans-serif;
+  font-size: var(--fontSize2);
+  line-height: 24px;
+  margin-bottom: 26px;
+}
+
+.contact-address-text {
+  color: var(--grayColor);
+  line-height: 20px;
+  max-width: 250px;
+  width: 100%;
+}
+
 .contact-response {
   background: #dfe3da;
   bottom: 0;
@@ -438,12 +460,20 @@ select.inputField {
     font-size: 30px;
   }
 
+  .contact-address {
+    max-width: 90%;
+  }
+
   .contact-text-response {
     font-size: 110px;
   }
 
   .contact-message-response {
     font-size: 40px;
+  }
+
+  .contact-address-text {
+    line-height: 28px;
   }
 
   .contact-link-response {

@@ -3,36 +3,18 @@ import sanityClient from "../client";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 
+import BlockContent from "@sanity/block-content-to-react";
+
 import Link from "next/link";
 
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import ImageSwicher from "../components/ImageSwicher";
 import InviewElement from "../components/InviewElement";
-import { findContentBySlug } from "../utils/utils";
+import BackgroundColor from "../components/BackgroundColor";
+import { findContentBySlug, findContentByType } from "../utils/utils";
 
 import data from "../data";
-
-/*
-<BackgroundColor
-  cSrcD="./images/bckContactD.svg"
-  cSrcM="./images/bckContactM.svg"
-  cColor="#ecf0f8"
-  cHeight="100%"
->
-  <Section id="contact-your-story">
-    <div className="contact-intro-body">
-      <InviewElement>
-        <div className="section-body text-center">
-          <h3>We want to hear your story</h3>
-          <br />
-          <div dangerouslySetInnerHTML={{ __html: intro.text }}></div>
-        </div>
-      </InviewElement>
-    </div>
-  </Section>
-</BackgroundColor>
-*/
 
 const initFormState = { loading: false, data: undefined, error: undefined };
 
@@ -59,14 +41,14 @@ const Contact = ({ data: sectionsData }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = async (data) => {
+  const onSubmit = async (contactData) => {
     setFormState({ ...initFormState, loading: true });
 
     try {
       const res = await fetch(`/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(contactData),
       });
       const data = await res.json();
 
@@ -84,6 +66,10 @@ const Contact = ({ data: sectionsData }) => {
   const { intro } = data.contact;
 
   const introSanity = findContentBySlug("contact", content);
+  const weWant = findContentBySlug("we-want-to-hear-your-story", content);
+  const address = findContentByType("address", content);
+
+  console.log(address);
 
   return (
     <Layout pageTitle={title}>
@@ -103,6 +89,23 @@ const Contact = ({ data: sectionsData }) => {
           </div>
         </InviewElement>
       </Section>
+
+      <BackgroundColor
+        cSrcD="./images/bckContactD.svg"
+        cSrcM="./images/bckContactM.svg"
+        cColor="#ecf0f8"
+        cHeight="100%"
+      >
+        <Section id="contact-your-story">
+          <div className="contact-intro-body">
+            <InviewElement>
+              <div className="section-body text-center">
+                <BlockContent blocks={weWant.body} />
+              </div>
+            </InviewElement>
+          </div>
+        </Section>
+      </BackgroundColor>
 
       {/* Form */}
       <Section id="contact-form">
@@ -210,6 +213,15 @@ const Contact = ({ data: sectionsData }) => {
               <input type="submit" value="Send" className="submit-button" />
             </div>
           </form>
+        </InviewElement>
+        <InviewElement>
+          <div className="contact-address" id={intro.addressTitle}>
+            <div className="contact-title-address">{intro.addressTitle}</div>
+            <div
+              className="contact-address-text"
+              dangerouslySetInnerHTML={{ __html: intro.address }}
+            ></div>
+          </div>
         </InviewElement>
       </Section>
 

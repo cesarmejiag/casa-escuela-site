@@ -36,6 +36,7 @@ export default {
         { type: "sectionCards" },
         { type: "sectionPillars" },
         { type: "link" },
+        { type: "address" },
       ],
     },
     {

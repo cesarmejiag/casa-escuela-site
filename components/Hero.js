@@ -6,6 +6,7 @@ import { useParallax } from "react-scroll-parallax";
 
 import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
+import Ripples from "./Ripples";
 
 const Hero = ({ id, imagesSrc, mobileImagesSrc, text }) => {
   const parallax = useParallax({
@@ -18,6 +19,7 @@ const Hero = ({ id, imagesSrc, mobileImagesSrc, text }) => {
         <div className="container-fluid">
           <InviewElement>
             <div className={styles.wrapper}>
+              <Ripples />
               <div className={styles.image}>
                 <ImageSwicher
                   imagesSrc={imagesSrc}
