@@ -102,6 +102,7 @@ const About = ({ data: sectionsData }) => {
             ))}
             slidesPerView={1}
             spaceBetween={0}
+            arrows
           />
         </InviewElement>
       </Section>

@@ -5,7 +5,13 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const Carrousel = ({ slides, slidesPerView = 3, spaceBetween = 30 }) => {
+const Carrousel = ({
+  slides,
+  slidesPerView = 3,
+  spaceBetween = 30,
+  speed = 750,
+  arrows = false,
+}) => {
   const [index, setIndex] = useState(1);
   const handleSlideChange = ({ activeIndex }) => {
     setIndex(activeIndex + 1);
@@ -17,6 +23,7 @@ const Carrousel = ({ slides, slidesPerView = 3, spaceBetween = 30 }) => {
         slidesPerView={slidesPerView}
         spaceBetween={spaceBetween}
         onSlideChange={handleSlideChange}
+        speed={speed}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>{slide}</SwiperSlide>

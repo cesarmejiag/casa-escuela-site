@@ -214,15 +214,17 @@ const Contact = ({ data: sectionsData }) => {
             </div>
           </form>
         </InviewElement>
-        <InviewElement>
-          <div className="contact-address" id={intro.addressTitle}>
-            <div className="contact-title-address">{intro.addressTitle}</div>
-            <div
-              className="contact-address-text"
-              dangerouslySetInnerHTML={{ __html: intro.address }}
-            ></div>
-          </div>
-        </InviewElement>
+        {address.address && (
+          <InviewElement>
+            <div className="contact-address" id={intro.addressTitle}>
+              <div className="contact-title-address">{address.title}</div>
+              <div
+                className="contact-address-text"
+                dangerouslySetInnerHTML={{ __html: address.address }}
+              ></div>
+            </div>
+          </InviewElement>
+        )}
       </Section>
 
       <style jsx>{`
