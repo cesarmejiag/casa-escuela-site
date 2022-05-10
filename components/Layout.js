@@ -43,6 +43,25 @@ const Layout = ({ children, pageTitle }) => {
         <Preloader loading={loading} />
       )}
       <ParallaxProvider>
+        {/* Global site tag (gtag.js) - Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-Q7ZW24952M`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-Q7ZW24952M', {
+                  page_path: window.location.pathname
+                });
+            `,
+          }}
+        />
         <Head>
           <title>{title}</title>
           <link rel="icon" href="/favicons/favicon.ico" type="image/x-icon" />
@@ -55,25 +74,6 @@ const Layout = ({ children, pageTitle }) => {
             rel="apple-touch-icon"
             sizes="114x114"
             href="/favicons/apple-icon-114x114.png"
-          />
-          {/* Global site tag (gtag.js) - Google Analytics */}
-          <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=G-Q7ZW24952M`}
-          />
-          <Script
-            id="gtag-init"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-Q7ZW24952M', {
-                  page_path: window.location.pathname
-                });
-            `,
-            }}
           />
         </Head>
         <Header />

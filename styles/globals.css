@@ -540,3 +540,9 @@ select.inputField {
 .useHover-word:hover .useHover-char::after {
   transform: translateY(0);
 }
+
+/* Override swiper styles */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #707070 !important;
+}
