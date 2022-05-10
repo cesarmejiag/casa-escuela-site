@@ -7,22 +7,22 @@ import Image from "next/image";
 
 import useHover from "./../hooks/useHover";
 
-const Nav = ({ mobileVisible, onToggleClick }) => {
+const NavLink = ({ path, text }) => {
   const router = useRouter();
 
-  const createLink = (path, text) => {
-    const active = router.asPath === path ? ` ${styles.active}` : ``;
-    const [el] = useHover();
+  const active = router.asPath === path ? ` ${styles.active}` : ``;
+  const [el] = useHover();
 
-    return (
-      <Link href={path}>
-        <a className={`${styles.link}${active}`} ref={el}>
-          {text}
-        </a>
-      </Link>
-    );
-  };
+  return (
+    <Link href={path}>
+      <a className={`${styles.link}${active}`} ref={el}>
+        {text}
+      </a>
+    </Link>
+  );
+};
 
+const Nav = ({ mobileVisible, onToggleClick }) => {
   const handleClick = () => onToggleClick();
 
   return (
@@ -38,11 +38,13 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
               <div
                 className={`${styles.leftLinks} d-none d-md-flex justify-content-start`}
               >
-                {createLink("/be-our-guest", "Be our guest")}
-                {createLink("/happenings", "Happenings")}
-                {createLink("/residencies", "Residencies")}
+                <NavLink path="/be-our-guest" text="Be our guest" />
+                <NavLink path="/happenings" text="Happenings" />
+                <NavLink path="/residencies" text="Residencies" />
               </div>
-              <div className="d-flex d-md-none">{createLink("#", "ESP")}</div>
+              <div className="d-flex d-md-none">
+                <NavLink path="#" text="ESP" />
+              </div>
             </div>
             <div className="col-8 col-md-4">
               <Link href="/">
@@ -61,9 +63,9 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
               <div
                 className={`${styles.rightLinks} d-none d-md-flex justify-content-end`}
               >
-                {createLink("/about", "About")}
-                {createLink("/contact", "Contact")}
-                {createLink("#", "Shop")}
+                <NavLink path="/about" text="About" />
+                <NavLink path="/contact" text="Contact" />
+                <NavLink path="#" text="Shop" />
               </div>
               <div className="d-flex d-md-none">
                 <button
