@@ -1,16 +1,24 @@
 import styles from "../styles/Nav.module.css";
+
+import { useRouter } from "next/router";
+
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
+
+import useHover from "./../hooks/useHover";
 
 const Nav = ({ mobileVisible, onToggleClick }) => {
   const router = useRouter();
 
   const createLink = (path, text) => {
     const active = router.asPath === path ? ` ${styles.active}` : ``;
+    const [el] = useHover();
+
     return (
       <Link href={path}>
-        <a className={`${styles.link}${active}`}>{text}</a>
+        <a className={`${styles.link}${active}`} ref={el}>
+          {text}
+        </a>
       </Link>
     );
   };

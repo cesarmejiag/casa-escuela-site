@@ -509,3 +509,34 @@ select.inputField {
   opacity: 1;
   transform: translateY(0px);
 }
+
+/* useHover hook */
+.useHover-char {
+  color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.useHover-char::before,
+.useHover-char::after {
+  content: attr(data-char);
+  color: #000;
+  left: 0;
+  position: absolute;
+  top: 0;
+  /* transition: all 0.7s cubic-bezier(0.858, 0.01, 0.068, 0.99); */
+  transition: all 0.7s cubic-bezier(0.458, 0.01, 0.068, 0.99);
+  transition-delay: calc(0.03s * var(--char-index));
+}
+
+.useHover-char::after {
+  transform: translateY(-100%);
+}
+
+.useHover-word:hover .useHover-char::before {
+  transform: translateY(100%);
+}
+
+.useHover-word:hover .useHover-char::after {
+  transform: translateY(0);
+}
