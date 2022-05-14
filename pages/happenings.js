@@ -25,15 +25,13 @@ export async function getServerSideProps() {
   };
 }
 
-const Happenings = ({ data: sectionsData }) => {
-  const { title, content } = sectionsData;
-
-  const intro = findContentBySlug("happenings", content);
-  const cards = findContentBySlug("cards", content);
-  const link = findContentByType("link", content);
+const Happenings = ({ data, config }) => {
+  const intro = findContentBySlug("happenings", data.content);
+  const cards = findContentBySlug("cards", data.content);
+  const link = findContentByType("link", data.content);
 
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={data.title} config={config}>
       {/* Happenings */}
       <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section

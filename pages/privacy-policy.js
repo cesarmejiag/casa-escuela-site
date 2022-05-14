@@ -22,12 +22,11 @@ export async function getServerSideProps() {
   };
 }
 
-const PrivacyPolicy = ({ data }) => {
-  const { title, content } = data;
-  const policy = findContentBySlug("privacy-policy", content);
+const PrivacyPolicy = ({ data, config }) => {
+  const policy = findContentBySlug("privacy-policy", data.content);
 
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={data.title} config={config}>
       <Section id="privacy-policy">
         <div className="plain-text">
           <BlockContent blocks={policy.body} />

@@ -28,14 +28,12 @@ export async function getServerSideProps() {
   };
 }
 
-const BeOurGuest = ({ data: sectionsData }) => {
-  const { title, content } = sectionsData;
-
-  const intro = findContentBySlug("be-our-guest", content);
-  const host = findContentBySlug("host-an-event", content);
-  const sayab = findContentBySlug("sayab", content);
-  const sayabBottom = findContentBySlug("sayab-bottom", content);
-  const link = findContentByType("link", content);
+const BeOurGuest = ({ data, config }) => {
+  const intro = findContentBySlug("be-our-guest", data.content);
+  const host = findContentBySlug("host-an-event", data.content);
+  const sayab = findContentBySlug("sayab", data.content);
+  const sayabBottom = findContentBySlug("sayab-bottom", data.content);
+  const link = findContentByType("link", data.content);
 
   return (
     <BackgroundColor
@@ -45,7 +43,7 @@ const BeOurGuest = ({ data: sectionsData }) => {
       cHeight="10%"
       cPosition="bottom"
     >
-      <Layout pageTitle={title}>
+      <Layout pageTitle={data.title} config={config}>
         {/* Intro Section */}
         <Section
           id={intro.slug.current}

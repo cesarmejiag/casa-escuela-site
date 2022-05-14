@@ -1,3 +1,5 @@
+import sanityClient from "../client";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
 
@@ -23,5 +25,33 @@ function MyApp({ Component, pageProps, router }) {
     </motion.div>
   );
 }
+
+MyApp.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {};
+
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+
+  // Add site config from sanity
+  try {
+    const data = await sanityClient.fetch(
+      `*[_id == "global-config"] {
+        file,
+        url
+      }[0]`
+    );
+
+    if (data) {
+      pageProps.config = data;
+    }
+  } catch (err) {
+    /* Handle error */
+  }
+
+  return {
+    pageProps,
+  };
+};
 
 export default MyApp;

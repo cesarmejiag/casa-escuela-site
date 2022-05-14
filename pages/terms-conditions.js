@@ -22,12 +22,11 @@ export async function getServerSideProps() {
   };
 }
 
-const termsConditions = ({ data }) => {
-  const { title, content } = data;
-  const terms = findContentBySlug("terms-conditions", content);
+const termsConditions = ({ data, config }) => {
+  const terms = findContentBySlug("terms-conditions", data.content);
 
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={data.title} config={config}>
       <Section id="terms-conditions">
         <div className="plain-text">
           <BlockContent blocks={terms.body} />

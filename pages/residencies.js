@@ -27,16 +27,14 @@ export async function getServerSideProps() {
   };
 }
 
-const Residensies = ({ data: sectionsData }) => {
-  const { title, content } = sectionsData;
-
-  const intro = findContentBySlug("residencies", content);
-  const exhibition = findContentBySlug("exhibition-space", content);
-  const footer = findContentBySlug("footer", content);
-  const link = findContentByType("link", content);
+const Residensies = ({ data, config }) => {
+  const intro = findContentBySlug("residencies", data.content);
+  const exhibition = findContentBySlug("exhibition-space", data.content);
+  const footer = findContentBySlug("footer", data.content);
+  const link = findContentByType("link", data.content);
 
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={data.title} config={config}>
       {/* Residencies */}
       <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section

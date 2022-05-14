@@ -5,24 +5,18 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
-import useHover from "./../hooks/useHover";
-
 const NavLink = ({ path, text }) => {
   const router = useRouter();
-
   const active = router.asPath === path ? ` ${styles.active}` : ``;
-  const [el] = useHover();
 
   return (
     <Link href={path}>
-      <a className={`${styles.link}${active}`} ref={el}>
-        {text}
-      </a>
+      <a className={`${styles.link}${active}`}>{text}</a>
     </Link>
   );
 };
 
-const Nav = ({ mobileVisible, onToggleClick }) => {
+const Nav = ({ mobileVisible, onToggleClick, shopUrl = "#" }) => {
   const handleClick = () => onToggleClick();
 
   return (
@@ -65,7 +59,7 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
               >
                 <NavLink path="/about" text="About" />
                 <NavLink path="/contact" text="Contact" />
-                <NavLink path="#" text="Shop" />
+                <NavLink path={shopUrl} text="Shop" />
               </div>
               <div className="d-flex d-md-none">
                 <button

@@ -4,14 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-const MobileNav = ({ visible, href }) => {
+const MobileNav = ({ visible, href, shopUrl }) => {
   const options = [
     { path: "/be-our-guest", label: "Be our guest" },
     { path: "/happenings", label: "Happenings" },
     { path: "/residencies", label: "Residencies" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
-    { path: "#", label: "Shop" },
+    { path: (shopUrl || "#"), label: "Shop" },
   ];
 
   const createLink = (path, text) => (

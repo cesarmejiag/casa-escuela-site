@@ -22,12 +22,11 @@ export async function getServerSideProps() {
   };
 }
 
-const covidPolicy = ({ data }) => {
-  const { title, content } = data;
-  const policy = findContentBySlug("covid-policy", content);
+const covidPolicy = ({ data, config }) => {
+  const policy = findContentBySlug("covid-policy", data.content);
 
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={data.title} config={config}>
       <Section id="covid-policy">
         <div className="plain-text">
           <BlockContent blocks={policy.body} />

@@ -34,7 +34,7 @@ export async function getServerSideProps() {
   };
 }
 
-const Contact = ({ data: sectionsData }) => {
+const Contact = ({ data: sectionsData, config }) => {
   const [formState, setFormState] = useState({ ...initFormState });
   const {
     register,
@@ -69,10 +69,8 @@ const Contact = ({ data: sectionsData }) => {
   const weWant = findContentBySlug("we-want-to-hear-your-story", content);
   const address = findContentByType("address", content);
 
-  console.log(address);
-
   return (
-    <Layout pageTitle={title}>
+    <Layout pageTitle={title} config={config}>
       {/* Contact */}
       <Section
         id={introSanity.slug.current}

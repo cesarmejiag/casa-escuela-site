@@ -27,16 +27,14 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ data: sectionsData }) {
-  const { content } = sectionsData;
-
-  const hero = findContentBySlug("hero", content);
-  const whatWeDo = findContentBySlug("what-we-do", content);
-  const homeTo = findContentBySlug("home-to", content);
-  const link = findContentByType("link", content);
+export default function Home({ data, config }) {
+  const hero = findContentBySlug("hero", data.content);
+  const whatWeDo = findContentBySlug("what-we-do", data.content);
+  const homeTo = findContentBySlug("home-to", data.content);
+  const link = findContentByType("link", data.content);
 
   return (
-    <Layout>
+    <Layout config={config}>
       {/* Hero Section */}
       <Hero
         id={hero.slug.current}

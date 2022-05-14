@@ -40,7 +40,6 @@
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
-  overflow: hidden;
 }
 
 .link:hover {
