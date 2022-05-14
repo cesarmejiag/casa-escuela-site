@@ -8,12 +8,22 @@ import AppContext from "../components/AppContext";
 const NavLink = ({ path, text, target = "_self" }) => {
   const router = useRouter();
   const active = router.asPath === path ? ` ${styles.active}` : ``;
-
   return (
     <Link href={path || "#"}>
       <a className={`${styles.link}${active}`} target={target}>
         {text}
       </a>
+    </Link>
+  );
+};
+
+const LangLink = () => {
+  const router = useRouter();
+  const text = router.locale === "en" ? "ESP" : "ENG";
+  const locale = router.locale === "en" ? "es" : "en";
+  return (
+    <Link href={router.pathname} locale={locale}>
+      <a className={styles.link}>{text}</a>
     </Link>
   );
 };
@@ -40,7 +50,7 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
                 <NavLink path="/residencies" text="Residencies" />
               </div>
               <div className="d-flex d-md-none">
-                <NavLink path="#" text="ESP" />
+                <LangLink />
               </div>
             </div>
             <div className="col-8 col-md-4">
@@ -63,6 +73,7 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
                 <NavLink path="/about" text="About" />
                 <NavLink path="/contact" text="Contact" />
                 <NavLink path={shopUrl} text="Shop" target="_blank" />
+                <LangLink />
               </div>
               <div className="d-flex d-md-none">
                 <button
