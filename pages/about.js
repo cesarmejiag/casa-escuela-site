@@ -19,6 +19,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -29,21 +31,25 @@ export async function getServerSideProps() {
   };
 }
 
-const About = ({ data, config }) => {
+const About = ({ data, globalConfig }) => {
   const { mobile } = useWindowSize();
+  const { title, description, content, openGraphImage } = data;
 
-  const intro = findContentBySlug("la-casa-de-todos", data.content);
-  const built = findContentBySlug("built", data.content);
-  const team = findContentBySlug("team", data.content);
-  const pillars = findContentBySlug("pillars", data.content);
-  const link = findContentByType("link", data.content);
+  const intro = findContentBySlug("la-casa-de-todos", content);
+  const built = findContentBySlug("built", content);
+  const team = findContentBySlug("team", content);
+  const pillars = findContentBySlug("pillars", content);
+  const link = findContentByType("link", content);
 
   return (
-    <Layout pageTitle={data.title} config={config}>
+    <Layout
+      pageConfig={{ title, description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       {/* La Casa de Todos Section */}
       <BackgroundColor
-        cSrcD="./images/bckAboutD.svg"
-        cSrcM="./images/bckHomeM.svg"
+        cSrcD="/images/bckAboutD.svg"
+        cSrcM="/images/bckHomeM.svg"
         cColor="#ecf0f8"
         cHeight="40%"
         cPosition="bottom"
@@ -60,8 +66,8 @@ const About = ({ data, config }) => {
 
       {/* Built Section */}
       <BackgroundColor
-        cSrcD="./images/bckAboutD.svg"
-        cSrcM="./images/bckHomeM.svg"
+        cSrcD="/images/bckAboutD.svg"
+        cSrcM="/images/bckHomeM.svg"
         cColor="#ecf0f8"
         cHeight="40%"
       >

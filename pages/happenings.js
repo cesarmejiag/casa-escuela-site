@@ -15,6 +15,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -25,13 +27,18 @@ export async function getServerSideProps() {
   };
 }
 
-const Happenings = ({ data, config }) => {
-  const intro = findContentBySlug("happenings", data.content);
-  const cards = findContentBySlug("cards", data.content);
-  const link = findContentByType("link", data.content);
+const Happenings = ({ data, globalConfig }) => {
+  const { title, description, content, openGraphImage } = data;
+
+  const intro = findContentBySlug("happenings", content);
+  const cards = findContentBySlug("cards", content);
+  const link = findContentByType("link", content);
 
   return (
-    <Layout pageTitle={data.title} config={config}>
+    <Layout
+      pageConfig={{ title, description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       {/* Happenings */}
       <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section

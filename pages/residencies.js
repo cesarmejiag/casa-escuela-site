@@ -17,6 +17,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -27,14 +29,19 @@ export async function getServerSideProps() {
   };
 }
 
-const Residensies = ({ data, config }) => {
-  const intro = findContentBySlug("residencies", data.content);
-  const exhibition = findContentBySlug("exhibition-space", data.content);
-  const footer = findContentBySlug("footer", data.content);
-  const link = findContentByType("link", data.content);
+const Residensies = ({ data, globalConfig }) => {
+  const { title, description, content, openGraphImage } = data;
+
+  const intro = findContentBySlug("residencies", content);
+  const exhibition = findContentBySlug("exhibition-space", content);
+  const footer = findContentBySlug("footer", content);
+  const link = findContentByType("link", content);
 
   return (
-    <Layout pageTitle={data.title} config={config}>
+    <Layout
+      pageConfig={{ title, description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       {/* Residencies */}
       <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section
@@ -55,7 +62,6 @@ const Residensies = ({ data, config }) => {
           />
         </Section>
       </BackgroundColor>
-
       {/* Exhibition Space */}
       <Section id={exhibition.slug.current} title={exhibition.title}>
         <div className="exhibition-wrapper">
@@ -83,7 +89,6 @@ const Residensies = ({ data, config }) => {
           </div>
         </div>
       </Section>
-
       {/* Footer */}
       <Section id={footer.slug.current}>
         <InviewElement>
@@ -95,9 +100,7 @@ const Residensies = ({ data, config }) => {
           </div>
         </InviewElement>
       </Section>
-
       <BottomLink path={link.href} text={link.text} />
-
       <style jsx>{`
         .exhibition-wrapper {
           margin-top: 80px;

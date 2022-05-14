@@ -12,6 +12,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -22,11 +24,15 @@ export async function getServerSideProps() {
   };
 }
 
-const PrivacyPolicy = ({ data, config }) => {
-  const policy = findContentBySlug("privacy-policy", data.content);
+const PrivacyPolicy = ({ data, globalConfig }) => {
+  const { title, description, content, openGraphImage } = data;
+  const policy = findContentBySlug("privacy-policy", content);
 
   return (
-    <Layout pageTitle={data.title} config={config}>
+    <Layout
+      pageConfig={{ title, description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       <Section id="privacy-policy">
         <div className="plain-text">
           <BlockContent blocks={policy.body} />

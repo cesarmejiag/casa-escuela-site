@@ -17,6 +17,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -27,14 +29,19 @@ export async function getServerSideProps() {
   };
 }
 
-export default function Home({ data, config }) {
-  const hero = findContentBySlug("hero", data.content);
-  const whatWeDo = findContentBySlug("what-we-do", data.content);
-  const homeTo = findContentBySlug("home-to", data.content);
-  const link = findContentByType("link", data.content);
+export default function Home({ data, globalConfig }) {
+  const { description, content, openGraphImage } = data;
+
+  const hero = findContentBySlug("hero", content);
+  const whatWeDo = findContentBySlug("what-we-do", content);
+  const homeTo = findContentBySlug("home-to", content);
+  const link = findContentByType("link", content);
 
   return (
-    <Layout config={config}>
+    <Layout
+      pageConfig={{ description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       {/* Hero Section */}
       <Hero
         id={hero.slug.current}

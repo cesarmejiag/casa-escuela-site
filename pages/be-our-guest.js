@@ -18,6 +18,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -28,12 +30,14 @@ export async function getServerSideProps() {
   };
 }
 
-const BeOurGuest = ({ data, config }) => {
-  const intro = findContentBySlug("be-our-guest", data.content);
-  const host = findContentBySlug("host-an-event", data.content);
-  const sayab = findContentBySlug("sayab", data.content);
-  const sayabBottom = findContentBySlug("sayab-bottom", data.content);
-  const link = findContentByType("link", data.content);
+const BeOurGuest = ({ data, globalConfig }) => {
+  const { title, description, content, openGraphImage } = data;
+
+  const intro = findContentBySlug("be-our-guest", content);
+  const host = findContentBySlug("host-an-event", content);
+  const sayab = findContentBySlug("sayab", content);
+  const sayabBottom = findContentBySlug("sayab-bottom", content);
+  const link = findContentByType("link", content);
 
   return (
     <BackgroundColor
@@ -43,7 +47,10 @@ const BeOurGuest = ({ data, config }) => {
       cHeight="10%"
       cPosition="bottom"
     >
-      <Layout pageTitle={data.title} config={config}>
+      <Layout
+        pageConfig={{ title, description, openGraphImage }}
+        globalConfig={globalConfig}
+      >
         {/* Intro Section */}
         <Section
           id={intro.slug.current}
@@ -59,8 +66,8 @@ const BeOurGuest = ({ data, config }) => {
 
         {/* Host Section */}
         <BackgroundColor
-          cSrcD="./images/bckBOGD1.svg"
-          cSrcM="./images/bckBOGM1.svg"
+          cSrcD="/images/bckBOGD1.svg"
+          cSrcM="/images/bckBOGM1.svg"
           cColor="#b96241"
           cHeight="80%"
         >

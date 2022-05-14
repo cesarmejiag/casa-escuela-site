@@ -1,22 +1,33 @@
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import Script from "next/script";
+import { useRouter } from "next/router";
 
 import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children, pageTitle, config }) => {
-  const siteTitle = "Casa Escuela - Welcome Home";
-  const title = pageTitle ? `${pageTitle} | ${siteTitle}` : siteTitle;
+import { getImages } from "../utils/utils";
+
+const Layout = ({ children, pageConfig, globalConfig }) => {
+  const {
+    title: pTitle,
+    description: pDescription,
+    openGraphImage: pImage,
+  } = pageConfig;
+  const { title: sTitle, url: sUrl } = globalConfig;
+  const router = useRouter();
+  const title = pTitle ? `${pTitle} | ${sTitle}` : sTitle;
+  const url = `${sUrl}${router.asPath}`;
+  const image = getImages(pImage);
+
   return (
     <>
       <ParallaxProvider>
         <Head>
           <title>{title}</title>
 
-          <meta name="description" content="page-description" />
-          <meta name="keywords" content="page-keywords" />
+          <meta name="description" content={pDescription} />
           <meta name="author" content="Goplek" />
           <meta name="robots" content="INDEX, FOLLOW, ARCHIVE" />
 
@@ -33,24 +44,23 @@ const Layout = ({ children, pageTitle, config }) => {
           />
 
           {/* Schema properties */}
-          <meta itemProp="name" content="page-title" />
-          <meta itemProp="description" content="page-description" />
-          <meta itemProp="url" content="page-url" />
-          <meta itemProp="image" content="image-url" />
+          <meta itemProp="name" content={title} />
+          <meta itemProp="description" content={pDescription} />
+          <meta itemProp="url" content={url} />
+          <meta itemProp="image" content={image} />
 
           {/* Open Graph properties */}
-          <meta property="fb:app_id" content="app-id" />
-          <meta property="og:site_name" content="name" />
-          <meta property="og:title" content="page-title" />
-          <meta property="og:description" content="page-description" />
-          <meta property="og:url" content="page-url" />
-          <meta property="og:image" content="image-url" />
+          <meta property="og:site_name" content={title} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={pDescription} />
+          <meta property="og:url" content={url} />
+          <meta property="og:image" content={image} />
           <meta property="og:type" content="website" />
 
           {/* Twitter integration */}
-          <meta name="twitter:title" content="page-title" />
-          <meta name="twitter:url" content="page-url" />
-          <meta name="twitter:image" content="image-url" />
+          <meta name="twitter:title" content={title} />
+          <meta name="twitter:url" content={url} />
+          <meta name="twitter:image" content={image} />
           <meta name="twitter:card" content="summary" />
         </Head>
         {/* Global site tag (gtag.js) - Google Analytics */}
@@ -72,7 +82,7 @@ const Layout = ({ children, pageTitle, config }) => {
             `,
           }}
         />
-        <Header shopUrl={config.url} />
+        <Header />
         <div className="outer-wrapper">{children}</div>
         <Footer />
       </ParallaxProvider>

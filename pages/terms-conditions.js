@@ -12,6 +12,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -22,11 +24,15 @@ export async function getServerSideProps() {
   };
 }
 
-const termsConditions = ({ data, config }) => {
-  const terms = findContentBySlug("terms-conditions", data.content);
+const termsConditions = ({ data, globalConfig }) => {
+  const { title, description, content, openGraphImage } = data;
+  const terms = findContentBySlug("terms-conditions", content);
 
   return (
-    <Layout pageTitle={data.title} config={config}>
+    <Layout
+      pageConfig={{ title, description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       <Section id="terms-conditions">
         <div className="plain-text">
           <BlockContent blocks={terms.body} />

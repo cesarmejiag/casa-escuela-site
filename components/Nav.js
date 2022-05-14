@@ -1,22 +1,25 @@
 import styles from "../styles/Nav.module.css";
-
+import { useContext } from "react";
 import { useRouter } from "next/router";
-
 import Link from "next/link";
 import Image from "next/image";
+import AppContext from "../components/AppContext";
 
-const NavLink = ({ path, text }) => {
+const NavLink = ({ path, text, target = "_self" }) => {
   const router = useRouter();
   const active = router.asPath === path ? ` ${styles.active}` : ``;
 
   return (
-    <Link href={path}>
-      <a className={`${styles.link}${active}`}>{text}</a>
+    <Link href={path || "#"}>
+      <a className={`${styles.link}${active}`} target={target}>
+        {text}
+      </a>
     </Link>
   );
 };
 
-const Nav = ({ mobileVisible, onToggleClick, shopUrl = "#" }) => {
+const Nav = ({ mobileVisible, onToggleClick }) => {
+  const { shopUrl } = useContext(AppContext);
   const handleClick = () => onToggleClick();
 
   return (
@@ -59,7 +62,7 @@ const Nav = ({ mobileVisible, onToggleClick, shopUrl = "#" }) => {
               >
                 <NavLink path="/about" text="About" />
                 <NavLink path="/contact" text="Contact" />
-                <NavLink path={shopUrl} text="Shop" />
+                <NavLink path={shopUrl} text="Shop" target="_blank" />
               </div>
               <div className="d-flex d-md-none">
                 <button

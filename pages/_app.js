@@ -4,25 +4,28 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
 
 import { motion } from "framer-motion";
+import AppContext from "../components/AppContext";
 
 function MyApp({ Component, pageProps, router }) {
   return (
-    <motion.div
-      key={router.route}
-      initial="initial"
-      animate="animate"
-      variants={{
-        initial: {
-          opacity: 0,
-        },
-        animate: {
-          opacity: 1,
-        },
-      }}
-      transition={{ duration: 0.75, times: [0, 0.2, 1] }}
-    >
-      <Component {...pageProps} />
-    </motion.div>
+    <AppContext.Provider value={pageProps.globalConfig}>
+      <motion.div
+        key={router.route}
+        initial="initial"
+        animate="animate"
+        variants={{
+          initial: {
+            opacity: 0,
+          },
+          animate: {
+            opacity: 1,
+          },
+        }}
+        transition={{ duration: 0.75, times: [0, 0.2, 1] }}
+      >
+        <Component {...pageProps} />
+      </motion.div>
+    </AppContext.Provider>
   );
 }
 
@@ -37,13 +40,15 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   try {
     const data = await sanityClient.fetch(
       `*[_id == "global-config"] {
+        title,
+        url,
         file,
-        url
+        shopUrl
       }[0]`
     );
 
     if (data) {
-      pageProps.config = data;
+      pageProps.globalConfig = data;
     }
   } catch (err) {
     /* Handle error */

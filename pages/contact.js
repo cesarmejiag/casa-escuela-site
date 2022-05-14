@@ -24,6 +24,8 @@ export async function getServerSideProps() {
       slug,
       title,
       content,
+      description,
+      openGraphImage
     }`
   );
 
@@ -34,7 +36,7 @@ export async function getServerSideProps() {
   };
 }
 
-const Contact = ({ data: sectionsData, config }) => {
+const Contact = ({ data: sectionsData, globalConfig }) => {
   const [formState, setFormState] = useState({ ...initFormState });
   const {
     register,
@@ -62,7 +64,7 @@ const Contact = ({ data: sectionsData, config }) => {
     }, 3000);
   };
 
-  const { title, content } = sectionsData;
+  const { title, description, content, openGraphImage } = sectionsData;
   const { intro } = data.contact;
 
   const introSanity = findContentBySlug("contact", content);
@@ -70,7 +72,10 @@ const Contact = ({ data: sectionsData, config }) => {
   const address = findContentByType("address", content);
 
   return (
-    <Layout pageTitle={title} config={config}>
+    <Layout
+      pageConfig={{ title, description, openGraphImage }}
+      globalConfig={globalConfig}
+    >
       {/* Contact */}
       <Section
         id={introSanity.slug.current}
@@ -89,8 +94,8 @@ const Contact = ({ data: sectionsData, config }) => {
       </Section>
 
       <BackgroundColor
-        cSrcD="./images/bckContactD.svg"
-        cSrcM="./images/bckContactM.svg"
+        cSrcD="/images/bckContactD.svg"
+        cSrcM="/images/bckContactM.svg"
         cColor="#ecf0f8"
         cHeight="100%"
       >
