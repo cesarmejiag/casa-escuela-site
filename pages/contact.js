@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import BlockContent from "@sanity/block-content-to-react";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Layout from "../components/Layout";
 import Section from "../components/Section";
@@ -18,15 +19,16 @@ import data from "../data";
 
 const initFormState = { loading: false, data: undefined, error: undefined };
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "contact"][0]{
       slug,
-      title,
+      "title": title[$lang],
       content,
-      description,
+      "description": description[$lang],
       openGraphImage
-    }`
+    }`,
+    { lang: locale }
   );
 
   return {
@@ -37,6 +39,7 @@ export async function getServerSideProps() {
 }
 
 const Contact = ({ data: sectionsData, globalConfig }) => {
+  const { locale } = useRouter();
   const [formState, setFormState] = useState({ ...initFormState });
   const {
     register,
@@ -79,7 +82,7 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
       {/* Contact */}
       <Section
         id={introSanity.slug.current}
-        title={introSanity.title}
+        title={introSanity.title[locale]}
         noHolder
         withMarginTop
       >
@@ -103,7 +106,7 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
           <div className="contact-intro-body">
             <InviewElement>
               <div className="section-body text-center">
-                <BlockContent blocks={weWant.body} />
+                <BlockContent blocks={weWant.body[locale]} />
               </div>
             </InviewElement>
           </div>
@@ -220,10 +223,12 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
         {address.address && (
           <InviewElement>
             <div className="contact-address" id={intro.addressTitle}>
-              <div className="contact-title-address">{address.title}</div>
+              <div className="contact-title-address">
+                {address.title[locale]}
+              </div>
               <div
                 className="contact-address-text"
-                dangerouslySetInnerHTML={{ __html: address.address }}
+                dangerouslySetInnerHTML={{ __html: address.address[locale] }}
               ></div>
             </div>
           </InviewElement>

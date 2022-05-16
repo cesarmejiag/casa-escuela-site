@@ -1,4 +1,5 @@
 export default {
+  localize: true,
   name: "sectionText",
   title: "Section Text",
   type: "object",
@@ -8,6 +9,7 @@ export default {
   ],
   fields: [
     {
+      localize: false,
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -30,32 +32,41 @@ export default {
       of: [{ type: "block" }],
     },
     {
+      fieldset: "images1",
+      localize: false,
       name: "desktopImages1",
       title: "Desktop Images",
       type: "array",
-      fieldset: "images1",
       of: [{ type: "image" }],
     },
     {
+      fieldset: "images1",
+      localize: false,
       name: "mobileImages1",
       title: "Mobile Images",
       type: "array",
-      fieldset: "images1",
       of: [{ type: "image" }],
     },
     {
+      fieldset: "images2",
+      localize: false,
       name: "desktopImages2",
       title: "Desktop Images",
       type: "array",
-      fieldset: "images2",
       of: [{ type: "image" }],
     },
     {
+      fieldset: "images2",
+      localize: false,
       name: "mobileImages2",
       title: "Mobile Images",
       type: "array",
-      fieldset: "images2",
       of: [{ type: "image" }],
     },
   ],
+  preview: {
+    select: {
+      title: "text",
+    },
+  },
 };

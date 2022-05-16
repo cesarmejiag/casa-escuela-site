@@ -1,5 +1,7 @@
 import sanityClient from "../client";
 
+import { useRouter } from "next/router";
+
 import Layout from "./../components/Layout";
 import Section from "../components/Section";
 import Carrousel from "../components/Carrousel";
@@ -13,15 +15,16 @@ import useWindowSize from "../hooks/useWindowSize";
 
 import { findContentBySlug, findContentByType } from "../utils/utils";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "about"][0]{
       slug,
-      title,
+      "title": title[$lang],
       content,
-      description,
+      "description": description[$lang],
       openGraphImage
-    }`
+    }`,
+    { lang: locale }
   );
 
   return {
@@ -32,6 +35,7 @@ export async function getServerSideProps() {
 }
 
 const About = ({ data, globalConfig }) => {
+  const { locale } = useRouter();
   const { mobile } = useWindowSize();
   const { title, description, content, openGraphImage } = data;
 
@@ -56,8 +60,8 @@ const About = ({ data, globalConfig }) => {
       >
         <Section
           id={intro.slug.current}
-          title={intro.title}
-          intro={intro.intro}
+          title={intro.title[locale]}
+          intro={intro.intro[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
           withMarginTop
@@ -71,7 +75,7 @@ const About = ({ data, globalConfig }) => {
         cColor="#ecf0f8"
         cHeight="40%"
       >
-        <Section id={built.slug.current} intro={built.intro}>
+        <Section id={built.slug.current} intro={built.intro[locale]}>
           <div className="section-image">
             <InviewElement>
               <div className="built-image">
@@ -79,17 +83,22 @@ const About = ({ data, globalConfig }) => {
               </div>
             </InviewElement>
           </div>
-          <div className="section-footer">{built.footer}</div>
+          <div className="section-footer">{built.footer[locale]}</div>
         </Section>
       </BackgroundColor>
 
       {/* Team Section */}
-      <Section id={team.slug.current} title={team.title}>
+      <Section id={team.slug.current} title={team.title[locale]}>
         <div className="team-wrapper">
           <InviewElement>
             <Carrousel
               slides={team.cards.map((card, index) => (
-                <Card {...card} key={index} />
+                <Card
+                  image={card.image}
+                  title={card.title[locale]}
+                  text={card.text[locale]}
+                  key={index}
+                />
               ))}
               slidesPerView={mobile ? 1 : 3}
               spaceBetween={mobile ? 0 : 100}
@@ -99,11 +108,16 @@ const About = ({ data, globalConfig }) => {
       </Section>
 
       {/* Pillars Section */}
-      <Section id={pillars.slug.current} title={pillars.title}>
+      <Section id={pillars.slug.current} title={pillars.title[locale]}>
         <InviewElement>
           <Carrousel
             slides={pillars.pillars.map((card, index) => (
-              <PillarCard {...card} id={index + 1} key={index} />
+              <PillarCard
+                id={index + 1}
+                title={card.title[locale]}
+                text={card.text[locale]}
+                key={index}
+              />
             ))}
             slidesPerView={1}
             spaceBetween={0}
@@ -113,7 +127,7 @@ const About = ({ data, globalConfig }) => {
       </Section>
 
       {/* Bottom Link Section */}
-      <BottomLink path={link.href} text={link.text}></BottomLink>
+      <BottomLink path={link.href} text={link.text[locale]}></BottomLink>
 
       <style jsx>{`
         .team-wrapper {

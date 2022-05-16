@@ -1,9 +1,11 @@
 export default {
+  localize: true,
   name: "card",
   title: "Card",
   type: "object",
   fields: [
     {
+      localize: false,
       name: "image",
       title: "Image",
       type: "image",
@@ -20,4 +22,9 @@ export default {
       of: [{ type: "block" }],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

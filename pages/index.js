@@ -1,6 +1,8 @@
 import sanityClient from "../client";
 import BlockContent from "@sanity/block-content-to-react";
 
+import { useRouter } from "next/router";
+
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import Section from "../components/Section";
@@ -11,15 +13,16 @@ import InviewElement from "../components/InviewElement";
 
 import { findContentBySlug, findContentByType } from "../utils/utils";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "home"][0]{
       slug,
-      title,
+      "title": title[$lang],
       content,
-      description,
+      "description": description[$lang],
       openGraphImage
-    }`
+    }`,
+    { lang: locale }
   );
 
   return {
@@ -30,6 +33,7 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ data, globalConfig }) {
+  const { locale } = useRouter();
   const { description, content, openGraphImage } = data;
 
   const hero = findContentBySlug("hero", content);
@@ -45,7 +49,7 @@ export default function Home({ data, globalConfig }) {
       {/* Hero Section */}
       <Hero
         id={hero.slug.current}
-        text={hero.text}
+        text={hero.text[locale]}
         imagesSrc={hero.desktopImages}
         mobileImagesSrc={hero.mobileImages}
       />
@@ -53,8 +57,8 @@ export default function Home({ data, globalConfig }) {
       {/* What We Do Section */}
       <Section
         id={whatWeDo.slug.current}
-        title={whatWeDo.title}
-        introText={whatWeDo.intro}
+        title={whatWeDo.title[locale]}
+        introText={whatWeDo.intro[locale]}
       >
         <InviewElement>
           <div className="section-image">
@@ -75,7 +79,7 @@ export default function Home({ data, globalConfig }) {
         cColor="#dfe3da"
         cHeight="75%"
       >
-        <Section id={homeTo.slug.current} intro={homeTo.intro}>
+        <Section id={homeTo.slug.current} intro={homeTo.intro[locale]}>
           <div className="home-to-wrapper">
             <div className="row">
               <div className="col-12 col-lg-8">
@@ -102,7 +106,7 @@ export default function Home({ data, globalConfig }) {
               <div className="col-12 col-lg-4">
                 <InviewElement>
                   <div className="home-to-text">
-                    <BlockContent blocks={homeTo.text} />
+                    <BlockContent blocks={homeTo.text[locale]} />
                   </div>
                 </InviewElement>
               </div>
@@ -112,7 +116,7 @@ export default function Home({ data, globalConfig }) {
       </BackgroundColor>
 
       {/* Bottom Section */}
-      <BottomLink path={link.href} text={link.text} />
+      <BottomLink path={link.href} text={link.text[locale]} />
 
       <style jsx>{`
         .what-we-do-image {

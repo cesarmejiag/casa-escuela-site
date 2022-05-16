@@ -1,15 +1,19 @@
 export default {
+  // This property says we should have all fields localized,
+  // except any field that explicitly says localize: false
+  localize: true,
   name: "page",
-  type: "document",
   title: "Page",
+  type: "document",
   fieldsets: [
     {
-      title: "SEO & metadata",
       name: "metadata",
+      title: "SEO & metadata",
     },
   ],
   fields: [
     {
+      localize: false,
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -22,13 +26,14 @@ export default {
     },
     {
       name: "title",
-      type: "string",
       title: "Title",
+      type: "string",
     },
     {
+      localize: false,
       name: "content",
-      type: "array",
       title: "Page sections",
+      type: "array",
       of: [
         { type: "hero" },
         { type: "section" },
@@ -40,21 +45,21 @@ export default {
       ],
     },
     {
-      name: "description",
-      type: "text",
-      title: "Description",
       description: "This description populates meta-tags on the webpage",
       fieldset: "metadata",
+      name: "description",
+      title: "Description",
+      type: "text",
     },
     {
-      name: "openGraphImage",
-      type: "image",
-      title: "Open Graph Image",
       description: "Image for sharing previews on Facebook, Twitter etc.",
       fieldset: "metadata",
+      localize: false,
+      name: "openGraphImage",
+      title: "Open Graph Image",
+      type: "image",
     },
   ],
-
   preview: {
     select: {
       title: "title",

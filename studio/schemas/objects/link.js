@@ -1,6 +1,7 @@
 export default {
-  title: "URL",
+  localize: true,
   name: "link",
+  title: "URL",
   type: "object",
   fields: [
     {
@@ -9,6 +10,7 @@ export default {
       type: "string",
     },
     {
+      localize: false,
       title: "URL",
       name: "href",
       type: "url",
@@ -19,4 +21,9 @@ export default {
         }),
     },
   ],
+  preview: {
+    select: {
+      title: "text",
+    },
+  },
 };

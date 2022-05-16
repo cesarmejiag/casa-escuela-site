@@ -1,4 +1,5 @@
 export default {
+  localize: true,
   name: "address",
   title: "Address",
   type: "object",
@@ -14,4 +15,9 @@ export default {
       type: "text",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

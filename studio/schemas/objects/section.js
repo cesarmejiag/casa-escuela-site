@@ -1,9 +1,11 @@
 export default {
+  localize: true,
   name: "section",
   title: "Section",
   type: "object",
   fields: [
     {
+      localize: false,
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -32,12 +34,14 @@ export default {
       of: [{ type: "block" }],
     },
     {
+      localize: false,
       name: "desktopImages",
       title: "Desktop Images",
       type: "array",
       of: [{ type: "image" }],
     },
     {
+      localize: false,
       name: "mobileImages",
       title: "Mobile Images",
       type: "array",
@@ -49,4 +53,9 @@ export default {
       type: "string",
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

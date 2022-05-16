@@ -1,4 +1,5 @@
 export default {
+  localize: true,
   name: "pillar",
   title: "Pillar",
   type: "object",
@@ -15,4 +16,9 @@ export default {
       of: [{ type: "block" }],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };

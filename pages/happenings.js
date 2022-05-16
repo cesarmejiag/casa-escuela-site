@@ -1,5 +1,7 @@
 import sanityClient from "../client";
 
+import { useRouter } from "next/router";
+
 import Layout from "../components/Layout";
 import Section from "../components/Section";
 import Card from "../components/Card";
@@ -9,15 +11,16 @@ import InviewElement from "../components/InviewElement";
 
 import { findContentBySlug, findContentByType } from "../utils/utils";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "happenings"][0]{
       slug,
-      title,
+      "title": title[$lang],
       content,
-      description,
+      "description": description[$lang],
       openGraphImage
-    }`
+    }`,
+    { lang: locale }
   );
 
   return {
@@ -28,6 +31,7 @@ export async function getServerSideProps() {
 }
 
 const Happenings = ({ data, globalConfig }) => {
+  const { locale } = useRouter();
   const { title, description, content, openGraphImage } = data;
 
   const intro = findContentBySlug("happenings", content);
@@ -43,8 +47,8 @@ const Happenings = ({ data, globalConfig }) => {
       <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section
           id={intro.slug.current}
-          title={intro.title}
-          intro={intro.intro}
+          title={intro.title[locale]}
+          intro={intro.intro[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
           imageDescription="Luz Vega - Taller de Cerámica"
@@ -59,7 +63,13 @@ const Happenings = ({ data, globalConfig }) => {
             <div className="col-12 col-md-4" key={index}>
               <InviewElement>
                 <div className="happenings-card">
-                  <Card {...card} key={index} type2 />
+                  <Card
+                    image={card.image}
+                    title={card.title[locale]}
+                    text={card.text[locale]}
+                    key={index}
+                    type2
+                  />
                 </div>
               </InviewElement>
             </div>
@@ -69,7 +79,7 @@ const Happenings = ({ data, globalConfig }) => {
 
       <BottomLink
         path={link.href}
-        text={link.text}
+        text={link.text[locale]}
         target="_blank"
       ></BottomLink>
 

@@ -1,31 +1,38 @@
 export default {
-    name: "sectionPillars",
-    title: "Section Pillars",
-    type: "object",
-    fields: [
-      {
-        name: "slug",
-        title: "Slug",
-        type: "slug",
-        options: {
-          source: "title",
-          maxLenght: 200,
-          slugify: (input) =>
-            input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
-        },
+  localize: true,
+  name: "sectionPillars",
+  title: "Section Pillars",
+  type: "object",
+  fields: [
+    {
+      localize: false,
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLenght: 200,
+        slugify: (input) =>
+          input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
       },
-      {
-        name: "title",
-        title: "Title",
-        type: "string",
-        description: "Title should be catchy, descriptive and not too long",
-      },
-      {
-        name: "pillars",
-        title: "Pillars",
-        type: "array",
-        of: [{ type: "pillar" }],
-      },
-    ],
-  };
-  
+    },
+    {
+      description: "Title should be catchy, descriptive and not too long",
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      localize: false,
+      name: "pillars",
+      title: "Pillars",
+      type: "array",
+      of: [{ type: "pillar" }],
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
+};

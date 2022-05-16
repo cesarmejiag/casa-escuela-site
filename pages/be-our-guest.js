@@ -1,6 +1,8 @@
 import sanityClient from "../client";
 import BlockContent from "@sanity/block-content-to-react";
+
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Layout from "../components/Layout";
 import Section from "../components/Section";
@@ -12,15 +14,16 @@ import InviewElement from "../components/InviewElement";
 
 import { findContentBySlug, findContentByType } from "../utils/utils";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "be-our-guest"][0]{
       slug,
-      title,
+      "title": title[$lang],
       content,
-      description,
+      "description": description[$lang],
       openGraphImage
-    }`
+    }`,
+    { lang: locale }
   );
 
   return {
@@ -31,6 +34,7 @@ export async function getServerSideProps() {
 }
 
 const BeOurGuest = ({ data, globalConfig }) => {
+  const { locale } = useRouter();
   const { title, description, content, openGraphImage } = data;
 
   const intro = findContentBySlug("be-our-guest", content);
@@ -54,11 +58,11 @@ const BeOurGuest = ({ data, globalConfig }) => {
         {/* Intro Section */}
         <Section
           id={intro.slug.current}
-          title={intro.title}
-          intro={intro.intro}
+          title={intro.title[locale]}
+          intro={intro.intro[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
-          footer={intro.footer}
+          footer={intro.footer[locale]}
           withMarginTop
         >
           <BottomLink path="/contact" text="Book your stay" paddingStyle={1} />
@@ -71,7 +75,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
           cColor="#b96241"
           cHeight="80%"
         >
-          <Section id={host.slug.current} title={host.title}>
+          <Section id={host.slug.current} title={host.title[locale]}>
             <div className="host-wrapper">
               <div className="row align-items-center">
                 <div className="col-12 col-md-6">
@@ -90,7 +94,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
                   <div className="host-body">
                     <InviewElement>
                       <div className="section-body">
-                        <BlockContent blocks={host.body} />
+                        <BlockContent blocks={host.body[locale]} />
                         <br />
                         <Link href="/contact">
                           <a className="gplk-btn">
@@ -118,9 +122,9 @@ const BeOurGuest = ({ data, globalConfig }) => {
         >
           <Section
             id={sayab.slug.current}
-            title={sayab.title}
-            intro={sayab.intro}
-            footer={sayab.footer}
+            title={sayab.title[locale]}
+            intro={sayab.intro[locale]}
+            footer={sayab.footer[locale]}
           >
             <div className="section-image">
               <InviewElement>
@@ -137,8 +141,8 @@ const BeOurGuest = ({ data, globalConfig }) => {
 
         {/* Sayab Bottom Section */}
         <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="100%">
-          <Section id={sayabBottom.slug.current} intro={sayabBottom.intro}>
-            <BottomLink path={link.href} text={link.text} paddingStyle={4} />
+          <Section id={sayabBottom.slug.current} intro={sayabBottom.intro[locale]}>
+            <BottomLink path={link.href} text={link.text[locale]} paddingStyle={4} />
           </Section>
         </BackgroundColor>
         <style jsx>{`

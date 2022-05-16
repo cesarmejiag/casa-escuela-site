@@ -1,6 +1,8 @@
 import sanityClient from "../client";
 import BlockContent from "@sanity/block-content-to-react";
+
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Layout from "../components/Layout";
 import Section from "../components/Section";
@@ -11,15 +13,16 @@ import InviewElement from "../components/InviewElement";
 
 import { findContentBySlug, findContentByType } from "../utils/utils";
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ locale }) {
   const data = await sanityClient.fetch(
     `*[_type == "page" && slug.current == "residencies"][0]{
       slug,
-      title,
+      "title": title[$lang],
       content,
-      description,
+      "description": description[$lang],
       openGraphImage
-    }`
+    }`,
+    { lang: locale }
   );
 
   return {
@@ -30,6 +33,7 @@ export async function getServerSideProps() {
 }
 
 const Residensies = ({ data, globalConfig }) => {
+  const { locale } = useRouter();
   const { title, description, content, openGraphImage } = data;
 
   const intro = findContentBySlug("residencies", content);
@@ -46,12 +50,12 @@ const Residensies = ({ data, globalConfig }) => {
       <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section
           id={intro.slug.current}
-          title={intro.title}
-          intro={intro.intro}
+          title={intro.title[locale]}
+          intro={intro.intro[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
           imageDescription="Angela Damman at Casa Escuela Studio"
-          footer={intro.footer}
+          footer={intro.footer[locale]}
           withMarginTop
         >
           <BottomLink
@@ -63,7 +67,7 @@ const Residensies = ({ data, globalConfig }) => {
         </Section>
       </BackgroundColor>
       {/* Exhibition Space */}
-      <Section id={exhibition.slug.current} title={exhibition.title}>
+      <Section id={exhibition.slug.current} title={exhibition.title[locale]}>
         <div className="exhibition-wrapper">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
@@ -77,7 +81,7 @@ const Residensies = ({ data, globalConfig }) => {
               <div className="exhibition-body">
                 <InviewElement>
                   <div className="section-body">
-                    <BlockContent blocks={exhibition.body} />
+                    <BlockContent blocks={exhibition.body[locale]} />
                     <br />
                     <Link href="/files/exhibitions.pdf">
                       <a className="gplk-btn">Current exhibitions</a>
@@ -100,7 +104,7 @@ const Residensies = ({ data, globalConfig }) => {
           </div>
         </InviewElement>
       </Section>
-      <BottomLink path={link.href} text={link.text} />
+      <BottomLink path={link.href} text={link.text[locale]} />
       <style jsx>{`
         .exhibition-wrapper {
           margin-top: 80px;

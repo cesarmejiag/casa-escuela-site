@@ -1,9 +1,11 @@
 export default {
+  localize: true,
   name: "sectionCards",
   title: "Section Cards",
   type: "object",
   fields: [
     {
+      localize: false,
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -15,16 +17,22 @@ export default {
       },
     },
     {
+      description: "Title should be catchy, descriptive and not too long",
       name: "title",
       title: "Title",
       type: "string",
-      description: "Title should be catchy, descriptive and not too long",
     },
     {
+      localize: false,
       name: "cards",
       title: "Cards",
       type: "array",
       of: [{ type: "card" }],
     },
   ],
+  preview: {
+    select: {
+      title: "title",
+    },
+  },
 };
