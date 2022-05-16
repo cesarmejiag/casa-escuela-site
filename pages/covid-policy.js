@@ -27,12 +27,12 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-const covidPolicy = ({ data, globalConfig }) => {
+const CovidPolicy = ({ data, globalConfig }) => {
   const { locale } = useRouter();
   const { title, description, content, openGraphImage } = data;
   const policy = findContentBySlug("covid-policy", content);
 
-  const body = policy.body ? policy.body[locale] : '';
+  const body = policy.body ? policy.body[locale] : "";
 
   return (
     <Layout
@@ -48,4 +48,4 @@ const covidPolicy = ({ data, globalConfig }) => {
   );
 };
 
-export default covidPolicy;
+export default CovidPolicy;

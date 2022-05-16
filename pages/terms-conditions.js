@@ -27,7 +27,7 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-const termsConditions = ({ data, globalConfig }) => {
+const TermsConditions = ({ data, globalConfig }) => {
   const { locale } = useRouter();
   const { title, description, content, openGraphImage } = data;
   const terms = findContentBySlug("terms-conditions", content);
@@ -48,4 +48,4 @@ const termsConditions = ({ data, globalConfig }) => {
   );
 };
 
-export default termsConditions;
+export default TermsConditions;
