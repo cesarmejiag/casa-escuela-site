@@ -31,7 +31,7 @@ const PrivacyPolicy = ({ data, globalConfig }) => {
   const { title, description, content, openGraphImage } = data;
   const policy = findContentBySlug("privacy-policy", content);
   
-  const body = policy.body ? policy.body[locale] : '';
+  const body = policy.body ? policy?.body?.[locale] : '';
   
   return (
     <Layout

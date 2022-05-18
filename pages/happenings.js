@@ -47,11 +47,11 @@ const Happenings = ({ data, globalConfig }) => {
       <BackgroundColor cSrcD="" cSrcM="" cColor="#efebe5" cHeight="80%">
         <Section
           id={intro.slug.current}
-          title={intro.title[locale]}
-          intro={intro.intro[locale]}
+          title={intro?.title?.[locale]}
+          intro={intro?.intro?.[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
-          imageDescription="Luz Vega - Taller de Cerámica"
+          imageCaption={intro?.imageCaption?.[locale]}
           withMarginTop
         />
       </BackgroundColor>
@@ -65,8 +65,8 @@ const Happenings = ({ data, globalConfig }) => {
                 <div className="happenings-card">
                   <Card
                     image={card.image}
-                    title={card.title[locale]}
-                    text={card.text[locale]}
+                    title={card?.title?.[locale]}
+                    text={card?.text?.[locale]}
                     key={index}
                     type2
                   />
@@ -79,7 +79,7 @@ const Happenings = ({ data, globalConfig }) => {
 
       <BottomLink
         path={link.href}
-        text={link.text[locale]}
+        text={link?.text?.[locale]}
         target="_blank"
       ></BottomLink>
 

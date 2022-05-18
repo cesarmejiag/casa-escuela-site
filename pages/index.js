@@ -49,7 +49,7 @@ export default function Home({ data, globalConfig }) {
       {/* Hero Section */}
       <Hero
         id={hero.slug.current}
-        text={hero.text[locale]}
+        text={hero?.text?.[locale]}
         imagesSrc={hero.desktopImages}
         mobileImagesSrc={hero.mobileImages}
       />
@@ -57,8 +57,8 @@ export default function Home({ data, globalConfig }) {
       {/* What We Do Section */}
       <Section
         id={whatWeDo.slug.current}
-        title={whatWeDo.title[locale]}
-        introText={whatWeDo.intro[locale]}
+        title={whatWeDo?.title?.[locale]}
+        introText={whatWeDo?.intro?.[locale]}
       >
         <InviewElement>
           <div className="section-image">
@@ -79,7 +79,7 @@ export default function Home({ data, globalConfig }) {
         cColor="#dfe3da"
         cHeight="75%"
       >
-        <Section id={homeTo.slug.current} intro={homeTo.intro[locale]}>
+        <Section id={homeTo.slug.current} intro={homeTo?.intro?.[locale]}>
           <div className="home-to-wrapper">
             <div className="row">
               <div className="col-12 col-lg-8">
@@ -106,7 +106,7 @@ export default function Home({ data, globalConfig }) {
               <div className="col-12 col-lg-4">
                 <InviewElement>
                   <div className="home-to-text">
-                    <BlockContent blocks={homeTo.text[locale]} />
+                    <BlockContent blocks={homeTo?.text?.[locale]} />
                   </div>
                 </InviewElement>
               </div>
@@ -116,7 +116,7 @@ export default function Home({ data, globalConfig }) {
       </BackgroundColor>
 
       {/* Bottom Section */}
-      <BottomLink path={link.href} text={link.text[locale]} />
+      <BottomLink path={link.href} text={link?.text?.[locale]} />
 
       <style jsx>{`
         .what-we-do-image {

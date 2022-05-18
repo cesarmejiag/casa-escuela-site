@@ -32,7 +32,7 @@ const CovidPolicy = ({ data, globalConfig }) => {
   const { title, description, content, openGraphImage } = data;
   const policy = findContentBySlug("covid-policy", content);
 
-  const body = policy.body ? policy.body[locale] : "";
+  const body = policy.body ? policy?.body?.[locale] : "";
 
   return (
     <Layout

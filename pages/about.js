@@ -59,8 +59,8 @@ const About = ({ data, globalConfig }) => {
       >
         <Section
           id={intro.slug.current}
-          title={intro.title[locale]}
-          intro={intro.intro[locale]}
+          title={intro?.title?.[locale]}
+          intro={intro?.intro?.[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
           withMarginTop
@@ -75,7 +75,7 @@ const About = ({ data, globalConfig }) => {
         cHeight="40%"
         cHeight2="50%"
       >
-        <Section id={built.slug.current} intro={built.intro[locale]}>
+        <Section id={built.slug.current} intro={built?.intro?.[locale]}>
           <div className="section-image">
             <InviewElement>
               <div className="built-image">
@@ -83,20 +83,20 @@ const About = ({ data, globalConfig }) => {
               </div>
             </InviewElement>
           </div>
-          <div className="section-footer">{built.footer[locale]}</div>
+          <div className="section-footer">{built?.footer?.[locale]}</div>
         </Section>
       </BackgroundColor>
 
       {/* Team Section */}
-      <Section id={team.slug.current} title={team.title[locale]}>
+      <Section id={team.slug.current} title={team?.title?.[locale]}>
         <div className="team-wrapper">
           <InviewElement>
             <Carrousel
               slides={team.cards.map((card, index) => (
                 <Card
                   image={card.image}
-                  title={card.title[locale]}
-                  text={card.text[locale]}
+                  title={card?.title?.[locale]}
+                  text={card?.text?.[locale]}
                   key={index}
                 />
               ))}
@@ -108,14 +108,14 @@ const About = ({ data, globalConfig }) => {
       </Section>
 
       {/* Pillars Section */}
-      <Section id={pillars.slug.current} title={pillars.title[locale]}>
+      <Section id={pillars.slug.current} title={pillars?.title?.[locale]}>
         <InviewElement>
           <Carrousel
             slides={pillars.pillars.map((card, index) => (
               <PillarCard
                 id={index + 1}
-                title={card.title[locale]}
-                text={card.text[locale]}
+                title={card?.title?.[locale]}
+                text={card?.text?.[locale]}
                 key={index}
               />
             ))}
@@ -127,7 +127,7 @@ const About = ({ data, globalConfig }) => {
       </Section>
 
       {/* Bottom Link Section */}
-      <BottomLink path={link.href} text={link.text[locale]}></BottomLink>
+      <BottomLink path={link.href} text={link?.text?.[locale]}></BottomLink>
 
       <style jsx>{`
         .team-wrapper {

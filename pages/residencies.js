@@ -50,12 +50,12 @@ const Residensies = ({ data, globalConfig }) => {
       <BackgroundColor cSrcD="" cSrcM="" cColor="#dfe3da" cHeight="55%">
         <Section
           id={intro.slug.current}
-          title={intro.title[locale]}
-          intro={intro.intro[locale]}
+          title={intro?.title?.[locale]}
+          intro={intro?.intro?.[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
-          imageDescription="Angela Damman at Casa Escuela Studio"
-          footer={intro.footer[locale]}
+          imageCaption={intro?.imageCaption?.[locale]}
+          footer={intro?.footer?.[locale]}
           withMarginTop
         >
           <BottomLink
@@ -67,7 +67,7 @@ const Residensies = ({ data, globalConfig }) => {
         </Section>
       </BackgroundColor>
       {/* Exhibition Space */}
-      <Section id={exhibition.slug.current} title={exhibition.title[locale]}>
+      <Section id={exhibition.slug.current} title={exhibition?.title?.[locale]}>
         <div className="exhibition-wrapper">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
@@ -81,7 +81,7 @@ const Residensies = ({ data, globalConfig }) => {
               <div className="exhibition-body">
                 <InviewElement>
                   <div className="section-body">
-                    <BlockContent blocks={exhibition.body[locale]} />
+                    <BlockContent blocks={exhibition?.body?.[locale]} />
                     <br />
                     <Link href="/files/exhibitions.pdf">
                       <a className="gplk-btn">Current exhibitions</a>
@@ -104,7 +104,7 @@ const Residensies = ({ data, globalConfig }) => {
           </div>
         </InviewElement>
       </Section>
-      <BottomLink path={link.href} text={link.text[locale]} />
+      <BottomLink path={link.href} text={link?.text?.[locale]} />
       <style jsx>{`
         .exhibition-wrapper {
           margin-top: 80px;

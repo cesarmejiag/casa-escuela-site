@@ -58,11 +58,11 @@ const BeOurGuest = ({ data, globalConfig }) => {
         {/* Intro Section */}
         <Section
           id={intro.slug.current}
-          title={intro.title[locale]}
-          intro={intro.intro[locale]}
+          title={intro?.title?.[locale]}
+          intro={intro?.intro?.[locale]}
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
-          footer={intro.footer[locale]}
+          footer={intro?.footer?.[locale]}
           withMarginTop
         >
           <BottomLink path="/contact" text="Book your stay" paddingStyle={1} />
@@ -75,7 +75,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
           cColor="#b96241"
           cHeight="80%"
         >
-          <Section id={host.slug.current} title={host.title[locale]}>
+          <Section id={host.slug.current} title={host?.title?.[locale]}>
             <div className="host-wrapper">
               <div className="row align-items-center">
                 <div className="col-12 col-md-6">
@@ -84,7 +84,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
                       <ImageSwicher
                         imagesSrc={host.desktopImages}
                         mobileImagesSrc={host.mobileImages}
-                        imageDescription="Terraza Mérida"
+                        imageCaption={host?.imageCaption?.[locale]}
                         cColor="#f5f3ef"
                       />
                     </div>
@@ -94,7 +94,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
                   <div className="host-body">
                     <InviewElement>
                       <div className="section-body">
-                        <BlockContent blocks={host.body[locale]} />
+                        <BlockContent blocks={host?.body?.[locale]} />
                         <br />
                         <Link href="/contact">
                           <a className="gplk-btn">Book your event</a>
@@ -118,9 +118,9 @@ const BeOurGuest = ({ data, globalConfig }) => {
         >
           <Section
             id={sayab.slug.current}
-            title={sayab.title[locale]}
-            intro={sayab.intro[locale]}
-            footer={sayab.footer[locale]}
+            title={sayab?.title?.[locale]}
+            intro={sayab?.intro?.[locale]}
+            footer={sayab?.footer?.[locale]}
           >
             <div className="section-image">
               <InviewElement>
@@ -139,11 +139,11 @@ const BeOurGuest = ({ data, globalConfig }) => {
         <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="100%">
           <Section
             id={sayabBottom.slug.current}
-            intro={sayabBottom.intro[locale]}
+            intro={sayabBottom?.intro?.[locale]}
           >
             <BottomLink
               path={link.href}
-              text={link.text[locale]}
+              text={link?.text?.[locale]}
               paddingStyle={4}
             />
           </Section>

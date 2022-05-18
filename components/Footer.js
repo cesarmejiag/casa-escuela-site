@@ -1,11 +1,14 @@
 import styles from "../styles/Footer.module.css";
 
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
 import Weather from "./Weather";
 
 const Footer = () => {
+  const { locale } = useRouter();
+
   return (
     <footer className={styles.footer}>
       <div className="holder">
@@ -36,12 +39,16 @@ const Footer = () => {
                 <div className="col-6 col-md-4">
                   <div>
                     <Link href="/contact">
-                      <a className="text-uppercase">Contact</a>
+                      <a className="text-uppercase">
+                        {locale === "en" ? "Contact" : "Contacto"}
+                      </a>
                     </Link>
                   </div>
                   <div className="instagram-link">
                     <Link href="https://www.instagram.com/casa.escuela/">
-                      <a className="text-uppercase" target="_blank">Instagram</a>
+                      <a className="text-uppercase" target="_blank">
+                        Instagram
+                      </a>
                     </Link>
                   </div>
                 </div>
@@ -50,23 +57,39 @@ const Footer = () => {
                     <div className="col-12 col-md-6">
                       <div>
                         <Link href="/terms-conditions">
-                          <a className="text-uppercase">Terms and Conditions</a>
+                          <a className="text-uppercase">
+                            {locale === "en"
+                              ? "Terms and Conditions"
+                              : "Términos y Condiciones"}
+                          </a>
                         </Link>
                       </div>
                       <div>
                         <Link href="/privacy-policy">
-                          <a className="text-uppercase">Privacy & Policy</a>
+                          <a className="text-uppercase">
+                            {locale === "en"
+                              ? "Privacy & Policy"
+                              : "Aviso de Privacidad"}
+                          </a>
                         </Link>
                       </div>
                       <div>
                         <Link href="/covid-policy">
-                          <a className="text-uppercase">Covid Policy</a>
+                          <a className="text-uppercase">
+                            {locale === "en"
+                              ? "Covid Policy"
+                              : "Políticas Covid"}
+                          </a>
                         </Link>
                       </div>
                     </div>
                     <div className="col-12 col-md-6">
                       <div className="text-uppercase">
-                        <div>All rights reserved</div>
+                        <div>
+                          {locale === "en"
+                            ? "All rights reserved"
+                            : "Todos los derechos reservados"}
+                        </div>
                         <div>2022©</div>
                       </div>
                     </div>

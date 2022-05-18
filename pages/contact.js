@@ -50,12 +50,19 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
     setFormState({ ...initFormState, loading: true });
 
     try {
-      const res = await fetch(`/api/contact`, {
+      // const endpoint = `/api/contact`;
+      const endpoint = `https://www.goplek.com/mailer/send-mail-v1.php`;
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: JSON.stringify(contactData),
+        body: `data=${JSON.stringify({
+          host: "casaescuela.mx",
+          data: contactData,
+        })}`,
       });
-      const data = await res.json();
+      const data = await res.text();
+
+      console.log(data);
 
       setFormState({ ...initFormState, data });
     } catch (error) {
@@ -82,7 +89,7 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
       {/* Contact */}
       <Section
         id={introSanity.slug.current}
-        title={introSanity.title[locale]}
+        title={introSanity?.title?.[locale]}
         noHolder
         withMarginTop
       >
@@ -106,7 +113,7 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
           <div className="contact-intro-body">
             <InviewElement>
               <div className="section-body text-center">
-                <BlockContent blocks={weWant.body[locale]} />
+                <BlockContent blocks={weWant?.body?.[locale]} />
               </div>
             </InviewElement>
           </div>
@@ -224,11 +231,11 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
           <InviewElement>
             <div className="contact-address" id={intro.addressTitle}>
               <div className="contact-title-address">
-                {address.title[locale]}
+                {address?.title?.[locale]}
               </div>
               <div
                 className="contact-address-text"
-                dangerouslySetInnerHTML={{ __html: address.address[locale] }}
+                dangerouslySetInnerHTML={{ __html: address?.address?.[locale] }}
               ></div>
             </div>
           </InviewElement>

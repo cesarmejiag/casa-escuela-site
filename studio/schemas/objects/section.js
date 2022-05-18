@@ -48,6 +48,11 @@ export default {
       of: [{ type: "image" }],
     },
     {
+      name: "imageCaption",
+      title: "Image Caption",
+      type: "string",
+    },
+    {
       name: "footer",
       title: "Footer",
       type: "string",

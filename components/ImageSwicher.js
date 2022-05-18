@@ -11,7 +11,7 @@ import { getImages } from "../utils/utils";
 const ImageSwicher = ({
   imagesSrc,
   mobileImagesSrc,
-  imageDescription,
+  imageCaption,
   textPosition,
   parallaxSpeed,
   cColor,
@@ -60,10 +60,10 @@ const ImageSwicher = ({
           </div>
         ))}
       </div>
-      {imageDescription && (
-        <div className={styles.imageDescription}>{imageDescription}</div>
+      {imageCaption && (
+        <div className={styles.imageCaption}>{imageCaption}</div>
       )}
-      {total > 0 && textPosition === 4 && !imageDescription && (
+      {total > 0 && textPosition === 4 && !imageCaption && (
         <div className={styles.clickText} style={{ color: cColor }}>
           Click on the image
         </div>
@@ -75,7 +75,7 @@ const ImageSwicher = ({
 ImageSwicher.propTypes = {
   imagesSrc: PropTypes.arrayOf(PropTypes.object).isRequired,
   mobileImagesSrc: PropTypes.arrayOf(PropTypes.object),
-  imageDescription: PropTypes.string,
+  imageCaption: PropTypes.string,
   textPosition: PropTypes.number,
   parallaxSpeed: PropTypes.number,
 };
@@ -83,7 +83,7 @@ ImageSwicher.propTypes = {
 ImageSwicher.defaultProps = {
   imagesSrc: [],
   mobileImagesSrc: [],
-  imageDescription: "",
+  imageCaption: "",
   textPosition: 1,
   parallaxSpeed: 3,
 };

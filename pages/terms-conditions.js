@@ -32,7 +32,7 @@ const TermsConditions = ({ data, globalConfig }) => {
   const { title, description, content, openGraphImage } = data;
   const terms = findContentBySlug("terms-conditions", content);
 
-  const body = terms.body ? terms.body[locale] : "";
+  const body = terms.body ? terms?.body?.[locale] : "";
 
   return (
     <Layout

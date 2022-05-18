@@ -32,14 +32,14 @@
   text-transform: uppercase;
 }
 
-.imageDescription {
+.imageCaption {
   color: #000;
   font-size: 12px;
   margin: 10px 0;
 }
 
 @media screen and (min-width: 768px) {
-  .imageDescription {
+  .imageCaption {
     font-size: 14px;
   }
 }
