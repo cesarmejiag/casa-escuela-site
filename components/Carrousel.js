@@ -21,6 +21,11 @@ const Carrousel = ({
 }) => {
   const { mobile } = useWindowSize();
   const [index, setIndex] = useState(1);
+  const [swiper, setSwiper] = useState(null);
+
+  const prevSlide = () => swiper && swiper.slidePrev();
+  const nextSlide = () => swiper && swiper.slideNext();
+  const handleSwiper = (swiper) => setSwiper(swiper);
   const handleSlideChange = ({ activeIndex }) => {
     setIndex(activeIndex + 1);
   };
@@ -28,7 +33,6 @@ const Carrousel = ({
   const swiperProps = {};
 
   if (type === 2) {
-    // swiperProps.navigation = true;
     swiperProps.navigation = !mobile;
     swiperProps.modules = [Navigation, EffectCreative];
     swiperProps.creativeEffect = {
@@ -50,6 +54,7 @@ const Carrousel = ({
         spaceBetween={spaceBetween}
         onSlideChange={handleSlideChange}
         speed={speed}
+        onSwiper={handleSwiper}
         {...swiperProps}
       >
         {slides.map((slide, index) => (
@@ -57,9 +62,9 @@ const Carrousel = ({
         ))}
       </Swiper>
       <div className={styles.controls}>
-        <button className={styles.prevBtn}></button>
+        <button className={styles.prevBtn} onClick={prevSlide}></button>
         {index} / {slides.length}
-        <button className={styles.nextBtn}></button>
+        <button className={styles.nextBtn} onClick={nextSlide}></button>
       </div>
     </div>
   );

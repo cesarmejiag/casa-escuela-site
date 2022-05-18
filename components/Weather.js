@@ -42,7 +42,7 @@ const Weather = () => {
         </div>
         <div className="col-6 col-md-12">
           <div className={styles.info}>
-            <div>{formatTime(localtime)}</div>
+            <div>{formatTime(localtime)} Mérida, Yucatán.</div>
             <div>
               {temp_f} F / {temp_c} C
             </div>

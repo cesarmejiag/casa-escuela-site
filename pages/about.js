@@ -53,7 +53,6 @@ const About = ({ data, globalConfig }) => {
       {/* La Casa de Todos Section */}
       <BackgroundColor
         cSrcD="/images/bckAboutD.svg"
-        cSrcM="/images/bckHomeM.svg"
         cColor="#ecf0f8"
         cHeight="40%"
         cPosition="bottom"
@@ -74,6 +73,7 @@ const About = ({ data, globalConfig }) => {
         cSrcM="/images/bckHomeM.svg"
         cColor="#ecf0f8"
         cHeight="40%"
+        cHeight2="50%"
       >
         <Section id={built.slug.current} intro={built.intro[locale]}>
           <div className="section-image">

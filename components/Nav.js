@@ -11,7 +11,7 @@ const NavLink = ({ path, text, target = "_self" }) => {
   return (
     <Link href={path || "#"}>
       <a className={`${styles.link}${active}`} target={target}>
-        {text}
+        {text[router.locale]}
       </a>
     </Link>
   );
@@ -45,9 +45,18 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
               <div
                 className={`${styles.leftLinks} d-none d-md-flex justify-content-start`}
               >
-                <NavLink path="/be-our-guest" text="Be our guest" />
-                <NavLink path="/happenings" text="Happenings" />
-                <NavLink path="/residencies" text="Residencies" />
+                <NavLink
+                  path="/be-our-guest"
+                  text={{ en: "Be our guest", es: "Visitanos" }}
+                />
+                <NavLink
+                  path="/happenings"
+                  text={{ en: "Happenings", es: "Eventos" }}
+                />
+                <NavLink
+                  path="/residencies"
+                  text={{ en: "Residencies", es: "Residencias" }}
+                />
               </div>
               <div className="d-flex d-md-none">
                 <LangLink />
@@ -70,9 +79,16 @@ const Nav = ({ mobileVisible, onToggleClick }) => {
               <div
                 className={`${styles.rightLinks} d-none d-md-flex justify-content-end`}
               >
-                <NavLink path="/about" text="About" />
-                <NavLink path="/contact" text="Contact" />
-                <NavLink path={shopUrl} text="Shop" target="_blank" />
+                <NavLink path="/about" text={{ en: "About", es: "Nosotros" }} />
+                <NavLink
+                  path="/contact"
+                  text={{ en: "Contact", es: "Contacto" }}
+                />
+                <NavLink
+                  path={shopUrl}
+                  text={{ en: "Shop", es: "Tienda" }}
+                  target="_blank"
+                />
                 <LangLink />
               </div>
               <div className="d-flex d-md-none">

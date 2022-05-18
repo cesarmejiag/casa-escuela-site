@@ -97,11 +97,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
                         <BlockContent blocks={host.body[locale]} />
                         <br />
                         <Link href="/contact">
-                          <a className="gplk-btn">
-                            Contact us to learn more about booking
-                            <br />
-                            Casa Escuela to host your next event.
-                          </a>
+                          <a className="gplk-btn">Book your event</a>
                         </Link>
                       </div>
                     </InviewElement>
@@ -141,8 +137,15 @@ const BeOurGuest = ({ data, globalConfig }) => {
 
         {/* Sayab Bottom Section */}
         <BackgroundColor cSrcD="" cSrcM="" cColor="#ecf0f8" cHeight="100%">
-          <Section id={sayabBottom.slug.current} intro={sayabBottom.intro[locale]}>
-            <BottomLink path={link.href} text={link.text[locale]} paddingStyle={4} />
+          <Section
+            id={sayabBottom.slug.current}
+            intro={sayabBottom.intro[locale]}
+          >
+            <BottomLink
+              path={link.href}
+              text={link.text[locale]}
+              paddingStyle={4}
+            />
           </Section>
         </BackgroundColor>
         <style jsx>{`

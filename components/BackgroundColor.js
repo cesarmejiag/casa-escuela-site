@@ -1,24 +1,24 @@
 import styles from "../styles/BackgroundColor.module.css";
-import ScreenSize from "../components/ScreenSize";
+import useWindowSize from "../hooks/useWindowSize";
 
 const BackgroundColor = ({
   cSrcD,
   cSrcM,
   cColor,
   cHeight,
+  cHeight2 = "100%",
   children,
   cPosition,
 }) => {
-  const size = ScreenSize();
+  const { mobile } = useWindowSize();
   const position =
     cPosition === "bottom" ? `${styles.bottom}` : `${styles.top}`;
 
   let styleBack;
   if (cSrcD || cSrcM) {
-    styleBack =
-      size.width > 767
-        ? { backgroundImage: `url(${cSrcD})`, height: cHeight }
-        : { backgroundImage: `url(${cSrcM})`, height: "100%" };
+    styleBack = !mobile
+      ? { backgroundImage: `url(${cSrcD})`, height: cHeight }
+      : { backgroundImage: `url(${cSrcM})`, height: cHeight2 };
   } else {
     styleBack = { background: cColor, height: cHeight };
   }
