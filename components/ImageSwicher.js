@@ -1,6 +1,7 @@
 import styles from "../styles/ImageSwicher.module.css";
 
 import Image from "next/image";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import { useParallax } from "react-scroll-parallax";
 
@@ -16,8 +17,10 @@ const ImageSwicher = ({
   parallaxSpeed,
   cColor,
 }) => {
+  const { locale } = useRouter();
   const { mobile } = useWindowSize();
-  const images = mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
+  const images =
+    mobile && mobileImagesSrc.length > 0 ? mobileImagesSrc : imagesSrc;
   const total = images.length - 1;
   const { count, increase } = useCounter(0, total, true);
 
@@ -44,7 +47,7 @@ const ImageSwicher = ({
     >
       {total > 0 && textPosition !== 4 && (
         <div className={styles.clickText} style={{ color: cColor }}>
-          Click on the image
+          {locale === "en" ? "Click on the image" : "Haz clic en la imagen"}
         </div>
       )}
       <div className={styles.wrapper}>
@@ -65,7 +68,7 @@ const ImageSwicher = ({
       )}
       {total > 0 && textPosition === 4 && !imageCaption && (
         <div className={styles.clickText} style={{ color: cColor }}>
-          Click on the image
+          {locale === "en" ? "Click on the image" : "Haz clic en la imagen"}
         </div>
       )}
     </div>

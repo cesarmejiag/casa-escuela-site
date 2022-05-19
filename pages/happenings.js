@@ -78,10 +78,10 @@ const Happenings = ({ data, globalConfig }) => {
       </Section>
 
       <BottomLink
-        path={link.href}
+        href={link.href}
         text={link?.text?.[locale]}
         target="_blank"
-      ></BottomLink>
+      />
 
       <style jsx>{`
         .happenings-card {

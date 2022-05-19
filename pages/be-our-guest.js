@@ -63,17 +63,20 @@ const BeOurGuest = ({ data, globalConfig }) => {
           imagesSrc={intro.desktopImages}
           mobileImagesSrc={intro.mobileImages}
           footer={intro?.footer?.[locale]}
+          link={{
+            href: intro?.linkHref,
+            text: intro?.linkText?.[locale],
+            paddingStyle: 1,
+          }}
           withMarginTop
-        >
-          <BottomLink path="/contact" text="Book your stay" paddingStyle={1} />
-        </Section>
+        />
 
         {/* Host Section */}
         <BackgroundColor
           cSrcD="/images/bckBOGD1.svg"
           cSrcM="/images/bckBOGM1.svg"
           cColor="#b96241"
-          cHeight="80%"
+          cHeight="85%"
         >
           <Section id={host.slug.current} title={host?.title?.[locale]}>
             <div className="host-wrapper">
@@ -96,8 +99,10 @@ const BeOurGuest = ({ data, globalConfig }) => {
                       <div className="section-body">
                         <BlockContent blocks={host?.body?.[locale]} />
                         <br />
-                        <Link href="/contact">
-                          <a className="gplk-btn">Book your event</a>
+                        <Link href={intro?.linkHref}>
+                          <a className="gplk-btn">
+                            {intro?.linkText?.[locale]}
+                          </a>
                         </Link>
                       </div>
                     </InviewElement>
@@ -142,7 +147,7 @@ const BeOurGuest = ({ data, globalConfig }) => {
             intro={sayabBottom?.intro?.[locale]}
           >
             <BottomLink
-              path={link.href}
+              href={link.href}
               text={link?.text?.[locale]}
               paddingStyle={4}
             />

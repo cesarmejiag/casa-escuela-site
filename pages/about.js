@@ -127,7 +127,7 @@ const About = ({ data, globalConfig }) => {
       </Section>
 
       {/* Bottom Link Section */}
-      <BottomLink path={link.href} text={link?.text?.[locale]}></BottomLink>
+      <BottomLink href={link.href} text={link?.text?.[locale]} />
 
       <style jsx>{`
         .team-wrapper {

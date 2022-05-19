@@ -62,8 +62,6 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
       });
       const data = await res.text();
 
-      console.log(data);
-
       setFormState({ ...initFormState, data });
     } catch (error) {
       setFormState({ ...initFormState, error });

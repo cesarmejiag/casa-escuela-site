@@ -3,6 +3,12 @@ export default {
   name: "section",
   title: "Section",
   type: "object",
+  fieldsets: [
+    {
+      name: "bottomLink",
+      title: "Bottom Link",
+    },
+  ],
   fields: [
     {
       localize: false,
@@ -56,6 +62,24 @@ export default {
       name: "footer",
       title: "Footer",
       type: "string",
+    },
+    {
+      localize: false,
+      name: "linkHref",
+      title: "Link Url",
+      type: "url",
+      fieldset: "bottomLink",
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ["https", "http", "mailto", "tel"],
+        }),
+    },
+    {
+      name: "linkText",
+      title: "Link Text",
+      type: "string",
+      fieldset: "bottomLink",
     },
   ],
   preview: {

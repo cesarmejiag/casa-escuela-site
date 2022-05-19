@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import InviewElement from "./InviewElement";
 import ImageSwicher from "./ImageSwicher";
 import AnimText from "./AnimText";
+import BottomLink from "./BottomLink";
 
 const Section = ({
   id,
@@ -15,6 +16,7 @@ const Section = ({
   mobileImagesSrc,
   imageCaption,
   footer,
+  link,
   noHolder = false,
   withMarginTop = false,
   children,
@@ -62,6 +64,7 @@ const Section = ({
               </InviewElement>
             )}
             <div>{children}</div>
+            {link && link.text && link.href && <BottomLink {...link} />}
           </div>
         </div>
       </div>
@@ -78,6 +81,7 @@ Section.propTypes = {
   mobileImagesSrc: PropTypes.arrayOf(PropTypes.object),
   imageCaption: PropTypes.string,
   footer: PropTypes.string,
+  link: PropTypes.object,
   noHolder: PropTypes.bool,
   withMarginTop: PropTypes.bool,
 };

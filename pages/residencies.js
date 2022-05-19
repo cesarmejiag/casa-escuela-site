@@ -56,15 +56,14 @@ const Residensies = ({ data, globalConfig }) => {
           mobileImagesSrc={intro.mobileImages}
           imageCaption={intro?.imageCaption?.[locale]}
           footer={intro?.footer?.[locale]}
+          link={{
+            href: intro?.linkHref,
+            text: intro?.linkText?.[locale],
+            paddingStyle: 3,
+            target: "_blank",
+          }}
           withMarginTop
-        >
-          <BottomLink
-            path="https://www.instagram.com/casa.escuela/"
-            text="Current artist in residence"
-            target="_blank"
-            paddingStyle={3}
-          />
-        </Section>
+        />
       </BackgroundColor>
       {/* Exhibition Space */}
       <Section id={exhibition.slug.current} title={exhibition?.title?.[locale]}>
@@ -83,8 +82,8 @@ const Residensies = ({ data, globalConfig }) => {
                   <div className="section-body">
                     <BlockContent blocks={exhibition?.body?.[locale]} />
                     <br />
-                    <Link href="/files/exhibitions.pdf">
-                      <a className="gplk-btn">Current exhibitions</a>
+                    <Link href={exhibition?.linkHref}>
+                      <a className="gplk-btn">{exhibition?.linkText?.[locale]}</a>
                     </Link>
                   </div>
                 </InviewElement>
@@ -104,7 +103,7 @@ const Residensies = ({ data, globalConfig }) => {
           </div>
         </InviewElement>
       </Section>
-      <BottomLink path={link.href} text={link?.text?.[locale]} />
+      <BottomLink href={link.href} text={link?.text?.[locale]} />
       <style jsx>{`
         .exhibition-wrapper {
           margin-top: 80px;

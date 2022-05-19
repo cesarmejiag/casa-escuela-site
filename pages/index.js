@@ -116,7 +116,7 @@ export default function Home({ data, globalConfig }) {
       </BackgroundColor>
 
       {/* Bottom Section */}
-      <BottomLink path={link.href} text={link?.text?.[locale]} />
+      <BottomLink href={link.href} text={link?.text?.[locale]} />
 
       <style jsx>{`
         .what-we-do-image {

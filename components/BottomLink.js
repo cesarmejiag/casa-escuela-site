@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 import InviewElement from "./InviewElement";
 
-const BottomLink = ({ path, text, target = "_self", paddingStyle = 0 }) => {
+const BottomLink = ({ href, text, target = "_self", paddingStyle = 0 }) => {
   let paddingClass = "";
 
   if (paddingStyle === 1) {
@@ -20,8 +20,10 @@ const BottomLink = ({ path, text, target = "_self", paddingStyle = 0 }) => {
   return (
     <div className={`${styles.bottomLink}${paddingClass}`}>
       <InviewElement>
-        <Link href={path}>
-          <a className="gplk-btn" target={target}>{text}</a>
+        <Link href={href}>
+          <a className="gplk-btn" target={target}>
+            {text}
+          </a>
         </Link>
       </InviewElement>
     </div>
@@ -29,7 +31,7 @@ const BottomLink = ({ path, text, target = "_self", paddingStyle = 0 }) => {
 };
 
 BottomLink.propTypes = {
-  path: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   target: PropTypes.string,
   paddingStyle: PropTypes.number,
