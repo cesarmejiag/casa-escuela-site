@@ -107,7 +107,7 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
       ],
     };
 
-    return options[lang].map((opt) => <option value={opt}>{opt}</option>);
+    return options[lang].map((opt) => <option value={opt} key={opt.toLowerCase()}>{opt}</option>);
   };
 
   return (
