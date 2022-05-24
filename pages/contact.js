@@ -79,6 +79,37 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
   const weWant = findContentBySlug("we-want-to-hear-your-story", content);
   const address = findContentByType("address", content);
 
+  const getOptions = (lang) => {
+    const options = {
+      en: [
+        "Collaborate",
+        "Stay with us",
+        "Host an event",
+        "Sayab",
+        "Residencies",
+        "Shop",
+        "Collaboration",
+        "General Inquiries",
+        "Press",
+        "Visit Gallery",
+      ],
+      es: [
+        "Colaborar",
+        "Hospédate con nosotros",
+        "Organiza un evento",
+        "Sayab",
+        "Residencias",
+        "Tienda",
+        "Colaboración",
+        "Consultas generales",
+        "Prensa",
+        "Visita a la Galería",
+      ],
+    };
+
+    return options[lang].map((opt) => <option value={opt}>{opt}</option>);
+  };
+
   return (
     <Layout
       pageConfig={{ title, description, openGraphImage }}
@@ -127,14 +158,26 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
         >
           <div className="contact-wrapper-response">
             <div className="contact-text-response">
-              {formState.loading ? "Enviando..." : intro.appreciation}
+              {formState.loading
+                ? locale === "en"
+                  ? "Sending..."
+                  : "Enviando..."
+                : locale === "en"
+                ? intro.appreciation
+                : "Mensaje Enviado"}
             </div>
             {formState.data && (
               <div className="contact-message-response">
-                {intro.contactMessage}
+                {locale === "en"
+                  ? intro.contactMessage
+                  : "Te contactaremos a la brevedad posible"}
                 <div className="contact-link-response">
                   <Link href="/">
-                    <a>Back home</a>
+                    <a>
+                      {locale === "en"
+                        ? "Back home"
+                        : "Regresar a la página de inicio"}
+                    </a>
                   </Link>
                 </div>
               </div>
@@ -152,7 +195,7 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
               <div className="contact-personal-information">
                 <div className="contact-group-button">
                   <label htmlFor="name" className="labels">
-                    Name
+                    {locale === "en" ? "Name" : "Nombre"}
                   </label>
                   <input
                     type="text"
@@ -161,12 +204,16 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
                     {...register("name", { required: true, maxLength: 30 })}
                   />
                   {errors?.name?.type === "required" && (
-                    <p className="errorMessage">This field is required</p>
+                    <p className="errorMessage">
+                      {locale === "en"
+                        ? "This field is required"
+                        : "Este campo es obligatorio"}
+                    </p>
                   )}
                 </div>
                 <div className="contact-group-button">
                   <label htmlFor="email" className="labels">
-                    Email
+                    {locale === "en" ? "Email" : "Email"}
                   </label>
                   <input
                     type="text"
@@ -179,49 +226,52 @@ const Contact = ({ data: sectionsData, globalConfig }) => {
                     })}
                   />
                   {errors?.email?.type === "required" && (
-                    <p className="errorMessage">This field is required</p>
+                    <p className="errorMessage">
+                      {locale === "en"
+                        ? "This field is required"
+                        : "Este campo es obligatorio"}
+                    </p>
                   )}
                 </div>
               </div>
               <div className="contact-subject-information">
                 <div className="contact-group-button">
                   <label htmlFor="name" className="labels">
-                    Subject
+                    {locale === "en" ? "Subject" : "Asunto"}
                   </label>
                   <select
                     {...register("subject", { required: true })}
                     className="inputField"
                   >
-                    <option value="Collaborate">Collaborate</option>
-                    <option value="Stay with us">Stay with us</option>
-                    <option value="Host an event">Host an event</option>
-                    <option value="Sayab">Sayab</option>
-                    <option value="Residencies">Residencies</option>
-                    <option value="Shop">Shop</option>
-                    <option value="Collaboration">Collaboration</option>
-                    <option value="General Inquiries">General Inquiries</option>
-                    <option value="Press">Press</option>
-                    <option value="Visit Gallery">Visit Gallery</option>
+                    {getOptions(locale)}
                   </select>
                 </div>
               </div>
             </div>
             <div className="contact-message">
               <label htmlFor="message" className="labels">
-                Message
+                {locale === "en" ? "Message" : "Mensaje"}
               </label>
               <textarea
                 id="message"
                 className="message"
-                placeholder="Hello ..."
+                placeholder={locale === "en" ? "Hello ..." : "Hola ..."}
                 {...register("message", { required: true, maxLength: 100 })}
               ></textarea>
               {errors?.message?.type === "required" && (
-                <p className="errorMessage">This field is required</p>
+                <p className="errorMessage">
+                  {locale === "en"
+                    ? "This field is required"
+                    : "Este campo es obligatorio"}
+                </p>
               )}
             </div>
             <div className="contact-wrapper-submit">
-              <input type="submit" value="Send" className="submit-button" />
+              <input
+                type="submit"
+                value={locale === "en" ? "Send" : "Enviar"}
+                className="submit-button"
+              />
             </div>
           </form>
         </InviewElement>
