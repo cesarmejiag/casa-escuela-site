@@ -6,7 +6,7 @@ const padZero = (number) => {
 };
 
 const formatTime = (datetime) => {
-  const date = datetime ? new Date(datetime) : new Date();
+  /* const date = datetime ? new Date(datetime) : new Date();
   if (date) {
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -18,9 +18,9 @@ const formatTime = (datetime) => {
     }
 
     return `${padZero(hours)}:${padZero(minutes)} ${m}`;
-  }
+  }*/
   
-  return ``;
+  return datetime;
 };
 
 const Weather = () => {
