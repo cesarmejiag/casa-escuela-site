@@ -6,21 +6,22 @@ const padZero = (number) => {
 };
 
 const formatTime = (datetime) => {
+  if (datetime) {
+    return datetime.split(" ")[1];
+  }
+
+  return '';
   /* const date = datetime ? new Date(datetime) : new Date();
-  if (date) {
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
-    let m = "AM";
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let m = "AM";
 
-    if (hours > 12) {
-      hours -= 12;
-      m = "PM";
-    }
+  if (hours > 12) {
+    hours -= 12;
+    m = "PM";
+  }
 
-    return `${padZero(hours)}:${padZero(minutes)} ${m}`;
-  }*/
-  
-  return datetime;
+  return `${padZero(hours)}:${padZero(minutes)} ${m}`; */
 };
 
 const Weather = () => {
