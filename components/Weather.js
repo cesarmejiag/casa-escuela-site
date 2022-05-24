@@ -7,16 +7,20 @@ const padZero = (number) => {
 
 const formatTime = (datetime) => {
   const date = datetime ? new Date(datetime) : new Date();
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let m = "AM";
+  if (date) {
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let m = "AM";
 
-  if (hours > 12) {
-    hours -= 12;
-    m = "PM";
+    if (hours > 12) {
+      hours -= 12;
+      m = "PM";
+    }
+
+    return `${padZero(hours)}:${padZero(minutes)} ${m}`;
   }
-
-  return `${padZero(hours)}:${padZero(minutes)} ${m}`;
+  
+  return ``;
 };
 
 const Weather = () => {
