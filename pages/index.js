@@ -32,7 +32,88 @@ export async function getServerSideProps({ locale }) {
   };
 }
 
-export default function Home({ data, globalConfig }) {
+export default function Home(){
+  return(
+    <div className="outer-wrapper">
+      <section className="block general">
+        <div className="holder">
+          <div className="container-fluid">
+            <div className="content">
+              <div className="text">
+                Comming soon...
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <style jsx>{`
+        .block.general{
+          background: #f5f3ef;
+          height: 100vh;
+          position: relative;
+          width: 100%;
+        }
+        .block.general .text{
+          color: #384c48;
+          font-family: "RecifeDisplay-Light";
+          font-size: 40px;
+          letter-spacing: 0;
+          left: 50%;
+          line-height: 50px;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+          width: 100%;
+        }
+        .block.general:before{
+          background: url("images/logo.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          content: "";
+          height: 20px;
+          left: 50%;
+          position: absolute;
+          top: 60px;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+          width: 202px;
+        }
+        .block.general:after {
+          background: url("images/icon-ce.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          bottom: 60px;
+          content: "";
+          display: block;
+          height: 32px;
+          left: 50%;
+          position: absolute;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+          width: 49px;
+        }
+        .outer-wrapper{
+          background-color: #f5f3ef;
+          margin-bottom: 0px !important; 
+          margin-top: 0px !important;
+          position: relative;
+          z-index: 1;
+        }
+        @media screen and (min-width: 768px){
+          .outer-wrapper{
+            margin-bottom: 0 !important;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+/*export default function Home({ data, globalConfig }) {
   const { locale } = useRouter();
   const { description, content, openGraphImage } = data;
 
@@ -46,7 +127,6 @@ export default function Home({ data, globalConfig }) {
       pageConfig={{ description, openGraphImage }}
       globalConfig={globalConfig}
     >
-      {/* Hero Section */}
       <Hero
         id={hero.slug.current}
         text={hero?.text?.[locale]}
@@ -54,7 +134,7 @@ export default function Home({ data, globalConfig }) {
         mobileImagesSrc={hero.mobileImages}
       />
 
-      {/* What We Do Section */}
+      {/* What We Do Section }
       <Section
         id={whatWeDo.slug.current}
         title={whatWeDo?.title?.[locale]}
@@ -72,7 +152,7 @@ export default function Home({ data, globalConfig }) {
         </InviewElement>
       </Section>
 
-      {/* Home To Section */}
+      {/* Home To Section }
       <BackgroundColor
         cSrcD="./images/bckhomeD.svg"
         cSrcM="./images/bckHomeM.svg"
@@ -115,7 +195,7 @@ export default function Home({ data, globalConfig }) {
         </Section>
       </BackgroundColor>
 
-      {/* Bottom Section */}
+      { Bottom Section }
       <BottomLink href={link.href} text={link?.text?.[locale]} />
 
       <style jsx>{`
@@ -182,3 +262,4 @@ export default function Home({ data, globalConfig }) {
     </Layout>
   );
 }
+*/
