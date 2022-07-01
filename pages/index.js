@@ -40,7 +40,7 @@ export default function Home(){
           <div className="container-fluid">
             <div className="content">
               <div className="text">
-                Comming soon...
+                Coming soon...
               </div>
             </div>
           </div>
